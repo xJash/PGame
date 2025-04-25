@@ -8,38 +8,123 @@
         };
 
         root.addView({
-            type: "wide", padding: 2,
+            type: "wide",
+            padding: 2,
             id: "mainPage",
             rows: [
                 {
-                    view: "layout", cols: [
-                        { view: "label", label: "礼包配置", css: "title", width: 100, },
-                        { view: "label" },
+                    view: "layout",
+                    cols: [
+                        {
+                            view: "label",
+                            label: "礼包配置",
+                            css: "title",
+                            width: 100,
+                        },
+                        {
+                            view: "label"
+                        },
                     ]
                 },
                 {
-                    view: "layout", cols: [
-                        { view: "text", id: "serial", label: "礼包ID", width: 300, labelAlign: "right", },
-                        { view: "text", id: "name", label: "礼包名称", width: 300, labelAlign: "right", },
-                        { view: "label" },
+                    view: "layout",
+                    cols: [
+                        {
+                            view: "text",
+                            id: "serial",
+                            label: "礼包ID",
+                            width: 300,
+                            labelAlign: "right",
+                        },
+                        {
+                            view: "text",
+                            id: "name",
+                            label: "礼包名称",
+                            width: 300,
+                            labelAlign: "right",
+                        },
+                        {
+                            view: "label"
+                        },
                     ]
                 },
                 {
-                    view: "layout", cols: [
-                        { view: "text", id: "desc", label: "礼包描述", width: 300, labelAlign: "right", },
-                        { view: "text", id: "content", label: "礼包内容", width: 300, labelAlign: "right", },
-                        { view: "text", id: "tag", label: "礼包标记", width: 200, labelAlign: "right", },
-                        { view: "label" },
+                    view: "layout",
+                    cols: [
+                        {
+                            view: "text",
+                            id: "desc",
+                            label: "礼包描述",
+                            width: 300,
+                            labelAlign: "right",
+                        },
+                        {
+                            view: "text",
+                            id: "content",
+                            label: "礼包内容",
+                            width: 300,
+                            labelAlign: "right",
+                        },
+                        {
+                            view: "text",
+                            id: "tag",
+                            label: "礼包标记",
+                            width: 200,
+                            labelAlign: "right",
+                        },
+                        {
+                            view: "label"
+                        },
                     ]
                 },
                 {
-                    view: "layout", cols: [
-                        { view: "datepicker", format: "%Y-%m-%d %H:%i:%s", id: "start", align: "right", label: '开始时间', labelAlign: "right", width: 300, timepicker: true, stringResult: true },
-                        { view: "datepicker", format: "%Y-%m-%d %H:%i:%s", id: "end", align: "right", label: '结束时间', labelAlign: "right", width: 300, timepicker: true, stringResult: true },
-                        { view: "label" },
-                        { view: "button", id: "queryBtn", label: "查询", width: 100, click: queryCDKeyGift },
-                        { view: "button", id: "createBtn", label: "创建", width: 100, click: addCDKeyGift },
-                        { view: "button", label: "导出", width: 100, click: exportCDKeyGifts },
+                    view: "layout",
+                    cols: [
+                        {
+                            view: "datepicker",
+                            format: "%Y-%m-%d %H:%i:%s",
+                            id: "start",
+                            align: "right",
+                            label: '开始时间',
+                            labelAlign: "right",
+                            width: 300,
+                            timepicker: true,
+                            stringResult: true
+                        },
+                        {
+                            view: "datepicker",
+                            format: "%Y-%m-%d %H:%i:%s",
+                            id: "end",
+                            align: "right",
+                            label: '结束时间',
+                            labelAlign: "right",
+                            width: 300,
+                            timepicker: true,
+                            stringResult: true
+                        },
+                        {
+                            view: "label"
+                        },
+                        {
+                            view: "button",
+                            id: "queryBtn",
+                            label: "查询",
+                            width: 100,
+                            click: queryCDKeyGift
+                        },
+                        {
+                            view: "button",
+                            id: "createBtn",
+                            label: "创建",
+                            width: 100,
+                            click: addCDKeyGift
+                        },
+                        {
+                            view: "button",
+                            label: "导出",
+                            width: 100,
+                            click: exportCDKeyGifts
+                        },
                     ]
                 },
                 {
@@ -49,16 +134,66 @@
                     resizeColumn: true,
                     scroll: "y",
                     columns: [
-                        { id: "serial", header: "礼包ID", width: 80, sort: "int" },
-                        { id: "name", header: "礼包名称", width: 150, sort: "string" },
-                        { id: "desc", header: "礼包描述", width: 150, sort: "string" },
-                        { id: "content", header: "礼包内容", width: 150, sort: "string" },
-                        { id: "tag", label: "礼包标记", width: 200, sort: "int" },
-                        { id: "time", header: "添加时间", width: 150, sort: "string" },
-                        { id: "modify", header: "修改", width: 60, template: "<button class='modify'>修改</button>" },
-                        { id: "deleate", header: "删除", width: 60, template: "<button class='deleate'>删除</button>" },
-                        { id: "loadfile", header: "下载", width: 60, template: "<button class='loadfile'>下载</button>" },
-                        { id: "check", header: "勾选", width: 60, template: "{common.checkbox()}" },
+                        {
+                            id: "serial",
+                            header: "礼包ID",
+                            width: 80,
+                            sort: "int"
+                        },
+                        {
+                            id: "name",
+                            header: "礼包名称",
+                            width: 150,
+                            sort: "string"
+                        },
+                        {
+                            id: "desc",
+                            header: "礼包描述",
+                            width: 150,
+                            sort: "string"
+                        },
+                        {
+                            id: "content",
+                            header: "礼包内容",
+                            width: 150,
+                            sort: "string"
+                        },
+                        {
+                            id: "tag",
+                            label: "礼包标记",
+                            width: 200,
+                            sort: "int"
+                        },
+                        {
+                            id: "time",
+                            header: "添加时间",
+                            width: 150,
+                            sort: "string"
+                        },
+                        {
+                            id: "modify",
+                            header: "修改",
+                            width: 60,
+                            template: "<button class='modify'>修改</button>"
+                        },
+                        {
+                            id: "deleate",
+                            header: "删除",
+                            width: 60,
+                            template: "<button class='deleate'>删除</button>"
+                        },
+                        {
+                            id: "loadfile",
+                            header: "下载",
+                            width: 60,
+                            template: "<button class='loadfile'>下载</button>"
+                        },
+                        {
+                            id: "check",
+                            header: "勾选",
+                            width: 60,
+                            template: "{common.checkbox()}"
+                        },
                     ],
                     onClick: ClickEvents,
                 },
@@ -77,20 +212,51 @@
                 title: "礼包添加",
                 elements: [
                     {
-                        view: "layout", cols: [
-                            { view: "text", id: "cserial", label: "礼包ID", width: 300, labelAlign: "right", },
-                            { view: "text", id: "cname", label: "礼包名称", width: 300, labelAlign: "right", },
-                            { view: "text", id: "ctag", label: "礼包标记", width: 200, labelAlign: "right", },
+                        view: "layout",
+                        cols: [
+                            {
+                                view: "text",
+                                id: "cserial",
+                                label: "礼包ID",
+                                width: 300,
+                                labelAlign: "right",
+                            },
+                            {
+                                view: "text",
+                                id: "cname",
+                                label: "礼包名称",
+                                width: 300,
+                                labelAlign: "right",
+                            },
+                            {
+                                view: "text",
+                                id: "ctag",
+                                label: "礼包标记",
+                                width: 200,
+                                labelAlign: "right",
+                            },
                         ]
                     },
                     {
-                        view: "layout", cols: [
-                            { view: "text", id: "cdesc", label: "礼包描述", labelAlign: "right", },
+                        view: "layout",
+                        cols: [
+                            {
+                                view: "text",
+                                id: "cdesc",
+                                label: "礼包描述",
+                                labelAlign: "right",
+                            },
                         ]
                     },
                     {
-                        view: "layout", cols: [
-                            { view: "text", id: "ccontent", label: "礼包内容", labelAlign: "right", },
+                        view: "layout",
+                        cols: [
+                            {
+                                view: "text",
+                                id: "ccontent",
+                                label: "礼包内容",
+                                labelAlign: "right",
+                            },
                         ]
                     },
                 ]
@@ -104,10 +270,10 @@
                 param.content = $$("ccontent").getValue();
                 param.tag = $$("ctag").getValue();
 
-                if (!param.serial
-                    || !param.name
-                    || !param.desc
-                    || !param.content) {
+                if (!param.serial ||
+                    !param.name ||
+                    !param.desc ||
+                    !param.content) {
                     alert("信息不完整，请检查");
                     return
                 }
@@ -116,8 +282,7 @@
                     await service.call("cdkey/addCDKeyGift", param);
                     dlg.close();
                     queryCDKeyGift();
-                }
-                catch (e) {
+                } catch (e) {
                     alert(e.message);
                 }
             });
@@ -129,8 +294,7 @@
             try {
                 await service.call("cdkey/deleteCDKeyGift", param);
                 await queryCDKeyGift();
-            }
-            catch (e) {
+            } catch (e) {
                 alert(e.message);
             }
         }
@@ -143,19 +307,48 @@
                 title: "礼包修改_" + item.name,
                 elements: [
                     {
-                        view: "layout", cols: [
-                            { view: "text", id: "cname", label: "礼包名称", value: item.name, width: 300, labelAlign: "right", },
-                            { view: "text", id: "ctag", label: "礼包标记", value: item.tag, width: 200, labelAlign: "right", },
+                        view: "layout",
+                        cols: [
+                            {
+                                view: "text",
+                                id: "cname",
+                                label: "礼包名称",
+                                value: item.name,
+                                width: 300,
+                                labelAlign: "right",
+                            },
+                            {
+                                view: "text",
+                                id: "ctag",
+                                label: "礼包标记",
+                                value: item.tag,
+                                width: 200,
+                                labelAlign: "right",
+                            },
                         ]
                     },
                     {
-                        view: "layout", cols: [
-                            { view: "text", id: "cdesc", label: "礼包描述", value: item.desc, labelAlign: "right", },
+                        view: "layout",
+                        cols: [
+                            {
+                                view: "text",
+                                id: "cdesc",
+                                label: "礼包描述",
+                                value: item.desc,
+                                labelAlign: "right",
+                            },
                         ]
                     },
                     {
-                        view: "layout", cols: [
-                            { view: "text", id: "ccontent", label: "礼包内容", value: item.content, labelAlign: "right", },
+                        view: "layout",
+                        cols: [
+                            {
+                                view: "text",
+                                id: "ccontent",
+                                label: "礼包内容",
+                                value: item.content,
+                                labelAlign: "right",
+                            },
                         ]
                     },
                 ]
@@ -169,10 +362,10 @@
                 param.desc = $$("cdesc").getValue();
                 param.content = $$("ccontent").getValue();
 
-                if (!param.name
-                    && !param.tag
-                    && !param.desc
-                    && !param.content) {
+                if (!param.name &&
+                    !param.tag &&
+                    !param.desc &&
+                    !param.content) {
                     alert("信息不完整，请检查");
                     return
                 }
@@ -181,8 +374,7 @@
                     await service.call("cdkey/modifyCDKeyGift", param);
                     dlg.close();
                     await queryCDKeyGift();
-                }
-                catch (e) {
+                } catch (e) {
                     alert(e.message);
                 }
             });
@@ -238,25 +430,78 @@
         };
 
         root.addView({
-            type: "wide", padding: 2,
+            type: "wide",
+            padding: 2,
             id: "mainPage",
             rows: [
                 {
-                    view: "layout", cols: [
-                        { view: "label", label: "礼包码管理", css: "title", width: 100, },
-                        { view: "label" },
+                    view: "layout",
+                    cols: [
+                        {
+                            view: "label",
+                            label: "礼包码管理",
+                            css: "title",
+                            width: 100,
+                        },
+                        {
+                            view: "label"
+                        },
                     ]
                 },
                 {
-                    view: "layout", cols: [
-                        { view: "text", id: "serial", label: "礼包ID", width: 300, labelAlign: "right", },
-                        { view: "text", id: "type", label: "CDKey类型", width: 300, labelAlign: "right", },
-                        { view: "text", id: "code", label: "CDKey", width: 300, labelAlign: "right", },
-                        { view: "label" },
-                        { view: "button", id: "queryBtn", label: "查询", width: 100, click: queryCDKey },
-                        { view: "button", id: "createBtn", label: "创建", width: 100, click: uploadCDKey },
-                        { view: "button", id: "uploadBtn", label: "导入", width: 100, click: uploadCDKey },
-                        { view: "button", label: "导出", width: 100, click: exportCDKey },
+                    view: "layout",
+                    cols: [
+                        {
+                            view: "text",
+                            id: "serial",
+                            label: "礼包ID",
+                            width: 300,
+                            labelAlign: "right",
+                        },
+                        {
+                            view: "text",
+                            id: "type",
+                            label: "CDKey类型",
+                            width: 300,
+                            labelAlign: "right",
+                        },
+                        {
+                            view: "text",
+                            id: "code",
+                            label: "CDKey",
+                            width: 300,
+                            labelAlign: "right",
+                        },
+                        {
+                            view: "label"
+                        },
+                        {
+                            view: "button",
+                            id: "queryBtn",
+                            label: "查询",
+                            width: 100,
+                            click: queryCDKey
+                        },
+                        {
+                            view: "button",
+                            id: "createBtn",
+                            label: "创建",
+                            width: 100,
+                            click: uploadCDKey
+                        },
+                        {
+                            view: "button",
+                            id: "uploadBtn",
+                            label: "导入",
+                            width: 100,
+                            click: uploadCDKey
+                        },
+                        {
+                            view: "button",
+                            label: "导出",
+                            width: 100,
+                            click: exportCDKey
+                        },
                     ]
                 },
                 {
@@ -266,12 +511,42 @@
                     resizeColumn: true,
                     scroll: "y",
                     columns: [
-                        { id: "code", header: "CDKey", width: 150, sort: "string" },
-                        { id: "serial", header: "礼包ID", width: 80, sort: "int" },
-                        { id: "type", label: "CDKey类型", width: 200, sort: "int" },
-                        { id: "count", label: "剩余个数", width: 200, sort: "int" },
-                        { id: "deleate", header: "删除", width: 60, template: "<button class='deleate'>删除</button>" },
-                        { id: "check", header: "勾选", width: 60, template: "{common.checkbox()}" },
+                        {
+                            id: "code",
+                            header: "CDKey",
+                            width: 150,
+                            sort: "string"
+                        },
+                        {
+                            id: "serial",
+                            header: "礼包ID",
+                            width: 80,
+                            sort: "int"
+                        },
+                        {
+                            id: "type",
+                            label: "CDKey类型",
+                            width: 200,
+                            sort: "int"
+                        },
+                        {
+                            id: "count",
+                            label: "剩余个数",
+                            width: 200,
+                            sort: "int"
+                        },
+                        {
+                            id: "deleate",
+                            header: "删除",
+                            width: 60,
+                            template: "<button class='deleate'>删除</button>"
+                        },
+                        {
+                            id: "check",
+                            header: "勾选",
+                            width: 60,
+                            template: "{common.checkbox()}"
+                        },
                     ],
                     onClick: ClickEvents,
                 },
@@ -290,10 +565,24 @@
                 title: "CDKey添加",
                 elements: [
                     {
-                        view: "layout", cols: [
-                            { view: "label", id: "createFileName", align: "right", width: 500 },
-                            { view: "label" },
-                            { view: "button", label: "上传文件", align: "right", width: 100, click: upload },
+                        view: "layout",
+                        cols: [
+                            {
+                                view: "label",
+                                id: "createFileName",
+                                align: "right",
+                                width: 500
+                            },
+                            {
+                                view: "label"
+                            },
+                            {
+                                view: "button",
+                                label: "上传文件",
+                                align: "right",
+                                width: 100,
+                                click: upload
+                            },
                         ]
                     }
                 ]
@@ -310,13 +599,13 @@
                     await service.uploadFile("cdkey/uploadCDKey", file, param);
                     dlg.close();
                     queryCDKey();
-                }
-                catch (e) {
+                } catch (e) {
                     alert(e.message);
                 }
             });
 
             var file;
+
             function upload() {
                 getFile(f => {
                     file = f;
@@ -334,8 +623,7 @@
             try {
                 await service.call("cdkey/deleteCDKey", param);
                 await queryCDKey();
-            }
-            catch (e) {
+            } catch (e) {
                 alert(e.message);
             }
         }

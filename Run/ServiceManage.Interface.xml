@@ -48,12 +48,12 @@
         </member>
         <member name="T:EasyGame.ErrCode">
             <summary>
-            服务错误码
+              Service error code
             </summary>
         </member>
         <member name="T:EasyGame.LogCategory">
             <summary>
-            日志分类
+              Log classification
             </summary>
         </member>
         <member name="T:EasyGame.HostInfoData">
@@ -113,38 +113,38 @@
         </member>
         <member name="M:EasyGame.IHostCommand.StartService(System.String,System.String,System.String,System.String[])">
             <summary>
-            通知ServiceHost启动一个service
+              Notify ServiceHost to start a service
             </summary>
             <param name="sessionId">session id</param>
             <param name="serviceName">service instance name</param>
-            <param name="program">服务程序名</param>
-            <param name="commands">启动后发送的命令行</param>
+            <param name="program">service program name</param>
+            <param name="commands">command line sent after startup</param>
             <returns>process id</returns>
-        </member>
-        <member name="M:EasyGame.IHostCommand.SendCmdToService(System.String,System.String)">
+          </member>
+          <member name="M:EasyGame.IHostCommand.SendCmdToService(System.String,System.String)">
             <summary>
-            通知ServiceHost向service发送一个命令
+              Notify ServiceHost to send a command to service
             </summary>
             <param name="serviceName"></param>
             <param name="command"></param>
-        </member>
-        <member name="M:EasyGame.IHostCommand.StopService(System.String)">
+          </member>
+          <member name="M:EasyGame.IHostCommand.StopService(System.String)">
             <summary>
-            通知Host关闭service
+              Notify Host to shut down service
             </summary>
             <param name="serviceName"></param>
-        </member>
-        <member name="M:EasyGame.IHostCommand.KillService(System.String)">
+          </member>
+          <member name="M:EasyGame.IHostCommand.KillService(System.String)">
             <summary>
-            通知Host强制结束service
+              Notify the Host to force the end of the service
             </summary>
             <param name="serviceName"></param>
-        </member>
-        <member name="M:EasyGame.IHostCommand.Ping(System.Int32)">
+          </member>
+          <member name="M:EasyGame.IHostCommand.Ping(System.Int32)">
             <summary>
-            服务管理发送Ping消息以确认连接存在
+              The service manager sends a Ping message to confirm that the connection exists
             </summary>
-            <remarks>host需用相同的tick值来回应</remarks>
+            <remarks>The host needs to respond with the same tick value</remarks>
             <param name="tick">tick值</param>
         </member>
         <member name="M:EasyGame.IHostCommand.UpdateServiceFiles(System.String,System.String)">
@@ -165,50 +165,50 @@
         </member>
         <member name="M:EasyGame.IHostCommand.ServiceDisconnect(System.String)">
             <summary>
-            通知host service和serviceManager的连接中断，让host通知service重连serviceManager
+              Notify the host that the connection between service and serviceManager is interrupted, and let the host notify the service to reconnect to serviceManager.
             </summary>
             <param name="service"></param>
-        </member>
-        <member name="M:EasyGame.IHostCommand.UpdateSourceFiles(System.Int32)">
+          </member>
+          <member name="M:EasyGame.IHostCommand.UpdateSourceFiles(System.Int32)">
             <summary>
-            notify ServiceHost to update the source files from the svn repository
+              notify ServiceHost to update the source files from the svn repository
             </summary>
             <param name="revision">-1 means lastest version</param>
             <returns>the current revision</returns>
-        </member>
-        <member name="M:EasyGame.IHostCommand.UpdateServiceHost(System.String)">
+          </member>
+          <member name="M:EasyGame.IHostCommand.UpdateServiceHost(System.String)">
             <summary>
-            notify ServiceHost to update itself from the url
+              notify ServiceHost to update itself from the url
             </summary>
             <remarks>after update success the service host will be resart</remarks>
             <param name="url">the service host packe file url</param>
-        </member>
-        <member name="M:EasyGame.IHostCommand.JobCancel">
+          </member>
+          <member name="M:EasyGame.IHostCommand.JobCancel">
             <summary>
-            force to cancel the current job
+              force to cancel the current job
             </summary>
-        </member>
-        <member name="M:EasyGame.IHostCommand.SystemRestart">
+          </member>
+          <member name="M:EasyGame.IHostCommand.SystemRestart">
             <summary>
-            宿主机重启
+              Host restart
             </summary>
-        </member>
-        <member name="M:EasyGame.IHostCommand.RunCmd(System.String)">
+          </member>
+          <member name="M:EasyGame.IHostCommand.RunCmd(System.String)">
             <summary>
-            run a command
+              run a command
             </summary>
-        </member>
-        <member name="T:EasyGame.IHostManager">
+          </member>
+          <member name="T:EasyGame.IHostManager">
             <summary>
-            服务管理
+              Service management
             </summary>
             <remarks>
-            服务管理器用于注册和管理所有的逻辑服务和物理服务器
+              The service manager is used to register and manage all logical services and physical servers
             </remarks>
-        </member>
-        <member name="M:EasyGame.IHostManager.RegisterHost(System.String,System.String,System.String,EasyGame.MetricSampleDescData[])">
+          </member>
+          <member name="M:EasyGame.IHostManager.RegisterHost(System.String,System.String,System.String,EasyGame.MetricSampleDescData[])">
             <summary>
-            宿主机向ServiceManager注册
+              The host registers with ServiceManager
             </summary>
             <param name="hostName">the host name</param>
             <param name="os">the operation system of the host</param>
@@ -259,146 +259,146 @@
         </member>
         <member name="M:EasyGame.IHostManager.ConsoleLog(EasyGame.LogLevel,System.DateTime,System.String)">
             <summary>
-            由ServiceHost发送的控制台日志信息
+              Console log information sent by ServiceHost
             </summary>
             <param name="level"></param>
             <param name="logTime"></param>
             <param name="message"></param>
-        </member>
-        <member name="M:EasyGame.IHostManager.HostClose">
+          </member>
+          <member name="M:EasyGame.IHostManager.HostClose">
             <summary>
-            Host关闭通知
+              Host close notification
             </summary>
-        </member>
-        <member name="T:EasyGame.ServiceCmdData">
+          </member>
+          <member name="T:EasyGame.ServiceCmdData">
             <summary>
-            服务提供的命令配置
+              Command configuration provided by the service
             </summary>
-        </member>
-        <member name="F:EasyGame.ServiceCmdData.Name">
+          </member>
+          <member name="F:EasyGame.ServiceCmdData.Name">
             <summary>
-            命令显示名
+              Command display name
             </summary>
-        </member>
-        <member name="F:EasyGame.ServiceCmdData.Cmd">
+          </member>
+          <member name="F:EasyGame.ServiceCmdData.Cmd">
             <summary>
-            命令名
+              Command name
             </summary>
-        </member>
-        <member name="F:EasyGame.ServiceCmdData.Parameters">
+          </member>
+          <member name="F:EasyGame.ServiceCmdData.Parameters">
             <summary>
-            命令参数名（逗号分隔多个参数）
+              Command parameter name (commas separate multiple parameters)
             </summary>
-        </member>
-        <member name="T:EasyGame.ServiceClassData">
+          </member>
+          <member name="T:EasyGame.ServiceClassData">
             <summary>
-            服务类配置
+              Service class configuration
             </summary>
-        </member>
-        <member name="F:EasyGame.ServiceClassData.Name">
+          </member>
+          <member name="F:EasyGame.ServiceClassData.Name">
             <summary>
-            服务类名
+              Service class name
             </summary>
         </member>
         <member name="F:EasyGame.ServiceClassData.Path">
             <summary>
-            服务存放路径
+              Service storage path
             </summary>
-        </member>
-        <member name="F:EasyGame.ServiceClassData.LaunchCommand">
+          </member>
+          <member name="F:EasyGame.ServiceClassData.LaunchCommand">
             <summary>
-            服务的启动命令
+              Service startup command
             </summary>
-        </member>
-        <member name="F:EasyGame.ServiceClassData.Commands">
+          </member>
+          <member name="F:EasyGame.ServiceClassData.Commands">
             <summary>
-            服务提供的命令
+              Commands provided by the service
             </summary>
-        </member>
-        <member name="F:EasyGame.ServiceInstanceData.LaunchCommands">
+          </member>
+          <member name="F:EasyGame.ServiceInstanceData.LaunchCommands">
             <summary>
-            commands for service launch
+              commands for service launch
             </summary>
-        </member>
-        <member name="F:EasyGame.ServiceInstanceData.AutoStart">
+          </member>
+          <member name="F:EasyGame.ServiceInstanceData.AutoStart">
             <summary>
-            automatic start while servicemanager launched
+              automatic start while servicemanager launched
             </summary>
-        </member>
-        <member name="F:EasyGame.ServiceInstanceData.MonitorDefinition">
+          </member>
+          <member name="F:EasyGame.ServiceInstanceData.MonitorDefinition">
             <summary>
-            the monitor description items
+              the monitor description items
             </summary>
-        </member>
-        <member name="T:EasyGame.ServiceStatusData">
+          </member>
+          <member name="T:EasyGame.ServiceStatusData">
             <summary>
-            服务状态数据
+              Service status data
             </summary>
-        </member>
-        <member name="T:EasyGame.HostStatusData">
+          </member>
+          <member name="T:EasyGame.HostStatusData">
             <summary>
-            主机状态数据
+              Host status data
             </summary>
-        </member>
-        <member name="T:EasyGame.MonitorDataPoint">
+          </member>
+          <member name="T:EasyGame.MonitorDataPoint">
             <summary>
-            监控数据采样点
+              Monitoring data sampling point
             </summary>
-        </member>
-        <member name="F:EasyGame.MonitorDataPoint.sampleTime">
+          </member>
+          <member name="F:EasyGame.MonitorDataPoint.sampleTime">
             <summary>
-            采样时间
+              Sampling time
             </summary>
-        </member>
-        <member name="F:EasyGame.MonitorDataPoint.Interval">
+          </member>
+          <member name="F:EasyGame.MonitorDataPoint.Interval">
             <summary>
-            采样间隔（秒）
+              Sampling interval (seconds)
             </summary>
         </member>
         <member name="F:EasyGame.MonitorDataPoint.MaxValue">
-            <summary>
-            采样间隔内最大值
-            </summary>
+          <summary>
+            Maximum value within the sampling interval
+          </summary>
         </member>
         <member name="F:EasyGame.MonitorDataPoint.MinValue">
-            <summary>
-            采样间隔内最小值
-            </summary>
+          <summary>
+            Minimum value within the sampling interval
+          </summary>
         </member>
         <member name="F:EasyGame.MonitorDataPoint.AverageValue">
-            <summary>
-            采样间隔内平均值
-            </summary>
+          <summary>
+            Average value within the sampling interval
+          </summary>
         </member>
         <member name="F:EasyGame.ParameterData.Name">
-            <summary>
+          <summary>
             parameter name
-            </summary>
+          </summary>
         </member>
         <member name="F:EasyGame.ParameterData.Type">
-            <summary>
+          <summary>
             parameter type: (number, string, bool, date...)
-            </summary>
+          </summary>
         </member>
         <member name="T:EasyGame.JobData">
-            <summary>
-            宿主机任务数据
-            </summary>
+          <summary>
+            Host task data
+          </summary>
         </member>
         <member name="T:ServiceConfig.ServiceConfigData">
-            <summary>
-            服务部署配置
-            </summary>
+          <summary>
+            Service deployment configuration
+          </summary>
         </member>
         <member name="F:ServiceConfig.ServiceConfigData.Name">
-            <summary>
-            部署配置名
-            </summary>
+          <summary>
+            Deployment configuration name
+          </summary>
         </member>
         <member name="F:ServiceConfig.ServiceConfigData.Instances">
-            <summary>
-            服务实例
-            </summary>
+          <summary>
+            Service instance
+          </summary>
         </member>
     </members>
 </doc>

@@ -48,7 +48,7 @@
   ],
   "targets": {
     "android": {
-      "appname": "宝贝原生As1.0",
+      "appname": "Baby Original As1.0",
       "packagename": "com.xulonggame.pokemon2"
     },
     "ios": {

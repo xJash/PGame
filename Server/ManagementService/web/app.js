@@ -50,7 +50,7 @@ var activity;
             rows: [
                 {
                     view: "layout", cols: [
-                        { view: "label", label: "活动管理", css: "title", width: 100, },
+                        { view: "label", label: "Activity Management", css: "title", width: 100, },
                         { view: "label" },
                     ]
                 },
@@ -63,27 +63,27 @@ var activity;
                 {
                     view: "layout", cols: [
                         {
-                            view: "combo", id: "type", label: "活动类型", width: 250, labelAlign: "left", suggest: {
+                            view: "combo", id: "type", label: "Activity Type", width: 250, labelAlign: "left", suggest: {
                                 filter: service.filterItem,
                                 data: datas._activities,
                             }
                         },
-                        { view: "text", id: "name", label: "活动名称", width: 200, labelAlign: "right", },
+                        { view: "text", id: "name", label: "activity name", width: 200, labelAlign: "right", },
                         {
-                            view: "combo", id: "state", label: "活动状态", width: 200, labelAlign: "right", suggest: {
+                            view: "combo", id: "state", label: "active state", width: 200, labelAlign: "right", suggest: {
                                 filter: service.filterItem,
                                 data: [
-                                    { id: 0, value: "0:新增加" },
-                                    { id: 1, value: "1:进行中" },
-                                    { id: 2, value: "2:已结束" },
+                                    { id: 0, value: "0: Newly added" },
+                                    { id: 1, value: "1: In progress" },
+                                    { id: 2, value: "2: Completed" },
                                 ],
                             }
                         },
                         { view: "label" },
-                        { view: "button", id: "queryBtn", label: "查询", width: 100, click: query },
-                        { view: "button", id: "createBtn", label: "创建", width: 100, click: create },
-                        { view: "button", label: "导出", width: 100, click: exportCsv },
-                        { view: "button", id: "deleateBtn", label: "批量删除", width: 100, click: deleateAll },
+                        { view: "button", id: "queryBtn", label: "Query", width: 100, click: query },
+                        { view: "button", id: "createBtn", label: "Create", width: 100, click: create },
+                        { view: "button", label: "Export", width: 100, click: exportCsv },
+                        { view: "button", id: "deleateBtn", label: "Batch delete", width: 100, click: deleateAll },
                     ]
                 },
                 {
@@ -94,16 +94,16 @@ var activity;
                     scroll: "y",
                     columns: [
                         { id: "id", header: "ID", width: 80, sort: "int" },
-                        { id: "sid", header: "区服", width: 80, sort: "int" },
+                        { id: "sid", header: "region", width: 80, sort: "int" },
                         { id: "p0", header: "p0", width: 80, sort: "int" },
                         { id: "sort", header: "sort", width: 80, sort: "int" },
-                        { id: "type", header: "活动类型", width: 80, sort: "int" },
-                        { id: "name", header: "活动名称", width: 150, sort: "string" },
-                        { id: "start", header: "开始时间", width: 150, sort: "date" },
-                        { id: "end", header: "结束时间", width: 150, sort: "date" },
-                        { id: "state", header: "活动状态", width: 80, sort: "int" },
-                        { id: "modify", header: "修改", width: 60, template: "<button class='modify'>修改</button>" },
-                        { id: "deleate", header: "删除", width: 60, template: "<button class='deleate'>删除</button>" },
+                        { id: "type", header: "activity type", width: 80, sort: "int" },
+                        { id: "name", header: "activity name", width: 150, sort: "string" },
+                        { id: "start", header: "start time", width: 150, sort: "date" },
+                        { id: "end", header: "end time", width: 150, sort: "date" },
+                        { id: "state", header: "activity status", width: 80, sort: "int" },
+                        { id: "modify", header: "Modify", width: 60, template: "<button class='modify'>Modify</button>" },
+                        { id: "deleate", header: "Delete", width: 60, template: "<button class='deleate'>Delete</button>" },
                     ],
                     onClick: ClickEvents,
                     data: [],
@@ -135,8 +135,8 @@ var activity;
                     param.reverse = true;
                     dataQuery("activity/getActivityAsync", param, list, pager, function (r) {
                         for (var i in r) {
-                            r[i].deleate = "删除";
-                            r[i].modify = "修改";
+                            r[i].delete = "delete";
+                            r[i].modify = "modify";
                         }
                         ;
                     });
@@ -161,7 +161,7 @@ var activity;
                     params = {
                         width: 1500,
                         position: "center",
-                        title: "活动创建",
+                        title: "Event Creation",
                         elements: [
                             {
                                 view: "layout", cols: [
@@ -191,15 +191,15 @@ var activity;
                                             }
                                         }
                                     },
-                                    { view: "text", id: "createName", label: "活动名(必填)", labelWidth: 100, width: 250, labelAlign: "right", },
+                                    { view: "text", id: "createName", label: "Activity Name (required)", labelWidth: 100, width: 250, labelAlign: "right", },
                                     { view: "text", id: "createP0", label: "p0", width: 150, labelAlign: "right", },
                                     { view: "text", id: "createSort", label: "sort", width: 150, labelAlign: "right", },
                                 ]
                             },
                             {
                                 view: "layout", cols: [
-                                    { view: "datepicker", format: "%Y-%m-%d %H:%i:%s", id: "createStart", align: "right", label: '开始时间(必填)', labelWidth: 100, width: 300, timepicker: true, stringResult: true },
-                                    { view: "datepicker", format: "%Y-%m-%d %H:%i:%s", id: "createEnd", align: "right", label: '结束时间(必填)', labelWidth: 100, width: 300, timepicker: true, stringResult: true },
+                                    { view: "datepicker", format: "%Y-%m-%d %H:%i:%s", id: "createStart", align: "right", label: 'Start time (required)', labelWidth: 100, width: 300, timepicker: true, stringResult: true },
+                                    { view: "datepicker", format: "%Y-%m-%d %H:%i:%s", id: "createEnd", align: "right", label: 'End time (required)', labelWidth: 100, width: 300, timepicker: true, stringResult: true },
                                     { view: "label", id: "createFileName", align: "right", width: 200 },
                                     { view: "button", label: "上传文件", width: 100, click: upload },
                                 ]
@@ -213,7 +213,7 @@ var activity;
                                 switch (_a.label) {
                                     case 0:
                                         if (serverIDs.length == 0) {
-                                            alert("请选择目标服");
+                                            alert("Please select the target server");
                                             return [2];
                                         }
                                         param = {};
@@ -263,7 +263,7 @@ var activity;
             var params = {
                 width: 1500,
                 position: "center",
-                title: "活动修改",
+                title: "Event Modification",
                 elements: [
                     {
                         view: "layout", cols: [
@@ -273,8 +273,8 @@ var activity;
                     },
                     {
                         view: "layout", cols: [
-                            { view: "datepicker", format: "%Y-%m-%d %H:%i:%s", value: item.start, id: "startTime", align: "right", label: '开始时间', labelWidth: 70, width: 250, timepicker: true, stringResult: true },
-                            { view: "datepicker", format: "%Y-%m-%d %H:%i:%s", value: item.end, id: "endTime", align: "right", label: '结束时间', labelAlign: "right", labelWidth: 70, width: 250, timepicker: true, stringResult: true },
+                            { view: "datepicker", format: "%Y-%m-%d %H:%i:%s", value: item.start, id: "startTime", align: "right", label: 'Start time', labelWidth: 70, width: 250, timepicker: true, stringResult: true },
+                            { view: "datepicker", format: "%Y-%m-%d %H:%i:%s", value: item.end, id: "endTime", align: "right", label: 'End time', labelAlign: "right", labelWidth: 70, width: 250, timepicker: true, stringResult: true },
                         ]
                     },
                     {
@@ -283,7 +283,7 @@ var activity;
                             { view: "text", id: "p0", value: item.p0, label: "p0", labelWidth: 40, width: 160, labelAlign: "right", },
                             { view: "text", id: "modifyName", value: item.name, label: "name", labelWidth: 80, width: 200, labelAlign: "right", },
                             { view: "label", id: "modifyFileName", align: "right", width: 200 },
-                            { view: "button", label: "上传文件", width: 100, click: upload },
+                            { view: "button", label: "Upload files", width: 100, click: upload },
                         ]
                     }
                 ]
@@ -363,7 +363,7 @@ var activity;
                             },
                             {
                                 view: "layout", cols: [
-                                    { view: "label", label: "是否按类型删除:", labelAlign: "left", width: 100, labelWidth: 0 },
+                                    { view: "label", label: "Whether to delete by type:", labelAlign: "left", width: 100, labelWidth: 0 },
                                     { view: "checkbox", id: "yes", labelRight: "yes", label: "", value: 0, labelAlign: "right", labelWidth: 0, click: selectHandle, autoheight: true, width: 100 },
                                     { view: "checkbox", id: "no", labelRight: "no", label: "", value: 1, labelAlign: "right", labelWidth: 0, click: selectHandle, autoheight: true, width: 100 },
                                     { view: "label" },
@@ -381,7 +381,7 @@ var activity;
                                         param.sids = serverIDs.join(",");
                                         param.state = item.state;
                                         if (param.sids.length <= 0 || (typeof param.state) != "number") {
-                                            alert("格式不对，请检查");
+                                            alert("The format is incorrect, please check");
                                             return [2];
                                         }
                                         _a.label = 1;
@@ -443,7 +443,7 @@ var activity;
                     params = {
                         width: 800,
                         position: "center",
-                        title: "批量删除",
+                        title: "Batch Deletion",
                         elements: [
                             {
                                 view: "layout", cols: [
@@ -453,10 +453,10 @@ var activity;
                             },
                             {
                                 view: "layout", cols: [
-                                    { view: "label", label: "活动状态:", labelAlign: "left", width: 100, labelWidth: 0 },
-                                    { view: "checkbox", id: "state0", labelRight: "新增加(0)", label: "", value: 0, labelAlign: "right", labelWidth: 0, click: selectHandle, autoheight: true },
-                                    { view: "checkbox", id: "state1", labelRight: "进行中(1)", label: "", value: 0, labelAlign: "right", labelWidth: 0, click: selectHandle, autoheight: true },
-                                    { view: "checkbox", id: "state2", labelRight: "已结束(2)", label: "", value: 1, labelAlign: "right", labelWidth: 0, click: selectHandle, autoheight: true },
+                                    { view: "label", label: "Activity Status:", labelAlign: "left", width: 100, labelWidth: 0 },
+                                    { view: "checkbox", id: "state0", labelRight: "Newly added(0)", label: "", value: 0, labelAlign: "right", labelWidth: 0, click: selectHandle, autoheight: true },
+                                    { view: "checkbox", id: "state1", labelRight: "In progress(1)", label: "", value: 0, labelAlign: "right", labelWidth: 0, click: selectHandle, autoheight: true },
+                                    { view: "checkbox", id: "state2", labelRight: "Completed(2)", label: "", value: 1, labelAlign: "right", labelWidth: 0, click: selectHandle, autoheight: true },
                                     { view: "label" },
                                 ]
                             }
@@ -469,14 +469,14 @@ var activity;
                                 switch (_a.label) {
                                     case 0:
                                         if (serverIDs.length == 0) {
-                                            alert("请选择要应用的服");
+                                            alert("Please select the service to be applied");
                                             return [2];
                                         }
                                         param = {};
                                         param.sids = serverIDs.join(",");
                                         param.state = state;
                                         if (param.sids.length <= 0 || (typeof param.state) != "number") {
-                                            alert("格式不对，请检查");
+                                            alert("The format is incorrect, please check");
                                             return [2];
                                         }
                                         _a.label = 1;
@@ -504,7 +504,7 @@ var activity;
             });
         }
         function exportCsv() {
-            param.fn = "活动列表.csv";
+            param.fn = "Event List.csv";
             service.downloadFile("activity/exportCSV", param);
         }
     }

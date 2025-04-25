@@ -507,22 +507,22 @@
         </member>
         <member name="F:EasyGame.MonitorSampleDescData.Item">
             <summary>
-            监控编号
+              Monitoring number
             </summary>
-        </member>
-        <member name="F:EasyGame.MonitorSampleDescData.Name">
+          </member>
+          <member name="F:EasyGame.MonitorSampleDescData.Name">
             <summary>
-            监控项名字
+              Monitoring item name
             </summary>
-        </member>
-        <member name="F:EasyGame.MonitorSampleDescData.Unit">
+          </member>
+          <member name="F:EasyGame.MonitorSampleDescData.Unit">
             <summary>
-            数据单位
+              Data unit
             </summary>
-        </member>
-        <member name="F:EasyGame.MonitorSampleDescData.Interval">
+          </member>
+          <member name="F:EasyGame.MonitorSampleDescData.Interval">
             <summary>
-            采样时间间隔(sec)
+              Sampling time interval (sec)
             </summary>
         </member>
         <member name="T:EasyGame.ServiceStatus">

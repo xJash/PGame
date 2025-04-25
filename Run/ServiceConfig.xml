@@ -28,11 +28,11 @@
 			<LaunchCommand>HuaXianGameService.exe</LaunchCommand>
 			<Commands>
 				<e>
-					<Name>保存常量</Name>
+					<Name>Saving constants</Name>
 					<Cmd>SaveConstant</Cmd>
 				</e>
 				<e>
-					<Name>发送邮件</Name>
+					<Name>Send Email</Name>
 					<Cmd>SendMail</Cmd>
 					<Parameters>
 						<e>
@@ -80,38 +80,38 @@
 			<Commands/>
 		</e>
 	</ServiceClasses>
-	<Configs>
-		<e Name="Pokemon_适配_BT">
-			<Instances>
-				<e ServiceClass="StaticResService" Name="静态Web服务" Description="静态Web服务">
-					<Command>Launch "http://+:8080/" ../../client/Pokemon_适配_BT</Command>
-				</e>				
-				<e ServiceClass="DataStorageService" Name="DataStorage" Description="数据存储服务">
-					<Command>Launch "server=127.0.0.1;uid=root;pwd=qweqwe;database=pokemon;default command timeout=12000;"</Command>
-				</e>
-				<e ServiceClass="PokemonGameService" Name="Game.1" Description="游戏1服">
-					<Command>SetServer Agent.1 DataStorage 1</Command>
-					<Command>LoadTable ../../Client/Pokemon_适配_BT/csv_beta</Command>
-					<Command>InitWordFilter ../../Client/Pokemon_适配_BT/csv_beta NG_WORDS.txt</Command>
-					<Command>SetConnectionString "server=127.0.0.1;uid=root;pwd=qweqwe;database=pokemon;"</Command>
-					<Command>Launch Agent.1 DataStorage 1</Command>
-					<Command>CheckTable</Command>
-				</e>
-				<e ServiceClass="AgentService" Name="Agent.1" Description="前端反向代理">
-					<Command>SetConnectionString "server=127.0.0.1;uid=root;pwd=qweqwe;database=pokemon;"</Command>
-					<Command>Launch http://+:8001/agent/ 1</Command>
-				</e>
-				<e ServiceClass="AuthenticationService" Name="登录认证" Description="登录认证服务">
-					<Command>Launch http://+:8000/login/ "server=127.0.0.1;uid=root;pwd=qweqwe;database=pokemon;"</Command>
-					<Command>LaunchGaveGame</Command>
-					<Command>AddPingService</Command>
-				</e>
-				<e ServiceClass="ManagementService" Name="后台管理服务" Description="后台管理服务器">
-					<Command>Launch http://+:8002/ ../../Server/ManagementService/web</Command>
-					<Command>SetConnectionString "server=127.0.0.1;uid=root;pwd=qweqwe;database=pokemon;default command timeout=600;"</Command>
-					<Command>LoadItems ../../Server/ManagementService/web/datas/items.csv</Command>
-				</e>
-			</Instances>
-		</e>
-	</Configs>
+  <Configs>
+    <e Name="Pokemon_Adapter_BT">
+      <Instances>
+        <e ServiceClass="StaticResService" Name="Static Web Service" Description="Static Web Service">
+          <Command>Launch "http://+:8080/" ../../client/Pokemon_Adapter_BT</Command>
+        </e>
+        <e ServiceClass="DataStorageService" Name="DataStorage" Description="Data Storage Service">
+          <Command>Launch "server=127.0.0.1;uid=root;pwd=qweqwe;database=pokemon;default command timeout=12000;"</Command>
+        </e>
+        <e ServiceClass="PokemonGameService" Name="Game.1" Description="Game 1">
+          <Command>SetServer Agent.1 DataStorage 1</Command>
+          <Command>LoadTable ../../Client/Pokemon_Adaptation_BT/csv_beta</Command>
+          <Command>InitWordFilter ../../Client/Pokemon_Adaptation_BT/csv_beta NG_WORDS.txt</Command>
+          <Command>SetConnectionString "server=127.0.0.1;uid=root;pwd=qweqwe;database=pokemon;"</Command>
+          <Command>Launch Agent.1 DataStorage 1</Command>
+          <Command>CheckTable</Command>
+        </e>
+        <e ServiceClass="AgentService" Name="Agent.1" Description="Front-end reverse proxy">
+          <Command>SetConnectionString "server=127.0.0.1;uid=root;pwd=qweqwe;database=pokemon;"</Command>
+          <Command>Launch http://+:8001/agent/ 1</Command>
+        </e>
+        <e ServiceClass="AuthenticationService" Name="Login Authentication" Description="Login Authentication Service">
+          <Command>Launch http://+:8000/login/ "server=127.0.0.1;uid=root;pwd=qweqwe;database=pokemon;"</Command>
+          <Command>LaunchGaveGame</Command>
+          <Command>AddPingService</Command>
+        </e>
+        <e ServiceClass="ManagementService" Name="Background Management Service" Description="Background Management Server">
+          <Command>Launch http://+:8002/ ../../Server/ManagementService/web</Command>
+          <Command>SetConnectionString "server=127.0.0.1;uid=root;pwd=qweqwe;database=pokemon;default command timeout=600;"</Command>
+          <Command>LoadItems ../../Server/ManagementService/web/datas/items.csv</Command>
+        </e>
+      </Instances>
+    </e>
+  </Configs>
 </root>

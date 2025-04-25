@@ -1,1173 +1,2131 @@
 html {
 	-ms-overflow-y: scroll;
 }
+
 body {
-	background: rgb(255, 255, 255); margin: 10px; padding: 0px; color: rgb(0, 0, 0);
+	background: rgb(255, 255, 255);
+	margin: 10px;
+	padding: 0px;
+	color: rgb(0, 0, 0);
 }
+
 body {
-	font: 16px/normal Î¢ÈíÑÅºÚ, Verdana, Arial, "Bitstream Vera Sans", Helvetica, sans-serif; font-size-adjust: none; font-stretch: normal;
+	font: 16px/normal Î¢ÈíÑÅºÚ, Verdana, Arial, "Bitstream Vera Sans", Helvetica, sans-serif;
+	font-size-adjust: none;
+	font-stretch: normal;
 }
+
 th {
-	font: 16px/normal Î¢ÈíÑÅºÚ, Verdana, Arial, "Bitstream Vera Sans", Helvetica, sans-serif; font-size-adjust: none; font-stretch: normal;
+	font: 16px/normal Î¢ÈíÑÅºÚ, Verdana, Arial, "Bitstream Vera Sans", Helvetica, sans-serif;
+	font-size-adjust: none;
+	font-stretch: normal;
 }
+
 tr {
-	font: 16px/normal Î¢ÈíÑÅºÚ, Verdana, Arial, "Bitstream Vera Sans", Helvetica, sans-serif; font-size-adjust: none; font-stretch: normal;
+	font: 16px/normal Î¢ÈíÑÅºÚ, Verdana, Arial, "Bitstream Vera Sans", Helvetica, sans-serif;
+	font-size-adjust: none;
+	font-stretch: normal;
 }
+
 h1 {
-	letter-spacing: -0.01em; font-family: Î¢ÈíÑÅºÚ, Arial,Verdana,"Bitstream Vera Sans",Helvetica,sans-serif; font-weight: bold; page-break-after: avoid;
+	letter-spacing: -0.01em;
+	font-family: Î¢ÈíÑÅºÚ, Arial, Verdana, "Bitstream Vera Sans", Helvetica, sans-serif;
+	font-weight: bold;
+	page-break-after: avoid;
 }
+
 h2 {
-	letter-spacing: -0.01em; font-family: Î¢ÈíÑÅºÚ, Arial,Verdana,"Bitstream Vera Sans",Helvetica,sans-serif; font-weight: bold; page-break-after: avoid;
+	letter-spacing: -0.01em;
+	font-family: Î¢ÈíÑÅºÚ, Arial, Verdana, "Bitstream Vera Sans", Helvetica, sans-serif;
+	font-weight: bold;
+	page-break-after: avoid;
 }
+
 h3 {
-	letter-spacing: -0.01em; font-family: Î¢ÈíÑÅºÚ, Arial,Verdana,"Bitstream Vera Sans",Helvetica,sans-serif; font-weight: bold; page-break-after: avoid;
+	letter-spacing: -0.01em;
+	font-family: Î¢ÈíÑÅºÚ, Arial, Verdana, "Bitstream Vera Sans", Helvetica, sans-serif;
+	font-weight: bold;
+	page-break-after: avoid;
 }
+
 h4 {
-	letter-spacing: -0.01em; font-family: Î¢ÈíÑÅºÚ, Arial,Verdana,"Bitstream Vera Sans",Helvetica,sans-serif; font-weight: bold; page-break-after: avoid;
+	letter-spacing: -0.01em;
+	font-family: Î¢ÈíÑÅºÚ, Arial, Verdana, "Bitstream Vera Sans", Helvetica, sans-serif;
+	font-weight: bold;
+	page-break-after: avoid;
 }
+
 h1 {
-	margin: 0.15em 1em 0.5em 0px; font-size: 24px;
+	margin: 0.15em 1em 0.5em 0px;
+	font-size: 24px;
 }
+
 h2 {
 	font-size: 20px;
 }
+
 h3 {
 	font-size: 18px;
 }
+
 hr {
-	border-width: 1px medium medium; border-style: solid none none; border-color: rgb(204, 204, 187) currentColor currentColor; margin: 2em 0px; border-image: none;
+	border-width: 1px medium medium;
+	border-style: solid none none;
+	border-color: rgb(204, 204, 187) currentColor currentColor;
+	margin: 2em 0px;
+	border-image: none;
 }
+
 address {
 	font-style: normal;
 }
+
 img {
-	border: currentColor; border-image: none;
+	border: currentColor;
+	border-image: none;
 }
+
 .underline {
 	text-decoration: underline;
 }
+
 ol.loweralpha {
 	list-style-type: lower-alpha;
 }
+
 ol.upperalpha {
 	list-style-type: upper-alpha;
 }
+
 ol.lowerroman {
 	list-style-type: lower-roman;
 }
+
 ol.upperroman {
 	list-style-type: upper-roman;
 }
+
 ol.arabic {
 	list-style-type: decimal;
 }
+
 :link {
-	color: rgb(187, 0, 0); text-decoration: none; border-bottom-color: rgb(187, 187, 187); border-bottom-width: 1px; border-bottom-style: dotted;
+	color: rgb(187, 0, 0);
+	text-decoration: none;
+	border-bottom-color: rgb(187, 187, 187);
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
 }
+
 :visited {
-	color: rgb(187, 0, 0); text-decoration: none; border-bottom-color: rgb(187, 187, 187); border-bottom-width: 1px; border-bottom-style: dotted;
+	color: rgb(187, 0, 0);
+	text-decoration: none;
+	border-bottom-color: rgb(187, 187, 187);
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
 }
+
 :hover:link {
-	color: rgb(85, 85, 85); background-color: rgb(238, 238, 238);
+	color: rgb(85, 85, 85);
+	background-color: rgb(238, 238, 238);
 }
+
 :hover:visited {
-	color: rgb(85, 85, 85); background-color: rgb(238, 238, 238);
+	color: rgb(85, 85, 85);
+	background-color: rgb(238, 238, 238);
 }
+
 h1 :link {
 	color: inherit;
 }
+
 h1 :visited {
 	color: inherit;
 }
+
 h2 :link {
 	color: inherit;
 }
+
 h2 :visited {
 	color: inherit;
 }
+
 h3 :link {
 	color: inherit;
 }
+
 h3 :visited {
 	color: inherit;
 }
+
 h4 :link {
 	color: inherit;
 }
+
 h4 :visited {
 	color: inherit;
 }
+
 h5 :link {
 	color: inherit;
 }
+
 h5 :visited {
 	color: inherit;
 }
+
 h6 :link {
 	color: inherit;
 }
+
 h6 :visited {
 	color: inherit;
 }
+
 .anchor:link {
-	border: currentColor; border-image: none; color: rgb(215, 215, 215); font-size: 0.8em; vertical-align: text-top;
+	border: currentColor;
+	border-image: none;
+	color: rgb(215, 215, 215);
+	font-size: 0.8em;
+	vertical-align: text-top;
 }
+
 .anchor:visited {
-	border: currentColor; border-image: none; color: rgb(215, 215, 215); font-size: 0.8em; vertical-align: text-top;
+	border: currentColor;
+	border-image: none;
+	color: rgb(215, 215, 215);
+	font-size: 0.8em;
+	vertical-align: text-top;
 }
+
 * > .anchor:link {
 	visibility: hidden;
 }
+
 * > .anchor:visited {
 	visibility: hidden;
 }
+
 h1:hover .anchor {
 	visibility: visible;
 }
+
 h2:hover .anchor {
 	visibility: visible;
 }
+
 h3:hover .anchor {
 	visibility: visible;
 }
+
 h4:hover .anchor {
 	visibility: visible;
 }
+
 h5:hover .anchor {
 	visibility: visible;
 }
+
 h6:hover .anchor {
 	visibility: visible;
 }
+
 span:hover .anchor {
 	visibility: visible;
 }
+
 h1:target {
-	background: rgb(255, 255, 187); border-radius: 0.2em; box-shadow: 0.1em 0.1em 0.4em 0.1em #dda;
+	background: rgb(255, 255, 187);
+	border-radius: 0.2em;
+	box-shadow: 0.1em 0.1em 0.4em 0.1em #dda;
 }
+
 h2:target {
-	background: rgb(255, 255, 187); border-radius: 0.2em; box-shadow: 0.1em 0.1em 0.4em 0.1em #dda;
+	background: rgb(255, 255, 187);
+	border-radius: 0.2em;
+	box-shadow: 0.1em 0.1em 0.4em 0.1em #dda;
 }
+
 h3:target {
-	background: rgb(255, 255, 187); border-radius: 0.2em; box-shadow: 0.1em 0.1em 0.4em 0.1em #dda;
+	background: rgb(255, 255, 187);
+	border-radius: 0.2em;
+	box-shadow: 0.1em 0.1em 0.4em 0.1em #dda;
 }
+
 h4:target {
-	background: rgb(255, 255, 187); border-radius: 0.2em; box-shadow: 0.1em 0.1em 0.4em 0.1em #dda;
+	background: rgb(255, 255, 187);
+	border-radius: 0.2em;
+	box-shadow: 0.1em 0.1em 0.4em 0.1em #dda;
 }
+
 h5:target {
-	background: rgb(255, 255, 187); border-radius: 0.2em; box-shadow: 0.1em 0.1em 0.4em 0.1em #dda;
+	background: rgb(255, 255, 187);
+	border-radius: 0.2em;
+	box-shadow: 0.1em 0.1em 0.4em 0.1em #dda;
 }
+
 h6:target {
-	background: rgb(255, 255, 187); border-radius: 0.2em; box-shadow: 0.1em 0.1em 0.4em 0.1em #dda;
+	background: rgb(255, 255, 187);
+	border-radius: 0.2em;
+	box-shadow: 0.1em 0.1em 0.4em 0.1em #dda;
 }
+
 span:target {
-	background: rgb(255, 255, 187); border-radius: 0.2em; box-shadow: 0.1em 0.1em 0.4em 0.1em #dda;
+	background: rgb(255, 255, 187);
+	border-radius: 0.2em;
+	box-shadow: 0.1em 0.1em 0.4em 0.1em #dda;
 }
-@media screen
-{
-a.ext-link .icon {
-	background: url("../extlink.gif") no-repeat left; padding-left: 15px;
+
+@media screen {
+	a.ext-link .icon {
+		background: url("../extlink.gif") no-repeat left;
+		padding-left: 15px;
+	}
+
+	a.mail-link .icon {
+		background: url("../envelope.png") no-repeat left;
+		padding-left: 16px;
+	}
+
+	a.trac-rawlink {
+		background: url("../download.png") no-repeat right;
+		padding-right: 16px;
+		border-bottom-color: currentColor;
+		border-bottom-width: medium;
+		border-bottom-style: none;
+	}
+
+	a.trac-ziplink {
+		background: url("../download.png") no-repeat right;
+		padding-right: 16px;
+		border-bottom-color: currentColor;
+		border-bottom-width: medium;
+		border-bottom-style: none;
+	}
 }
-a.mail-link .icon {
-	background: url("../envelope.png") no-repeat left; padding-left: 16px;
-}
-a.trac-rawlink {
-	background: url("../download.png") no-repeat right; padding-right: 16px; border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none;
-}
-a.trac-ziplink {
-	background: url("../download.png") no-repeat right; padding-right: 16px; border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none;
-}
-}
+
 input {
 	margin: 2px;
 }
+
 textarea {
 	margin: 2px;
 }
+
 select {
 	margin: 2px;
 }
+
 input {
 	vertical-align: middle;
 }
+
 select {
 	vertical-align: middle;
 }
+
 input[type=button] {
-	
 }
+
 input[type=submit] {
-	
 }
+
 input[type=reset] {
-	
 }
+
 button {
-	
 }
+
 input[type=button] {
-	background: rgb(238, 238, 238); padding: 0.1em 0.5em 0.2em; border-radius: 0.3em; border: 1px outset rgb(238, 238, 238); border-image: none; color: rgb(34, 34, 34); cursor: pointer; box-shadow: 0.1em 0.1em 0.4em 0px #888; text-shadow: 0.1em 0.1em #ddd;
+	background: rgb(238, 238, 238);
+	padding: 0.1em 0.5em 0.2em;
+	border-radius: 0.3em;
+	border: 1px outset rgb(238, 238, 238);
+	border-image: none;
+	color: rgb(34, 34, 34);
+	cursor: pointer;
+	box-shadow: 0.1em 0.1em 0.4em 0px #888;
+	text-shadow: 0.1em 0.1em #ddd;
 }
+
 input[type=submit] {
-	background: rgb(238, 238, 238); padding: 0.1em 0.5em 0.2em; border-radius: 0.3em; border: 1px outset rgb(238, 238, 238); border-image: none; color: rgb(34, 34, 34); cursor: pointer; box-shadow: 0.1em 0.1em 0.4em 0px #888; text-shadow: 0.1em 0.1em #ddd;
+	background: rgb(238, 238, 238);
+	padding: 0.1em 0.5em 0.2em;
+	border-radius: 0.3em;
+	border: 1px outset rgb(238, 238, 238);
+	border-image: none;
+	color: rgb(34, 34, 34);
+	cursor: pointer;
+	box-shadow: 0.1em 0.1em 0.4em 0px #888;
+	text-shadow: 0.1em 0.1em #ddd;
 }
+
 input[type=reset] {
-	background: rgb(238, 238, 238); padding: 0.1em 0.5em 0.2em; border-radius: 0.3em; border: 1px outset rgb(238, 238, 238); border-image: none; color: rgb(34, 34, 34); cursor: pointer; box-shadow: 0.1em 0.1em 0.4em 0px #888; text-shadow: 0.1em 0.1em #ddd;
+	background: rgb(238, 238, 238);
+	padding: 0.1em 0.5em 0.2em;
+	border-radius: 0.3em;
+	border: 1px outset rgb(238, 238, 238);
+	border-image: none;
+	color: rgb(34, 34, 34);
+	cursor: pointer;
+	box-shadow: 0.1em 0.1em 0.4em 0px #888;
+	text-shadow: 0.1em 0.1em #ddd;
 }
+
 input[type=button]:hover {
-	background: rgb(246, 246, 246); box-shadow: 0.1em 0.1em 0.6em 0px #999; text-shadow: 0.1em 0.1em #fcfcfc;
+	background: rgb(246, 246, 246);
+	box-shadow: 0.1em 0.1em 0.6em 0px #999;
+	text-shadow: 0.1em 0.1em #fcfcfc;
 }
+
 input[type=submit]:hover {
-	background: rgb(246, 246, 246); box-shadow: 0.1em 0.1em 0.6em 0px #999; text-shadow: 0.1em 0.1em #fcfcfc;
+	background: rgb(246, 246, 246);
+	box-shadow: 0.1em 0.1em 0.6em 0px #999;
+	text-shadow: 0.1em 0.1em #fcfcfc;
 }
+
 input[type=reset]:hover {
-	background: rgb(246, 246, 246); box-shadow: 0.1em 0.1em 0.6em 0px #999; text-shadow: 0.1em 0.1em #fcfcfc;
+	background: rgb(246, 246, 246);
+	box-shadow: 0.1em 0.1em 0.6em 0px #999;
+	text-shadow: 0.1em 0.1em #fcfcfc;
 }
+
 input[type=button]:active {
-	left: 0.1em; top: 0.1em; position: relative;
+	left: 0.1em;
+	top: 0.1em;
+	position: relative;
 }
+
 input[type=submit]:active {
-	left: 0.1em; top: 0.1em; position: relative;
+	left: 0.1em;
+	top: 0.1em;
+	position: relative;
 }
+
 input[type=reset]:active {
-	left: 0.1em; top: 0.1em; position: relative;
+	left: 0.1em;
+	top: 0.1em;
+	position: relative;
 }
+
 input[type=button][disabled] {
-	background: rgb(246, 246, 246); border-style: solid; color: rgb(153, 153, 153);
+	background: rgb(246, 246, 246);
+	border-style: solid;
+	color: rgb(153, 153, 153);
 }
+
 input[type=submit][disabled] {
-	background: rgb(246, 246, 246); border-style: solid; color: rgb(153, 153, 153);
+	background: rgb(246, 246, 246);
+	border-style: solid;
+	color: rgb(153, 153, 153);
 }
+
 input[type=reset][disabled] {
-	background: rgb(246, 246, 246); border-style: solid; color: rgb(153, 153, 153);
+	background: rgb(246, 246, 246);
+	border-style: solid;
+	color: rgb(153, 153, 153);
 }
+
 input[type=text] {
-	border-radius: 0.3em; border: 1px solid rgb(215, 215, 215); border-image: none;
+	border-radius: 0.3em;
+	border: 1px solid rgb(215, 215, 215);
+	border-image: none;
 }
+
 input.textwidget {
-	border-radius: 0.3em; border: 1px solid rgb(215, 215, 215); border-image: none;
+	border-radius: 0.3em;
+	border: 1px solid rgb(215, 215, 215);
+	border-image: none;
 }
+
 textarea {
-	border-radius: 0.3em; border: 1px solid rgb(215, 215, 215); border-image: none;
+	border-radius: 0.3em;
+	border: 1px solid rgb(215, 215, 215);
+	border-image: none;
 }
+
 input[type=text] {
 	padding: 0.25em 0.5em;
 }
+
 input.textwidget {
 	padding: 0.25em 0.5em;
 }
+
 input[type=text]:focus {
-	border: 1px solid rgb(136, 136, 102); border-image: none;
+	border: 1px solid rgb(136, 136, 102);
+	border-image: none;
 }
+
 input.textwidget:focus {
-	border: 1px solid rgb(136, 136, 102); border-image: none;
+	border: 1px solid rgb(136, 136, 102);
+	border-image: none;
 }
+
 textarea:focus {
-	border: 1px solid rgb(136, 136, 102); border-image: none;
+	border: 1px solid rgb(136, 136, 102);
+	border-image: none;
 }
+
 option {
-	border-bottom-color: rgb(215, 215, 215); border-bottom-width: 1px; border-bottom-style: dotted;
+	border-bottom-color: rgb(215, 215, 215);
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
 }
+
 fieldset {
-	background: rgb(247, 247, 240); margin: 1em 0px; padding: 1em; border-radius: 0.4em; border: 1px solid rgb(215, 215, 215); border-image: none; box-shadow: inset 0.1em 0.1em 1em 0px #e7e7e7;
+	background: rgb(247, 247, 240);
+	margin: 1em 0px;
+	padding: 1em;
+	border-radius: 0.4em;
+	border: 1px solid rgb(215, 215, 215);
+	border-image: none;
+	box-shadow: inset 0.1em 0.1em 1em 0px #e7e7e7;
 }
+
 p.hint {
-	margin: 0.5em 0px; color: rgb(102, 102, 102); padding-left: 1em; font-size: 85%; font-style: italic;
+	margin: 0.5em 0px;
+	color: rgb(102, 102, 102);
+	padding-left: 1em;
+	font-size: 85%;
+	font-style: italic;
 }
+
 span.hint {
-	margin: 0.5em 0px; color: rgb(102, 102, 102); padding-left: 1em; font-size: 85%; font-style: italic;
+	margin: 0.5em 0px;
+	color: rgb(102, 102, 102);
+	padding-left: 1em;
+	font-size: 85%;
+	font-style: italic;
 }
+
 legend {
-	padding: 0px 0.25em; color: rgb(153, 153, 153); font-size: 90%; font-weight: bold; margin-left: 0.6em;
+	padding: 0px 0.25em;
+	color: rgb(153, 153, 153);
+	font-size: 90%;
+	font-weight: bold;
+	margin-left: 0.6em;
 }
+
 label.disabled {
 	color: rgb(215, 215, 215);
 }
+
 .buttons {
 	margin: 0.5em 0.5em 0.5em 0px;
 }
-.buttons form {
-	display: inline;
-}
-.buttons form div {
-	display: inline;
-}
-.buttons input {
-	margin: 1em 0.5em 0.1em 0px;
-}
+
+	.buttons form {
+		display: inline;
+	}
+
+		.buttons form div {
+			display: inline;
+		}
+
+	.buttons input {
+		margin: 1em 0.5em 0.1em 0px;
+	}
+
 .inlinebuttons input {
-	background: none; margin: 0px 0.1em 0.1em; padding: 0px 0.4em 0.1em; border-radius: 1em; border: 1px solid rgb(221, 221, 221); border-image: none; height: 1.6em; color: rgb(128, 128, 128); font-size: 70%; cursor: pointer; box-shadow: none;
+	background: none;
+	margin: 0px 0.1em 0.1em;
+	padding: 0px 0.4em 0.1em;
+	border-radius: 1em;
+	border: 1px solid rgb(221, 221, 221);
+	border-image: none;
+	height: 1.6em;
+	color: rgb(128, 128, 128);
+	font-size: 70%;
+	cursor: pointer;
+	box-shadow: none;
 }
+
 .uisymbols .inlinebuttons input[type=button] {
 	font-size: 100%;
 }
+
 .uisymbols .inlinebuttons input[type=submit] {
 	font-size: 100%;
 }
+
 .inlinebuttons input[type=button]:hover {
-	background: rgb(246, 246, 246); color: rgb(51, 51, 51); box-shadow: 0.1em 0.1em 0.6em 0px #999; text-shadow: 0.1em 0.1em #fcfcfc;
+	background: rgb(246, 246, 246);
+	color: rgb(51, 51, 51);
+	box-shadow: 0.1em 0.1em 0.6em 0px #999;
+	text-shadow: 0.1em 0.1em #fcfcfc;
 }
+
 .inlinebuttons input[type=submit]:hover {
-	background: rgb(246, 246, 246); color: rgb(51, 51, 51); box-shadow: 0.1em 0.1em 0.6em 0px #999; text-shadow: 0.1em 0.1em #fcfcfc;
+	background: rgb(246, 246, 246);
+	color: rgb(51, 51, 51);
+	box-shadow: 0.1em 0.1em 0.6em 0px #999;
+	text-shadow: 0.1em 0.1em #fcfcfc;
 }
+
 input[type=button].trac-delete {
 	color: rgb(211, 19, 19);
 }
+
 input[type=submit].trac-delete {
 	color: rgb(211, 19, 19);
 }
+
 input[type=button].trac-delete:hover {
 	color: rgb(227, 19, 19);
 }
+
 input[type=submit].trac-delete:hover {
 	color: rgb(227, 19, 19);
 }
+
 #header hr {
 	display: none;
 }
+
 #header h1 {
-	margin: 1.5em 0px -1.5em; padding: 0px;
+	margin: 1.5em 0px -1.5em;
+	padding: 0px;
 }
+
 #header img {
-	margin: 0px 0px -3em; border: currentColor; border-image: none;
+	margin: 0px 0px -3em;
+	border: currentColor;
+	border-image: none;
 }
+
 #header :link {
-	background: none; padding: 0px; border: currentColor; border-image: none; color: rgb(85, 85, 85); margin-bottom: 2px;
+	background: none;
+	padding: 0px;
+	border: currentColor;
+	border-image: none;
+	color: rgb(85, 85, 85);
+	margin-bottom: 2px;
 }
+
 #header :visited {
-	background: none; padding: 0px; border: currentColor; border-image: none; color: rgb(85, 85, 85); margin-bottom: 2px;
+	background: none;
+	padding: 0px;
+	border: currentColor;
+	border-image: none;
+	color: rgb(85, 85, 85);
+	margin-bottom: 2px;
 }
+
 #header :hover:link {
-	background: none; padding: 0px; border: currentColor; border-image: none; color: rgb(85, 85, 85); margin-bottom: 2px;
+	background: none;
+	padding: 0px;
+	border: currentColor;
+	border-image: none;
+	color: rgb(85, 85, 85);
+	margin-bottom: 2px;
 }
+
 #header :hover:visited {
-	background: none; padding: 0px; border: currentColor; border-image: none; color: rgb(85, 85, 85); margin-bottom: 2px;
+	background: none;
+	padding: 0px;
+	border: currentColor;
+	border-image: none;
+	color: rgb(85, 85, 85);
+	margin-bottom: 2px;
 }
+
 #header h1 :hover:link {
 	color: rgb(0, 0, 0);
 }
+
 #header h1 :hover:visited {
 	color: rgb(0, 0, 0);
 }
+
 #search {
-	margin: 0px 0px 1em; height: 2.2em; text-align: right; clear: both; font-size: 10px;
-}
-#search input {
+	margin: 0px 0px 1em;
+	height: 2.2em;
+	text-align: right;
+	clear: both;
 	font-size: 10px;
 }
-#search label {
-	display: none;
-}
+
+	#search input {
+		font-size: 10px;
+	}
+
+	#search label {
+		display: none;
+	}
+
 .nav h2 {
 	display: none;
 }
+
 .nav hr {
 	display: none;
 }
+
 .nav ul {
-	list-style: none; margin: 0px; padding: 0px; text-align: right; font-size: 10px;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	text-align: right;
+	font-size: 10px;
 }
+
 .nav li {
-	padding: 0px 0.75em; border-right-color: rgb(215, 215, 215); border-right-width: 1px; border-right-style: solid; display: inline-block; white-space: nowrap; -ms-zoom: 1;
+	padding: 0px 0.75em;
+	border-right-color: rgb(215, 215, 215);
+	border-right-width: 1px;
+	border-right-style: solid;
+	display: inline-block;
+	white-space: nowrap;
+	-ms-zoom: 1;
 }
-.nav li.last {
-	border-right-color: currentColor; border-right-width: medium; border-right-style: none;
-}
+
+	.nav li.last {
+		border-right-color: currentColor;
+		border-right-width: medium;
+		border-right-style: none;
+	}
+
 #metanav {
 	padding-top: 0.3em;
 }
+
 #mainnav {
-	font: 10px/normal verdana, "Bitstream Vera Sans", helvetica, arial, sans-serif; margin: 0.66em 0px 0.33em; border-radius: 0.5em; border: 1px solid rgb(228, 228, 228); border-image: none; font-size-adjust: none; font-stretch: normal; box-shadow: 0px 0.5em 1.5em #eee;
+	font: 10px/normal verdana, "Bitstream Vera Sans", helvetica, arial, sans-serif;
+	margin: 0.66em 0px 0.33em;
+	border-radius: 0.5em;
+	border: 1px solid rgb(228, 228, 228);
+	border-image: none;
+	font-size-adjust: none;
+	font-stretch: normal;
+	box-shadow: 0px 0.5em 1.5em #eee;
 }
-#mainnav li {
-	background: url("../topbar_gradient.png") 0px 0px white; margin: -1px 0.3em 0px -0.4em; padding: 0.3em 0px; border: 1px solid rgb(228, 228, 228); border-image: none;
-}
-#mainnav .first {
-	border-top-left-radius: 0.5em; border-bottom-left-radius: 0.5em;
-}
-#mainnav .first :link {
-	border-top-left-radius: 0.5em; border-bottom-left-radius: 0.5em;
-}
-#mainnav .last {
-	margin-right: 0px; border-top-right-radius: 0.5em; border-bottom-right-radius: 0.5em;
-}
-#mainnav .last :link {
-	margin-right: 0px; border-top-right-radius: 0.5em; border-bottom-right-radius: 0.5em;
-}
-#mainnav :link {
-	padding: 0.3em 20px; color: rgb(0, 0, 0); border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none; box-shadow: 0px 0.1em 0.3em 0px #999;
-}
-#mainnav :visited {
-	padding: 0.3em 20px; color: rgb(0, 0, 0); border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none; box-shadow: 0px 0.1em 0.3em 0px #999;
-}
-#mainnav li:hover {
-	border: 1px solid rgb(102, 102, 102); border-image: none;
-}
-#mainnav :hover:link {
-	background: url("../topbar_gradient2.png") repeat-x 0px 0px rgb(0, 0, 0); color: rgb(238, 238, 238); box-shadow: 0px 0.1em 0.6em 0px #666;
-}
-#mainnav :hover:visited {
-	background: url("../topbar_gradient2.png") repeat-x 0px 0px rgb(0, 0, 0); color: rgb(238, 238, 238); box-shadow: 0px 0.1em 0.6em 0px #666;
-}
-#mainnav .active {
-	border: 1px solid rgb(102, 102, 102); border-image: none;
-}
-#mainnav .active :link {
-	background: url("../topbar_gradient2.png") repeat-x 0px 0px rgb(0, 0, 0); color: rgb(238, 238, 238); text-shadow: 1px 0px #eee;
-}
-#mainnav .active :visited {
-	background: url("../topbar_gradient2.png") repeat-x 0px 0px rgb(0, 0, 0); color: rgb(238, 238, 238); text-shadow: 1px 0px #eee;
-}
+
+	#mainnav li {
+		background: url("../topbar_gradient.png") 0px 0px white;
+		margin: -1px 0.3em 0px -0.4em;
+		padding: 0.3em 0px;
+		border: 1px solid rgb(228, 228, 228);
+		border-image: none;
+	}
+
+	#mainnav .first {
+		border-top-left-radius: 0.5em;
+		border-bottom-left-radius: 0.5em;
+	}
+
+		#mainnav .first :link {
+			border-top-left-radius: 0.5em;
+			border-bottom-left-radius: 0.5em;
+		}
+
+	#mainnav .last {
+		margin-right: 0px;
+		border-top-right-radius: 0.5em;
+		border-bottom-right-radius: 0.5em;
+	}
+
+		#mainnav .last :link {
+			margin-right: 0px;
+			border-top-right-radius: 0.5em;
+			border-bottom-right-radius: 0.5em;
+		}
+
+	#mainnav :link {
+		padding: 0.3em 20px;
+		color: rgb(0, 0, 0);
+		border-bottom-color: currentColor;
+		border-bottom-width: medium;
+		border-bottom-style: none;
+		box-shadow: 0px 0.1em 0.3em 0px #999;
+	}
+
+	#mainnav :visited {
+		padding: 0.3em 20px;
+		color: rgb(0, 0, 0);
+		border-bottom-color: currentColor;
+		border-bottom-width: medium;
+		border-bottom-style: none;
+		box-shadow: 0px 0.1em 0.3em 0px #999;
+	}
+
+	#mainnav li:hover {
+		border: 1px solid rgb(102, 102, 102);
+		border-image: none;
+	}
+
+	#mainnav :hover:link {
+		background: url("../topbar_gradient2.png") repeat-x 0px 0px rgb(0, 0, 0);
+		color: rgb(238, 238, 238);
+		box-shadow: 0px 0.1em 0.6em 0px #666;
+	}
+
+	#mainnav :hover:visited {
+		background: url("../topbar_gradient2.png") repeat-x 0px 0px rgb(0, 0, 0);
+		color: rgb(238, 238, 238);
+		box-shadow: 0px 0.1em 0.6em 0px #666;
+	}
+
+	#mainnav .active {
+		border: 1px solid rgb(102, 102, 102);
+		border-image: none;
+	}
+
+		#mainnav .active :link {
+			background: url("../topbar_gradient2.png") repeat-x 0px 0px rgb(0, 0, 0);
+			color: rgb(238, 238, 238);
+			text-shadow: 1px 0px #eee;
+		}
+
+		#mainnav .active :visited {
+			background: url("../topbar_gradient2.png") repeat-x 0px 0px rgb(0, 0, 0);
+			color: rgb(238, 238, 238);
+			text-shadow: 1px 0px #eee;
+		}
+
 #ctxtnav {
-	padding: 0.4em 0px; min-height: 1em;
+	padding: 0.4em 0px;
+	min-height: 1em;
 }
-#ctxtnav li ul {
-	background: rgb(247, 247, 247); margin: 0px; padding: 0px; border: 1px solid currentColor; border-image: none; color: rgb(204, 204, 204); display: inline;
-}
-#ctxtnav li li {
-	padding: 0px;
-}
-#ctxtnav li li :link {
-	padding: 0px 1em;
-}
-#ctxtnav li li :visited {
-	padding: 0px 1em;
-}
-#ctxtnav li li :hover:link {
-	background: rgb(187, 187, 170); color: rgb(255, 255, 255);
-}
-#ctxtnav li li :hover:visited {
-	background: rgb(187, 187, 170); color: rgb(255, 255, 255);
-}
+
+	#ctxtnav li ul {
+		background: rgb(247, 247, 247);
+		margin: 0px;
+		padding: 0px;
+		border: 1px solid currentColor;
+		border-image: none;
+		color: rgb(204, 204, 204);
+		display: inline;
+	}
+
+	#ctxtnav li li {
+		padding: 0px;
+	}
+
+		#ctxtnav li li :link {
+			padding: 0px 1em;
+		}
+
+		#ctxtnav li li :visited {
+			padding: 0px 1em;
+		}
+
+		#ctxtnav li li :hover:link {
+			background: rgb(187, 187, 170);
+			color: rgb(255, 255, 255);
+		}
+
+		#ctxtnav li li :hover:visited {
+			background: rgb(187, 187, 170);
+			color: rgb(255, 255, 255);
+		}
+
 .trac-nav {
-	font-size: 80%; float: right;
+	font-size: 80%;
+	float: right;
 }
+
 .trac-topnav {
-	font-size: 80%; float: right;
+	font-size: 80%;
+	float: right;
 }
+
 .trac-topnav {
 	margin-top: 14px;
 }
+
 #altlinks {
-	text-align: center; clear: both; margin-top: 0.4em;
+	text-align: center;
+	clear: both;
+	margin-top: 0.4em;
 }
-#altlinks h3 {
-	margin: 0px; letter-spacing: normal; font-size: 12px;
-}
-#altlinks ul {
-	list-style: none; margin: 0px;
-}
-#altlinks li {
-	padding: 0px 1em; line-height: 1.5; font-size: 11px; border-right-color: rgb(215, 215, 215); border-right-width: 1px; border-right-style: solid; display: inline; white-space: nowrap;
-}
-#altlinks li.last {
-	border-right-color: currentColor; border-right-width: medium; border-right-style: none;
-}
-#altlinks li :link {
-	padding: 0px 0px 2px; border: currentColor; border-image: none; color: rgb(102, 102, 102); background-repeat: no-repeat;
-}
-#altlinks li :visited {
-	padding: 0px 0px 2px; border: currentColor; border-image: none; color: rgb(102, 102, 102); background-repeat: no-repeat;
-}
-#altlinks li a.ics {
-	background: url("../ics.png") no-repeat left; padding-left: 22px;
-}
-#altlinks li a.rss {
-	background: url("../feed.png") no-repeat left; padding-left: 20px;
-}
+
+	#altlinks h3 {
+		margin: 0px;
+		letter-spacing: normal;
+		font-size: 12px;
+	}
+
+	#altlinks ul {
+		list-style: none;
+		margin: 0px;
+	}
+
+	#altlinks li {
+		padding: 0px 1em;
+		line-height: 1.5;
+		font-size: 11px;
+		border-right-color: rgb(215, 215, 215);
+		border-right-width: 1px;
+		border-right-style: solid;
+		display: inline;
+		white-space: nowrap;
+	}
+
+		#altlinks li.last {
+			border-right-color: currentColor;
+			border-right-width: medium;
+			border-right-style: none;
+		}
+
+		#altlinks li :link {
+			padding: 0px 0px 2px;
+			border: currentColor;
+			border-image: none;
+			color: rgb(102, 102, 102);
+			background-repeat: no-repeat;
+		}
+
+		#altlinks li :visited {
+			padding: 0px 0px 2px;
+			border: currentColor;
+			border-image: none;
+			color: rgb(102, 102, 102);
+			background-repeat: no-repeat;
+		}
+
+		#altlinks li a.ics {
+			background: url("../ics.png") no-repeat left;
+			padding-left: 22px;
+		}
+
+		#altlinks li a.rss {
+			background: url("../feed.png") no-repeat left;
+			padding-left: 20px;
+		}
+
 #footer {
-	padding: 0.25em 0px; height: 31px; color: rgb(187, 187, 187); clear: both; font-size: 10px;
-}
-#footer :link {
+	padding: 0.25em 0px;
+	height: 31px;
 	color: rgb(187, 187, 187);
+	clear: both;
+	font-size: 10px;
 }
-#footer :visited {
-	color: rgb(187, 187, 187);
-}
-#footer hr {
-	display: none;
-}
-#footer #tracpowered {
-	border: 0px currentColor; border-image: none; float: left;
-}
-#footer #tracpowered:hover {
-	background: none;
-}
-#footer p {
-	margin: 0px;
-}
-#footer p.left {
-	padding: 0px 1em; margin-left: 1em; border-right-color: rgb(215, 215, 215); border-left-color: rgb(215, 215, 215); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid; float: left;
-}
-#footer p.right {
-	text-align: right; float: right;
-}
+
+	#footer :link {
+		color: rgb(187, 187, 187);
+	}
+
+	#footer :visited {
+		color: rgb(187, 187, 187);
+	}
+
+	#footer hr {
+		display: none;
+	}
+
+	#footer #tracpowered {
+		border: 0px currentColor;
+		border-image: none;
+		float: left;
+	}
+
+		#footer #tracpowered:hover {
+			background: none;
+		}
+
+	#footer p {
+		margin: 0px;
+	}
+
+		#footer p.left {
+			padding: 0px 1em;
+			margin-left: 1em;
+			border-right-color: rgb(215, 215, 215);
+			border-left-color: rgb(215, 215, 215);
+			border-right-width: 1px;
+			border-left-width: 1px;
+			border-right-style: solid;
+			border-left-style: solid;
+			float: left;
+		}
+
+		#footer p.right {
+			text-align: right;
+			float: right;
+		}
+
 #content {
 	position: relative;
 }
+
 div.trac-content {
-	margin: 0.3em auto; padding: 0.5em 1em; border-radius: 0.5em; border: 1px solid rgb(228, 228, 228); border-image: none; box-shadow: 0.2em 0.3em 1.5em #eee;
+	margin: 0.3em auto;
+	padding: 0.5em 1em;
+	border-radius: 0.5em;
+	border: 1px solid rgb(228, 228, 228);
+	border-image: none;
+	box-shadow: 0.2em 0.3em 1.5em #eee;
 }
+
 .uinohelp #help {
 	display: none;
 }
+
 #help {
-	margin: 1em; text-align: right; color: rgb(153, 153, 153); clear: both; font-size: 90%;
+	margin: 1em;
+	text-align: right;
+	color: rgb(153, 153, 153);
+	clear: both;
+	font-size: 90%;
 }
-#help :link {
-	cursor: help;
-}
-#help :visited {
-	cursor: help;
-}
-#help hr {
-	display: none;
-}
+
+	#help :link {
+		cursor: help;
+	}
+
+	#help :visited {
+		cursor: help;
+	}
+
+	#help hr {
+		display: none;
+	}
+
 .foldable :link {
-	background: url("../expanded.png") no-repeat 4px 50%; padding: 0.3em 0.5em 0.3em 20px; border-radius: 0.3em; border: currentColor; border-image: none; color: rgb(34, 34, 34); box-shadow: 0.1em 0.1em 0.3em 0px #bbb; text-shadow: 0.1em 0.1em #fcfcfc;
+	background: url("../expanded.png") no-repeat 4px 50%;
+	padding: 0.3em 0.5em 0.3em 20px;
+	border-radius: 0.3em;
+	border: currentColor;
+	border-image: none;
+	color: rgb(34, 34, 34);
+	box-shadow: 0.1em 0.1em 0.3em 0px #bbb;
+	text-shadow: 0.1em 0.1em #fcfcfc;
 }
+
 .foldable :visited {
-	background: url("../expanded.png") no-repeat 4px 50%; padding: 0.3em 0.5em 0.3em 20px; border-radius: 0.3em; border: currentColor; border-image: none; color: rgb(34, 34, 34); box-shadow: 0.1em 0.1em 0.3em 0px #bbb; text-shadow: 0.1em 0.1em #fcfcfc;
+	background: url("../expanded.png") no-repeat 4px 50%;
+	padding: 0.3em 0.5em 0.3em 20px;
+	border-radius: 0.3em;
+	border: currentColor;
+	border-image: none;
+	color: rgb(34, 34, 34);
+	box-shadow: 0.1em 0.1em 0.3em 0px #bbb;
+	text-shadow: 0.1em 0.1em #fcfcfc;
 }
+
 .foldable :hover:link {
 	background-color: transparent;
 }
+
 .foldable :hover:visited {
 	background-color: transparent;
 }
+
 .collapsed > .foldable :link {
 	background-image: url("../collapsed.png");
 }
+
 .collapsed > .foldable :visited {
 	background-image: url("../collapsed.png");
 }
+
 .collapsed > div {
 	display: none;
 }
+
 .collapsed > table {
 	display: none;
 }
+
 .collapsed > ul {
 	display: none;
 }
+
 .collapsed > dl {
 	display: none;
 }
+
 fieldset > legend.foldable :link {
-	color: rgb(102, 102, 102); font-size: 110%; text-shadow: 0.1em 0.1em #ddd;
+	color: rgb(102, 102, 102);
+	font-size: 110%;
+	text-shadow: 0.1em 0.1em #ddd;
 }
+
 fieldset > legend.foldable :visited {
-	color: rgb(102, 102, 102); font-size: 110%; text-shadow: 0.1em 0.1em #ddd;
+	color: rgb(102, 102, 102);
+	font-size: 110%;
+	text-shadow: 0.1em 0.1em #ddd;
 }
+
 .collapsed legend.foldable {
 	background: white;
 }
+
 h2 .trac-count {
-	color: rgb(153, 153, 153); font-size: 90%; font-weight: normal; margin-left: 0.2em; vertical-align: baseline;
+	color: rgb(153, 153, 153);
+	font-size: 90%;
+	font-weight: normal;
+	margin-left: 0.2em;
+	vertical-align: baseline;
 }
+
 h3 .trac-count {
-	color: rgb(153, 153, 153); font-size: 90%; font-weight: normal; margin-left: 0.2em; vertical-align: baseline;
+	color: rgb(153, 153, 153);
+	font-size: 90%;
+	font-weight: normal;
+	margin-left: 0.2em;
+	vertical-align: baseline;
 }
+
 #prefs {
-	background: rgb(247, 247, 240); margin: 0px 1em 1em; padding: 0.8em; border-radius: 1em; border: 1px outset rgb(238, 238, 238); border-image: none; font-size: 9px; float: right; position: relative; box-shadow: 0.2em 0.2em 0.7em 0px #777;
+	background: rgb(247, 247, 240);
+	margin: 0px 1em 1em;
+	padding: 0.8em;
+	border-radius: 1em;
+	border: 1px outset rgb(238, 238, 238);
+	border-image: none;
+	font-size: 9px;
+	float: right;
+	position: relative;
+	box-shadow: 0.2em 0.2em 0.7em 0px #777;
 }
+
 * html #prefs {
 	width: 26em;
 }
-#prefs input {
-	font-size: 9px; vertical-align: middle;
-}
-#prefs select {
-	font-size: 9px; vertical-align: middle;
-}
-#prefs fieldset {
-	background: none; margin: 0.5em; padding: 0px; border: currentColor; border-image: none; box-shadow: none;
-}
-#prefs fieldset legend {
-	background: none; margin: 0px 0px 0px -1.5em; padding: 0px; color: rgb(0, 0, 0); font-size: 9px; font-weight: normal;
-}
-#prefs .buttons {
-	text-align: right;
-}
+
+	#prefs input {
+		font-size: 9px;
+		vertical-align: middle;
+	}
+
+	#prefs select {
+		font-size: 9px;
+		vertical-align: middle;
+	}
+
+	#prefs fieldset {
+		background: none;
+		margin: 0.5em;
+		padding: 0px;
+		border: currentColor;
+		border-image: none;
+		box-shadow: none;
+	}
+
+		#prefs fieldset legend {
+			background: none;
+			margin: 0px 0px 0px -1.5em;
+			padding: 0px;
+			color: rgb(0, 0, 0);
+			font-size: 9px;
+			font-weight: normal;
+		}
+
+	#prefs .buttons {
+		text-align: right;
+	}
+
 #info {
-	background: rgb(247, 247, 240); margin: 1em 0px 0px; border: 1px solid rgb(215, 215, 215); border-image: none; width: 100%; clear: both; border-collapse: collapse; border-spacing: 0;
-}
-#info th {
-	padding: 2px 0.5em; font-size: 85%; vertical-align: top;
-}
-#info td {
-	padding: 2px 0.5em; font-size: 85%; vertical-align: top;
-}
-#info th {
-	text-align: left; font-weight: bold;
-}
-#info td.message {
+	background: rgb(247, 247, 240);
+	margin: 1em 0px 0px;
+	border: 1px solid rgb(215, 215, 215);
+	border-image: none;
 	width: 100%;
+	clear: both;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
-#info .message ul {
-	margin: 0px 2em; padding: 0px;
-}
-#info .message p {
-	margin: 0px; padding: 0px;
-}
+
+	#info th {
+		padding: 2px 0.5em;
+		font-size: 85%;
+		vertical-align: top;
+	}
+
+	#info td {
+		padding: 2px 0.5em;
+		font-size: 85%;
+		vertical-align: top;
+	}
+
+	#info th {
+		text-align: left;
+		font-weight: bold;
+	}
+
+	#info td.message {
+		width: 100%;
+	}
+
+	#info .message ul {
+		margin: 0px 2em;
+		padding: 0px;
+	}
+
+	#info .message p {
+		margin: 0px;
+		padding: 0px;
+	}
+
 a.trac-diff::after {
 	content: "?";
 }
+
 .wikipage {
 	padding-left: 18px;
 }
-.wikipage h1 {
-	margin-left: -18px;
-}
-.wikipage h2 {
-	margin-left: -18px;
-}
-.wikipage h3 {
-	margin-left: -18px;
-}
-.wikipage table h1 {
-	margin-left: 0px;
-}
-.wikipage table h2 {
-	margin-left: 0px;
-}
-.wikipage table h3 {
-	margin-left: 0px;
-}
+
+	.wikipage h1 {
+		margin-left: -18px;
+	}
+
+	.wikipage h2 {
+		margin-left: -18px;
+	}
+
+	.wikipage h3 {
+		margin-left: -18px;
+	}
+
+	.wikipage table h1 {
+		margin-left: 0px;
+	}
+
+	.wikipage table h2 {
+		margin-left: 0px;
+	}
+
+	.wikipage table h3 {
+		margin-left: 0px;
+	}
+
 div.compact > p:first-child {
 	margin-top: 0px;
 }
+
 div.compact > p:last-child {
 	margin-bottom: 0px;
 }
+
 a.missing:link {
 	color: rgb(153, 153, 136);
 }
+
 a.missing:visited {
 	color: rgb(153, 153, 136);
 }
+
 a.missing {
 	color: rgb(153, 153, 136);
 }
+
 span.missing {
 	color: rgb(153, 153, 136);
 }
+
 a.forbidden {
 	color: rgb(153, 153, 136);
 }
+
 span.forbidden {
 	color: rgb(153, 153, 136);
 }
+
 a.missing:hover {
 	color: rgb(0, 0, 0);
 }
+
 a.closed:link {
 	text-decoration: line-through;
 }
+
 a.closed:visited {
 	text-decoration: line-through;
 }
+
 span.closed {
 	text-decoration: line-through;
 }
+
 .important {
-	background: rgb(255, 204, 187); margin: 0.5em; padding: 0px 0.5em; border: 1px dotted rgb(221, 0, 0); border-image: none; color: rgb(85, 0, 0);
+	background: rgb(255, 204, 187);
+	margin: 0.5em;
+	padding: 0px 0.5em;
+	border: 1px dotted rgb(221, 0, 0);
+	border-image: none;
+	color: rgb(85, 0, 0);
 }
+
 dl.wiki dt {
 	font-weight: bold;
 }
+
 dl.compact dt {
-	padding-right: 0.5em; float: left;
+	padding-right: 0.5em;
+	float: left;
 }
+
 dl.compact dd {
-	margin: 0px; padding: 0px;
+	margin: 0px;
+	padding: 0px;
 }
+
 pre.wiki {
-	background: rgb(247, 247, 247); margin: 1em 1.75em; padding: 0.25em; border-radius: 0.3em; border: 1px solid rgb(215, 215, 215); border-image: none; overflow: auto; box-shadow: 0px 0px 1em #eee;
+	background: rgb(247, 247, 247);
+	margin: 1em 1.75em;
+	padding: 0.25em;
+	border-radius: 0.3em;
+	border: 1px solid rgb(215, 215, 215);
+	border-image: none;
+	overflow: auto;
+	box-shadow: 0px 0px 1em #eee;
 }
+
 pre.literal-block {
-	background: rgb(247, 247, 247); margin: 1em 1.75em; padding: 0.25em; border-radius: 0.3em; border: 1px solid rgb(215, 215, 215); border-image: none; overflow: auto; box-shadow: 0px 0px 1em #eee;
+	background: rgb(247, 247, 247);
+	margin: 1em 1.75em;
+	padding: 0.25em;
+	border-radius: 0.3em;
+	border: 1px solid rgb(215, 215, 215);
+	border-image: none;
+	overflow: auto;
+	box-shadow: 0px 0px 1em #eee;
 }
+
 tt {
-	background: rgb(250, 250, 250); padding: 0px 0.3em; border-radius: 0.25em; border: 1px solid rgb(238, 221, 204); border-image: none; color: rgb(102, 0, 0);
+	background: rgb(250, 250, 250);
+	padding: 0px 0.3em;
+	border-radius: 0.25em;
+	border: 1px solid rgb(238, 221, 204);
+	border-image: none;
+	color: rgb(102, 0, 0);
 }
+
 blockquote.citation {
-	border-width: 0px 0px 0px 2px; border-style: solid; border-color: rgb(187, 68, 68); margin: -0.6em 0px; padding-left: 0.5em;
+	border-width: 0px 0px 0px 2px;
+	border-style: solid;
+	border-color: rgb(187, 68, 68);
+	margin: -0.6em 0px;
+	padding-left: 0.5em;
 }
+
 .citation blockquote.citation {
 	border-color: rgb(68, 187, 68);
 }
+
 .citation .citation blockquote.citation {
 	border-color: rgb(68, 68, 187);
 }
+
 .citation .citation .citation blockquote.citation {
 	border-color: rgb(204, 85, 85);
 }
+
 table.wiki {
-	border: 1px solid rgb(204, 204, 204); border-image: none; border-collapse: collapse; border-spacing: 0; box-shadow: 0px 0px 1em #eee;
+	border: 1px solid rgb(204, 204, 204);
+	border-image: none;
+	border-collapse: collapse;
+	border-spacing: 0;
+	box-shadow: 0px 0px 1em #eee;
 }
-table.wiki td {
-	padding: 0.1em 0.25em; border: 1px solid rgb(204, 204, 204); border-image: none;
-}
-table.wiki th {
-	padding: 0.1em 0.25em; border: 1px solid rgb(187, 187, 187); border-image: none; background-color: rgb(247, 247, 247);
-}
+
+	table.wiki td {
+		padding: 0.1em 0.25em;
+		border: 1px solid rgb(204, 204, 204);
+		border-image: none;
+	}
+
+	table.wiki th {
+		padding: 0.1em 0.25em;
+		border: 1px solid rgb(187, 187, 187);
+		border-image: none;
+		background-color: rgb(247, 247, 247);
+	}
+
 .wikitoolbar {
-	border-width: 1px 1px 1px 0px; border-style: solid; border-color: rgb(215, 215, 215); border-image: none; width: 234px; height: 18px; margin-top: 0.3em; margin-left: 2px;
+	border-width: 1px 1px 1px 0px;
+	border-style: solid;
+	border-color: rgb(215, 215, 215);
+	border-image: none;
+	width: 234px;
+	height: 18px;
+	margin-top: 0.3em;
+	margin-left: 2px;
 }
-.wikitoolbar :link {
-	background: url("../edit_toolbar.png") no-repeat; border-width: 1px; border-style: solid; border-color: rgb(255, 255, 255) rgb(255, 255, 255) rgb(255, 255, 255) rgb(215, 215, 215); border-image: none; width: 24px; height: 16px; float: left; display: block; cursor: default;
-}
-.wikitoolbar :visited {
-	background: url("../edit_toolbar.png") no-repeat; border-width: 1px; border-style: solid; border-color: rgb(255, 255, 255) rgb(255, 255, 255) rgb(255, 255, 255) rgb(215, 215, 215); border-image: none; width: 24px; height: 16px; float: left; display: block; cursor: default;
-}
-.wikitoolbar :hover:link {
-	border: 1px solid rgb(255, 187, 34); border-image: none; background-color: transparent;
-}
-.wikitoolbar :hover:visited {
-	border: 1px solid rgb(255, 187, 34); border-image: none; background-color: transparent;
-}
-.wikitoolbar a#em {
-	background-position: 0px 0px;
-}
-.wikitoolbar a#strong {
-	background-position: 0px -16px;
-}
-.wikitoolbar a#heading {
-	background-position: 0px -32px;
-}
-.wikitoolbar a#link {
-	background-position: 0px -48px;
-}
-.wikitoolbar a#code {
-	background-position: 0px -64px;
-}
-.wikitoolbar a#hr {
-	background-position: 0px -80px;
-}
-.wikitoolbar a#np {
-	background-position: 0px -96px;
-}
-.wikitoolbar a#br {
-	background-position: 0px -112px;
-}
-.wikitoolbar a#img {
-	background-position: 0px -128px;
-}
+
+	.wikitoolbar :link {
+		background: url("../edit_toolbar.png") no-repeat;
+		border-width: 1px;
+		border-style: solid;
+		border-color: rgb(255, 255, 255) rgb(255, 255, 255) rgb(255, 255, 255) rgb(215, 215, 215);
+		border-image: none;
+		width: 24px;
+		height: 16px;
+		float: left;
+		display: block;
+		cursor: default;
+	}
+
+	.wikitoolbar :visited {
+		background: url("../edit_toolbar.png") no-repeat;
+		border-width: 1px;
+		border-style: solid;
+		border-color: rgb(255, 255, 255) rgb(255, 255, 255) rgb(255, 255, 255) rgb(215, 215, 215);
+		border-image: none;
+		width: 24px;
+		height: 16px;
+		float: left;
+		display: block;
+		cursor: default;
+	}
+
+	.wikitoolbar :hover:link {
+		border: 1px solid rgb(255, 187, 34);
+		border-image: none;
+		background-color: transparent;
+	}
+
+	.wikitoolbar :hover:visited {
+		border: 1px solid rgb(255, 187, 34);
+		border-image: none;
+		background-color: transparent;
+	}
+
+	.wikitoolbar a#em {
+		background-position: 0px 0px;
+	}
+
+	.wikitoolbar a#strong {
+		background-position: 0px -16px;
+	}
+
+	.wikitoolbar a#heading {
+		background-position: 0px -32px;
+	}
+
+	.wikitoolbar a#link {
+		background-position: 0px -48px;
+	}
+
+	.wikitoolbar a#code {
+		background-position: 0px -64px;
+	}
+
+	.wikitoolbar a#hr {
+		background-position: 0px -80px;
+	}
+
+	.wikitoolbar a#np {
+		background-position: 0px -96px;
+	}
+
+	.wikitoolbar a#br {
+		background-position: 0px -112px;
+	}
+
+	.wikitoolbar a#img {
+		background-position: 0px -128px;
+	}
+
 div.trac-resizable {
-	width: 1px; display: table;
+	width: 1px;
+	display: table;
 }
-div.trac-resizable > div {
-	display: table-cell;
-}
-div.trac-resizable textarea {
-	margin-bottom: 0px; display: block;
-}
+
+	div.trac-resizable > div {
+		display: table-cell;
+	}
+
+	div.trac-resizable textarea {
+		margin-bottom: 0px;
+		display: block;
+	}
+
 div.trac-grip {
-	background: url("../grip.png") no-repeat center 1px rgb(238, 238, 238); border-width: 0px 1px 1px; border-style: solid; border-color: rgb(221, 221, 221); border-image: none; height: 5px; overflow: hidden; cursor: s-resize;
+	background: url("../grip.png") no-repeat center 1px rgb(238, 238, 238);
+	border-width: 0px 1px 1px;
+	border-style: solid;
+	border-color: rgb(221, 221, 221);
+	border-image: none;
+	height: 5px;
+	overflow: hidden;
+	cursor: s-resize;
 }
+
 #attachment .field {
 	margin-top: 1.3em;
 }
+
 #attachment label {
 	padding-left: 0.2em;
 }
+
 #attachment fieldset {
 	margin-top: 2em;
 }
-#attachment fieldset .field {
-	margin: 0px 1em 0.5em 0px; float: left;
-}
+
+	#attachment fieldset .field {
+		margin: 0px 1em 0.5em 0px;
+		float: left;
+	}
+
 #attachment .options {
-	padding: 0px 0px 1em 1em; float: left;
+	padding: 0px 0px 1em 1em;
+	float: left;
 }
+
 #attachment br {
 	clear: left;
 }
+
 .attachment #preview {
 	margin-top: 1em;
 }
+
 #attachments > div.attachments {
 	padding: 0px 0px 1em 1em;
 }
+
 #attachments dl.attachments {
-	padding: 0px; margin-left: 2em;
+	padding: 0px;
+	margin-left: 2em;
 }
+
 #attachments dt {
-	list-style: square; display: list-item;
+	list-style: square;
+	display: list-item;
 }
+
 #attachments dd {
-	padding-left: 0px; font-style: italic; margin-left: 0px;
+	padding-left: 0px;
+	font-style: italic;
+	margin-left: 0px;
 }
+
 #attachments p {
-	color: rgb(102, 102, 102); font-size: 90%; margin-left: 2em;
+	color: rgb(102, 102, 102);
+	font-size: 90%;
+	margin-left: 2em;
 }
+
 #attachments > div.attachments > p {
-	margin: 0.4em 0px; float: right;
+	margin: 0.4em 0px;
+	float: right;
 }
+
 table.listing {
-	width: 100%; clear: both; margin-top: 1em; border-bottom-color: rgb(215, 215, 215); border-bottom-width: 1px; border-bottom-style: solid; border-collapse: collapse; border-spacing: 0; box-shadow: 0.2em 0.3em 1.5em #eee;
+	width: 100%;
+	clear: both;
+	margin-top: 1em;
+	border-bottom-color: rgb(215, 215, 215);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-collapse: collapse;
+	border-spacing: 0;
+	box-shadow: 0.2em 0.3em 1.5em #eee;
 }
-table.listing th {
-	padding: 0px 1em 0.1em 0px; text-align: left; font-size: 12px;
-}
-table.listing th.sel {
-	width: 1%; text-align: center;
-}
-table.listing td.sel {
-	width: 1%; text-align: center;
-}
-table.listing thead tr {
-	background: rgb(247, 247, 240);
-}
-table.listing thead th {
-	border-width: 1px; border-style: solid; border-color: rgb(215, 215, 215) rgb(215, 215, 215) rgb(153, 153, 153); padding: 2px 0.5em; border-image: none; font-size: 11px; font-weight: bold; vertical-align: bottom; white-space: nowrap;
-}
-table.listing thead th :hover:link {
-	background-color: transparent;
-}
-table.listing thead th :hover:visited {
-	background-color: transparent;
-}
-table.listing thead th a {
-	border: currentColor; border-image: none; padding-right: 12px;
-}
-table.listing th.asc a {
-	background-position: 100% 50%; font-weight: bold; background-repeat: no-repeat;
-}
-table.listing th.desc a {
-	background-position: 100% 50%; font-weight: bold; background-repeat: no-repeat;
-}
-table.listing th.asc a {
-	background-image: url("../asc.png");
-}
-table.listing th.desc a {
-	background-image: url("../desc.png");
-}
-table.listing tbody td {
-	padding: 0.3em 0.5em; border: 1px dotted rgb(221, 221, 221); border-image: none; vertical-align: top;
-}
-table.listing tbody th {
-	padding: 0.3em 0.5em; border: 1px dotted rgb(221, 221, 221); border-image: none; vertical-align: top;
-}
-table.listing tbody td a:hover {
-	background-color: transparent;
-}
-table.listing tbody th a:hover {
-	background-color: transparent;
-}
-table.listing tbody tr {
-	border-top-color: rgb(221, 221, 221); border-top-width: 1px; border-top-style: solid;
-}
-table.listing tbody tr.even {
-	background-color: rgb(252, 252, 252);
-}
-table.listing tbody tr.odd {
-	background-color: rgb(247, 247, 247);
-}
-table.listing tbody tr:hover {
-	background: rgb(238, 238, 221) !important;
-}
-table.listing tbody tr.focus {
-	background: rgb(221, 221, 255) !important;
-}
-table.listing pre {
-	white-space: pre-wrap;
-}
+
+	table.listing th {
+		padding: 0px 1em 0.1em 0px;
+		text-align: left;
+		font-size: 12px;
+	}
+
+		table.listing th.sel {
+			width: 1%;
+			text-align: center;
+		}
+
+	table.listing td.sel {
+		width: 1%;
+		text-align: center;
+	}
+
+	table.listing thead tr {
+		background: rgb(247, 247, 240);
+	}
+
+	table.listing thead th {
+		border-width: 1px;
+		border-style: solid;
+		border-color: rgb(215, 215, 215) rgb(215, 215, 215) rgb(153, 153, 153);
+		padding: 2px 0.5em;
+		border-image: none;
+		font-size: 11px;
+		font-weight: bold;
+		vertical-align: bottom;
+		white-space: nowrap;
+	}
+
+		table.listing thead th :hover:link {
+			background-color: transparent;
+		}
+
+		table.listing thead th :hover:visited {
+			background-color: transparent;
+		}
+
+		table.listing thead th a {
+			border: currentColor;
+			border-image: none;
+			padding-right: 12px;
+		}
+
+	table.listing th.asc a {
+		background-position: 100% 50%;
+		font-weight: bold;
+		background-repeat: no-repeat;
+	}
+
+	table.listing th.desc a {
+		background-position: 100% 50%;
+		font-weight: bold;
+		background-repeat: no-repeat;
+	}
+
+	table.listing th.asc a {
+		background-image: url("../asc.png");
+	}
+
+	table.listing th.desc a {
+		background-image: url("../desc.png");
+	}
+
+	table.listing tbody td {
+		padding: 0.3em 0.5em;
+		border: 1px dotted rgb(221, 221, 221);
+		border-image: none;
+		vertical-align: top;
+	}
+
+	table.listing tbody th {
+		padding: 0.3em 0.5em;
+		border: 1px dotted rgb(221, 221, 221);
+		border-image: none;
+		vertical-align: top;
+	}
+
+	table.listing tbody td a:hover {
+		background-color: transparent;
+	}
+
+	table.listing tbody th a:hover {
+		background-color: transparent;
+	}
+
+	table.listing tbody tr {
+		border-top-color: rgb(221, 221, 221);
+		border-top-width: 1px;
+		border-top-style: solid;
+	}
+
+		table.listing tbody tr.even {
+			background-color: rgb(252, 252, 252);
+		}
+
+		table.listing tbody tr.odd {
+			background-color: rgb(247, 247, 247);
+		}
+
+		table.listing tbody tr:hover {
+			background: rgb(238, 238, 221) !important;
+		}
+
+		table.listing tbody tr.focus {
+			background: rgb(221, 221, 255) !important;
+		}
+
+	table.listing pre {
+		white-space: pre-wrap;
+	}
+
 #fieldhist td {
 	padding: 0px 0.5em;
 }
-#fieldhist td.date {
-	white-space: nowrap;
-}
-#fieldhist td.diff {
-	white-space: nowrap;
-}
-#fieldhist td.version {
-	white-space: nowrap;
-}
-#fieldhist td.author {
-	white-space: nowrap;
-}
-#fieldhist td.version {
-	text-align: center;
-}
-#fieldhist td.comment {
-	width: 100%;
-}
+
+	#fieldhist td.date {
+		white-space: nowrap;
+	}
+
+	#fieldhist td.diff {
+		white-space: nowrap;
+	}
+
+	#fieldhist td.version {
+		white-space: nowrap;
+	}
+
+	#fieldhist td.author {
+		white-space: nowrap;
+	}
+
+	#fieldhist td.version {
+		text-align: center;
+	}
+
+	#fieldhist td.comment {
+		width: 100%;
+	}
+
 .suggestions {
-	background: rgb(255, 255, 255); border: 1px solid rgb(136, 136, 102); border-image: none; color: rgb(34, 34, 34);
+	background: rgb(255, 255, 255);
+	border: 1px solid rgb(136, 136, 102);
+	border-image: none;
+	color: rgb(34, 34, 34);
 }
-.suggestions ul {
-	list-style: none; margin: 0px; padding: 0px; width: 440px; overflow: auto; font-family: sans-serif; min-height: 3em; max-height: 20em;
-}
-* html .suggestions ul {
-	height: 10em;
-}
-.suggestions li {
-	background: rgb(255, 255, 255); padding: 2px 5px; cursor: pointer;
-}
-.suggestions li.selected {
-	background: rgb(185, 185, 185);
-}
+
+	.suggestions ul {
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
+		width: 440px;
+		overflow: auto;
+		font-family: sans-serif;
+		min-height: 3em;
+		max-height: 20em;
+	}
+
+	* html .suggestions ul {
+		height: 10em;
+	}
+
+	.suggestions li {
+		background: rgb(255, 255, 255);
+		padding: 2px 5px;
+		cursor: pointer;
+	}
+
+		.suggestions li.selected {
+			background: rgb(185, 185, 185);
+		}
+
 .error#content .message {
-	background: rgb(255, 221, 204); margin: 1em 0px; padding: 0.5em; border: 2px solid rgb(221, 0, 0); border-image: none; color: rgb(85, 0, 0);
+	background: rgb(255, 221, 204);
+	margin: 1em 0px;
+	padding: 0.5em;
+	border: 2px solid rgb(221, 0, 0);
+	border-image: none;
+	color: rgb(85, 0, 0);
 }
+
 div.system-message {
-	background: rgb(255, 221, 204); margin: 1em 0px; padding: 0.5em; border: 2px solid rgb(221, 0, 0); border-image: none; color: rgb(85, 0, 0);
+	background: rgb(255, 221, 204);
+	margin: 1em 0px;
+	padding: 0.5em;
+	border: 2px solid rgb(221, 0, 0);
+	border-image: none;
+	color: rgb(85, 0, 0);
 }
+
 .error#content div.message pre {
-	overflow: hidden; margin-left: 1em; white-space: normal;
+	overflow: hidden;
+	margin-left: 1em;
+	white-space: normal;
 }
+
 div.system-message pre {
-	overflow: hidden; margin-left: 1em; white-space: normal;
+	overflow: hidden;
+	margin-left: 1em;
+	white-space: normal;
 }
+
 div.system-message p {
 	margin: 0px;
 }
-div.system-message p.system-message-title {
-	font-weight: bold;
-}
+
+	div.system-message p.system-message-title {
+		font-weight: bold;
+	}
+
 span.system-message {
-	background: rgb(255, 221, 204); margin: 1px; padding: 0.2em; border-radius: 0.25em; float: left;
+	background: rgb(255, 221, 204);
+	margin: 1px;
+	padding: 0.2em;
+	border-radius: 0.25em;
+	float: left;
 }
+
 div.system-message {
-	border-radius: 0.5em; box-shadow: 0.2em 0.2em 0.7em 0px #777;
+	border-radius: 0.5em;
+	box-shadow: 0.2em 0.2em 0.7em 0px #777;
 }
+
 .system-message#warning {
-	background: rgb(255, 255, 187); border: 1px solid rgb(85, 0, 0); border-image: none;
+	background: rgb(255, 255, 187);
+	border: 1px solid rgb(85, 0, 0);
+	border-image: none;
 }
+
 .warning.system-message {
-	background: rgb(255, 255, 187); border: 1px solid rgb(85, 0, 0); border-image: none;
+	background: rgb(255, 255, 187);
+	border: 1px solid rgb(85, 0, 0);
+	border-image: none;
 }
+
 .system-message#warning li {
 	list-style-type: square;
 }
+
 .system-message#notice {
-	background: rgb(221, 255, 221); border: 1px solid rgb(85, 0, 0); border-image: none;
+	background: rgb(221, 255, 221);
+	border: 1px solid rgb(85, 0, 0);
+	border-image: none;
 }
+
 .notice.system-message {
-	background: rgb(221, 255, 221); border: 1px solid rgb(85, 0, 0); border-image: none;
+	background: rgb(221, 255, 221);
+	border: 1px solid rgb(85, 0, 0);
+	border-image: none;
 }
+
 .system-message#notice li {
 	list-style-type: square;
 }
+
 div.system-message .trac-close-msg {
-	background: none; margin: 0px 0.1em 0.1em 0px; padding: 0px 0.4em 0.1em; border-radius: 1em; border: 1px solid rgb(221, 221, 221); border-image: none; height: 1.4em; color: rgb(211, 19, 19); font-size: 80%; float: right; display: none; box-shadow: none;
+	background: none;
+	margin: 0px 0.1em 0.1em 0px;
+	padding: 0px 0.4em 0.1em;
+	border-radius: 1em;
+	border: 1px solid rgb(221, 221, 221);
+	border-image: none;
+	height: 1.4em;
+	color: rgb(211, 19, 19);
+	font-size: 80%;
+	float: right;
+	display: none;
+	box-shadow: none;
 }
-div.system-message .trac-close-msg:hover {
-	background: rgb(246, 246, 246); color: rgb(51, 51, 51); box-shadow: 0.1em 0.1em 0.6em 0px #999; text-shadow: 0.1em 0.1em #fcfcfc;
-}
+
+	div.system-message .trac-close-msg:hover {
+		background: rgb(246, 246, 246);
+		color: rgb(51, 51, 51);
+		box-shadow: 0.1em 0.1em 0.6em 0px #999;
+		text-shadow: 0.1em 0.1em #fcfcfc;
+	}
+
 .uisymbols div.system-message .trac-close-msg > span {
 	display: none;
 }
+
 .uisymbols div.system-message .trac-close-msg::after {
 	content: "x";
 }
+
 .error#content form.newticket {
 	display: inline;
 }
-.error#content form.newticket textarea {
-	display: none;
-}
+
+	.error#content form.newticket textarea {
+		display: none;
+	}
+
 .error#content #systeminfo {
-	margin: 1em; width: auto;
+	margin: 1em;
+	width: auto;
 }
+
 .error#content #plugins {
-	margin: 1em; width: auto;
+	margin: 1em;
+	width: auto;
 }
+
 .error#content #systeminfo th {
 	font-size: 90%;
 }
+
 .error#content #systeminfo td {
 	font-size: 90%;
 }
+
 .error#content #plugins th {
 	font-size: 90%;
 }
+
 .error#content #plugins td {
 	font-size: 90%;
 }
+
 .error#content #systeminfo th {
-	background: rgb(247, 247, 247); font-weight: bold;
+	background: rgb(247, 247, 247);
+	font-weight: bold;
 }
+
 .error#content #plugins th {
-	background: rgb(247, 247, 247); font-weight: bold;
+	background: rgb(247, 247, 247);
+	font-weight: bold;
 }
+
 .error#content #traceback {
 	margin-left: 1em;
 }
-.error#content #traceback :link {
-	border: currentColor; border-image: none;
-}
-.error#content #traceback :visited {
-	border: currentColor; border-image: none;
-}
+
+	.error#content #traceback :link {
+		border: currentColor;
+		border-image: none;
+	}
+
+	.error#content #traceback :visited {
+		border: currentColor;
+		border-image: none;
+	}
+
 .error#content #tbtoggle {
 	font-size: 80%;
 }
+
 .error#content #traceback div {
 	margin-left: 1em;
 }
+
 .error#content #traceback h3 {
-	margin: 0.5em 0px 0px; font-size: 95%;
+	margin: 0.5em 0px 0px;
+	font-size: 95%;
 }
+
 .error#content #traceback :link var {
-	font-family: monospace; font-style: normal; font-weight: bold;
+	font-family: monospace;
+	font-style: normal;
+	font-weight: bold;
 }
+
 .error#content #traceback :visited var {
-	font-family: monospace; font-style: normal; font-weight: bold;
+	font-family: monospace;
+	font-style: normal;
+	font-weight: bold;
 }
+
 .error#content #traceback span.file {
-	color: rgb(102, 102, 102); font-size: 85%;
+	color: rgb(102, 102, 102);
+	font-size: 85%;
 }
+
 .error#content #traceback ul {
-	list-style: none; margin: 0.5em 0px; padding: 0px;
+	list-style: none;
+	margin: 0.5em 0px;
+	padding: 0px;
 }
+
 .error#content #traceback table.code td {
-	font-size: 90%; white-space: pre;
+	font-size: 90%;
+	white-space: pre;
 }
+
 .error#content #traceback table.code tr.current td {
 	background: rgb(230, 230, 230);
 }
+
 .error#content #traceback table {
 	margin: 0.5em 0px 1em;
 }
+
 .error#content #traceback th {
-	padding: 1px; font-size: 85%;
+	padding: 1px;
+	font-size: 85%;
 }
+
 .error#content #traceback td {
-	padding: 1px; font-size: 85%;
+	padding: 1px;
+	font-size: 85%;
 }
+
 .error#content #traceback th var {
-	font-family: monospace; font-style: normal;
+	font-family: monospace;
+	font-style: normal;
 }
+
 .error#content #traceback td code {
 	white-space: pre;
 }
+
 .error#content #traceback pre {
 	font-size: 95%;
 }
+
 .error#content #plugins td.file {
 	color: rgb(102, 102, 102);
 }
+
 #content .paging {
-	margin: 0px 0px 2em; padding: 0.5em 0px 0px; text-align: center; line-height: 2em; font-size: 85%;
+	margin: 0px 0px 2em;
+	padding: 0.5em 0px 0px;
+	text-align: center;
+	line-height: 2em;
+	font-size: 85%;
 }
-#content .paging .current {
-	background: rgb(153, 153, 153); padding: 0.1em 0.3em; border: 1px solid rgb(51, 51, 51); border-image: none; color: rgb(255, 255, 255);
-}
-#content .paging :link {
-	background: none; padding: 0.1em 0.3em; border: 1px solid rgb(102, 102, 102); border-image: none; color: rgb(102, 102, 102);
-}
-#content .paging :visited {
-	background: none; padding: 0.1em 0.3em; border: 1px solid rgb(102, 102, 102); border-image: none; color: rgb(102, 102, 102);
-}
-#content .paging :hover:link {
-	background: rgb(153, 153, 153); border-color: rgb(51, 51, 51); color: rgb(255, 255, 255);
-}
-#content .paging :hover:visited {
-	background: rgb(153, 153, 153); border-color: rgb(51, 51, 51); color: rgb(255, 255, 255);
-}
-#content .paging .previous a {
-	border: currentColor; border-image: none; font-size: 150%; font-weight: bold;
-}
-#content .paging .next a {
-	border: currentColor; border-image: none; font-size: 150%; font-weight: bold;
-}
-#content .paging .previous a:hover {
-	background: none; color: rgb(102, 102, 102);
-}
-#content .paging .next a:hover {
-	background: none; color: rgb(102, 102, 102);
-}
+
+	#content .paging .current {
+		background: rgb(153, 153, 153);
+		padding: 0.1em 0.3em;
+		border: 1px solid rgb(51, 51, 51);
+		border-image: none;
+		color: rgb(255, 255, 255);
+	}
+
+	#content .paging :link {
+		background: none;
+		padding: 0.1em 0.3em;
+		border: 1px solid rgb(102, 102, 102);
+		border-image: none;
+		color: rgb(102, 102, 102);
+	}
+
+	#content .paging :visited {
+		background: none;
+		padding: 0.1em 0.3em;
+		border: 1px solid rgb(102, 102, 102);
+		border-image: none;
+		color: rgb(102, 102, 102);
+	}
+
+	#content .paging :hover:link {
+		background: rgb(153, 153, 153);
+		border-color: rgb(51, 51, 51);
+		color: rgb(255, 255, 255);
+	}
+
+	#content .paging :hover:visited {
+		background: rgb(153, 153, 153);
+		border-color: rgb(51, 51, 51);
+		color: rgb(255, 255, 255);
+	}
+
+	#content .paging .previous a {
+		border: currentColor;
+		border-image: none;
+		font-size: 150%;
+		font-weight: bold;
+	}
+
+	#content .paging .next a {
+		border: currentColor;
+		border-image: none;
+		font-size: 150%;
+		font-weight: bold;
+	}
+
+	#content .paging .previous a:hover {
+		background: none;
+		color: rgb(102, 102, 102);
+	}
+
+	#content .paging .next a:hover {
+		background: none;
+		color: rgb(102, 102, 102);
+	}
+
 #content h2 .numresults {
-	color: rgb(102, 102, 102); font-size: 90%;
+	color: rgb(102, 102, 102);
+	font-size: 90%;
 }
-@media screen
-{
-.searchword0 {
-	background: rgb(255, 255, 153);
+
+@media screen {
+	.searchword0 {
+		background: rgb(255, 255, 153);
+	}
+
+	.searchword1 {
+		background: rgb(204, 255, 204);
+	}
+
+	.searchword2 {
+		background: rgb(204, 255, 255);
+	}
+
+	.searchword3 {
+		background: rgb(204, 204, 255);
+	}
+
+	.searchword4 {
+		background: rgb(255, 204, 255);
+	}
 }
-.searchword1 {
-	background: rgb(204, 255, 204);
-}
-.searchword2 {
-	background: rgb(204, 255, 255);
-}
-.searchword3 {
-	background: rgb(204, 204, 255);
-}
-.searchword4 {
-	background: rgb(255, 204, 255);
-}
-}
-@media print
-{
-#header {
-	display: none;
-}
-#altlinks {
-	display: none;
-}
-#footer {
-	display: none;
-}
-#help {
-	display: none;
-}
-#warning {
-	display: none;
-}
-#notice {
-	display: none;
-}
-.nav {
-	display: none;
-}
-form {
-	display: none;
-}
-.buttons form {
-	display: none;
-}
-form .buttons {
-	display: none;
-}
-form .inlinebuttons {
-	display: none;
-}
-.noprint {
-	display: none;
-}
-.trac-nav {
-	display: none;
-}
-.trac-topnav {
-	display: none;
-}
-#attachments > div.attachments > p {
-	display: none;
-}
-form.printableform {
-	display: block;
-}
-div.code pre {
-	white-space: pre-wrap;
-}
-:link {
-	border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none;
-}
-:visited {
-	border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none;
-}
-div.trac-content {
-	box-shadow: none;
-}
-.foldable :link {
-	box-shadow: none; text-shadow: none;
-}
-.foldable :visited {
-	box-shadow: none; text-shadow: none;
-}
+
+@media print {
+	#header {
+		display: none;
+	}
+
+	#altlinks {
+		display: none;
+	}
+
+	#footer {
+		display: none;
+	}
+
+	#help {
+		display: none;
+	}
+
+	#warning {
+		display: none;
+	}
+
+	#notice {
+		display: none;
+	}
+
+	.nav {
+		display: none;
+	}
+
+	form {
+		display: none;
+	}
+
+	.buttons form {
+		display: none;
+	}
+
+	form .buttons {
+		display: none;
+	}
+
+	form .inlinebuttons {
+		display: none;
+	}
+
+	.noprint {
+		display: none;
+	}
+
+	.trac-nav {
+		display: none;
+	}
+
+	.trac-topnav {
+		display: none;
+	}
+
+	#attachments > div.attachments > p {
+		display: none;
+	}
+
+	form.printableform {
+		display: block;
+	}
+
+	div.code pre {
+		white-space: pre-wrap;
+	}
+
+	:link {
+		border-bottom-color: currentColor;
+		border-bottom-width: medium;
+		border-bottom-style: none;
+	}
+
+	:visited {
+		border-bottom-color: currentColor;
+		border-bottom-width: medium;
+		border-bottom-style: none;
+	}
+
+	div.trac-content {
+		box-shadow: none;
+	}
+
+	.foldable :link {
+		box-shadow: none;
+		text-shadow: none;
+	}
+
+	.foldable :visited {
+		box-shadow: none;
+		text-shadow: none;
+	}
 }

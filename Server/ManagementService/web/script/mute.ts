@@ -7,29 +7,80 @@
         };
 
         root.addView({
-            type: "wide", padding: 2,
+            type: "wide",
+            padding: 2,
             id: "mainPage",
             rows: [
                 {
-                    view: "layout", cols: [
-                        { view: "label", label: "禁言词管理", css: "title", width: 150, },
-                        { view: "label" },
+                    view: "layout",
+                    cols: [
+                        {
+                            view: "label",
+                            label: "禁言词管理",
+                            css: "title",
+                            width: 150,
+                        },
+                        {
+                            view: "label"
+                        },
                     ]
                 },
                 {
-                    view: "layout", cols: [
-                        { view: "text", id: "channels", label: "频道", width: 200, labelAlign: "right", },
-                        { view: "text", id: "keyword", label: "关键词", width: 200, labelAlign: "right", },
-                        { view: "label" },
-                        { view: "button", id: "queryBtn", label: "查询", width: 100, click: queryMuteWord },
-                        { view: "button", id: "deleteBtn", label: "删除", width: 100, click: deleteMuteWords },
-                        { view: "button", id: "createBtn", label: "创建", width: 100, click: addMuteWord },
+                    view: "layout",
+                    cols: [
+                        {
+                            view: "text",
+                            id: "channels",
+                            label: "频道",
+                            width: 200,
+                            labelAlign: "right",
+                        },
+                        {
+                            view: "text",
+                            id: "keyword",
+                            label: "关键词",
+                            width: 200,
+                            labelAlign: "right",
+                        },
+                        {
+                            view: "label"
+                        },
+                        {
+                            view: "button",
+                            id: "queryBtn",
+                            label: "查询",
+                            width: 100,
+                            click: queryMuteWord
+                        },
+                        {
+                            view: "button",
+                            id: "deleteBtn",
+                            label: "删除",
+                            width: 100,
+                            click: deleteMuteWords
+                        },
+                        {
+                            view: "button",
+                            id: "createBtn",
+                            label: "创建",
+                            width: 100,
+                            click: addMuteWord
+                        },
                     ]
                 },
                 {
-                    view: "layout", cols: [
-                        { view: "label" },
-                        { view: "button", id: "deleteSelectedBtn", label: "删除勾选", width: 300, click: deleteSelectedMuteWords },
+                    view: "layout",
+                    cols: [
+                        {
+                            view: "label"
+                        },
+                        {
+                            view: "button",
+                            id: "deleteSelectedBtn",
+                            label: "删除勾选",
+                            width: 300,
+                            click: deleteSelectedMuteWords
+                        },
                     ]
                 },
                 {
@@ -39,14 +90,54 @@
                     resizeColumn: true,
                     scroll: "y",
                     columns: [
-                        { id: "id", header: "ID", width: 80, sort: "int" },
-                        { id: "channels", header: "频道", width: 80, sort: "string" },
-                        { id: "keyword", header: "关键词", width: 150, sort: "string" },
-                        { id: "time", header: "禁言时长", width: 80, sort: "int" },
-                        { id: "state", header: "状态", width: 80, sort: "int" },
-                        { id: "modify", header: "修改", width: 60, template: "<button class='modify'>修改</button>" },
-                        { id: "deleate", header: "删除", width: 60, template: "<button class='deleate'>删除</button>" },
-                        { id: "check", header: "勾选", width: 60, template: "{common.checkbox()}" },
+                        {
+                            id: "id",
+                            header: "ID",
+                            width: 80,
+                            sort: "int"
+                        },
+                        {
+                            id: "channels",
+                            header: "频道",
+                            width: 80,
+                            sort: "string"
+                        },
+                        {
+                            id: "keyword",
+                            header: "关键词",
+                            width: 150,
+                            sort: "string"
+                        },
+                        {
+                            id: "time",
+                            header: "禁言时长",
+                            width: 80,
+                            sort: "int"
+                        },
+                        {
+                            id: "state",
+                            header: "状态",
+                            width: 80,
+                            sort: "int"
+                        },
+                        {
+                            id: "modify",
+                            header: "修改",
+                            width: 60,
+                            template: "<button class='modify'>修改</button>"
+                        },
+                        {
+                            id: "deleate",
+                            header: "删除",
+                            width: 60,
+                            template: "<button class='deleate'>删除</button>"
+                        },
+                        {
+                            id: "check",
+                            header: "勾选",
+                            width: 60,
+                            template: "{common.checkbox()}"
+                        },
                     ],
                     onClick: ClickEvents,
                 },
@@ -65,10 +156,34 @@
                 title: "禁言词创建",
                 elements: [
                     {
-                        view: "layout", cols: [
-                            { view: "text", id: "cchannels", label: "频道", labelWidth: 100, width: 250, labelAlign: "right", },
-                            { view: "text", id: "ckeyword", label: "关键词(必填)", labelWidth: 100, width: 250, labelAlign: "right", },
-                            { view: "counter", id: "ctime", label: "禁言时长(小时)", min: 1, value: 24, labelWidth: 100, width: 250, labelAlign: "right", },
+                        view: "layout",
+                        cols: [
+                            {
+                                view: "text",
+                                id: "cchannels",
+                                label: "频道",
+                                labelWidth: 100,
+                                width: 250,
+                                labelAlign: "right",
+                            },
+                            {
+                                view: "text",
+                                id: "ckeyword",
+                                label: "关键词(必填)",
+                                labelWidth: 100,
+                                width: 250,
+                                labelAlign: "right",
+                            },
+                            {
+                                view: "counter",
+                                id: "ctime",
+                                label: "禁言时长(小时)",
+                                min: 1,
+                                value: 24,
+                                labelWidth: 100,
+                                width: 250,
+                                labelAlign: "right",
+                            },
                         ]
                     },
                 ]
@@ -89,8 +204,7 @@
                     await service.call("ban/addMuteWorld", param);
                     dlg.close();
                     queryMuteWord();
-                }
-                catch (e) {
+                } catch (e) {
                     alert(e.message);
                 }
             });
@@ -102,8 +216,7 @@
             try {
                 await service.call("ban/deleteMuteWord", param);
                 await queryMuteWord();
-            }
-            catch (e) {
+            } catch (e) {
                 alert(e.message);
             }
         }
@@ -118,13 +231,11 @@
                         await service.call("ban/deleteMuteWords", param);
                         await queryMuteWord();
                     });
-                }
-                else {
+                } else {
                     await service.call("ban/deleteMuteWords", param);
                     await queryMuteWord();
                 }
-            }
-            catch (e) {
+            } catch (e) {
                 alert(e.message);
             }
         }
@@ -148,8 +259,7 @@
             try {
                 await service.call("ban/deleteMuteWords", param);
                 await queryMuteWord();
-            }
-            catch (e) {
+            } catch (e) {
                 alert(e.message);
             }
         }
@@ -162,10 +272,35 @@
                 title: "禁言词修改_" + item.keyword,
                 elements: [
                     {
-                        view: "layout", cols: [
-                            { view: "text", id: "mchannels", label: "频道", value: item.channel, labelWidth: 100, width: 250, labelAlign: "right", },
-                            { view: "text", id: "mkeyword", label: "关键词", value: item.keyword, width: 150, labelAlign: "right", },
-                            { view: "counter", id: "mtime", label: "禁言时长(小时)", min: 1, value: item.time, labelWidth: 100, width: 250, labelAlign: "right", },
+                        view: "layout",
+                        cols: [
+                            {
+                                view: "text",
+                                id: "mchannels",
+                                label: "频道",
+                                value: item.channel,
+                                labelWidth: 100,
+                                width: 250,
+                                labelAlign: "right",
+                            },
+                            {
+                                view: "text",
+                                id: "mkeyword",
+                                label: "关键词",
+                                value: item.keyword,
+                                width: 150,
+                                labelAlign: "right",
+                            },
+                            {
+                                view: "counter",
+                                id: "mtime",
+                                label: "禁言时长(小时)",
+                                min: 1,
+                                value: item.time,
+                                labelWidth: 100,
+                                width: 250,
+                                labelAlign: "right",
+                            },
                         ]
                     },
                 ]
@@ -187,8 +322,7 @@
                     await service.call("ban/modifyMuteWord", param);
                     dlg.close();
                     await queryMuteWord();
-                }
-                catch (e) {
+                } catch (e) {
                     alert(e.message);
                 }
             });

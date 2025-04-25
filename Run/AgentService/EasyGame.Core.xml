@@ -647,33 +647,33 @@
         </member>
         <member name="M:EasyGame.IServiceManagerEvent.Ping(System.Int32)">
             <summary>
-            服务管理发送Ping消息以确认连接存在
+              The service manager sends a Ping message to confirm that the connection exists
             </summary>
-            <remarks>service需用相同的tick值来回应Pong</remarks>
-            <param name="tick">tick值</param>
-        </member>
-        <member name="M:EasyGame.IServiceManagerEvent.OnBroadcastMessage(System.String,System.String,System.String)">
+            <remarks>The service needs to respond to Pong with the same tick value</remarks>
+            <param name="tick">tick value</param>
+          </member>
+          <member name="M:EasyGame.IServiceManagerEvent.OnBroadcastMessage(System.String,System.String,System.String)">
             <summary>
-            广播消息
+              Broadcast message
             </summary>
-            <param name="sender">发送者的service name</param>
-            <param name="subject">主题</param>
-            <param name="body">消息体，通常可以是json格式对象</param>
-        </member>
-        <member name="T:EasyGame.IServiceManager">
+            <param name="sender">Sender's service name</param>
+            <param name="subject">Subject</param>
+            <param name="body">Message body, usually a json format object</param>
+          </member>
+          <member name="T:EasyGame.IServiceManager">
             <summary>
-            服务管理
+              Service management
             </summary>
             <remarks>
-            服务管理器用于注册和管理所有的逻辑服务和物理服务器
+              The service manager is used to register and manage all logical services and physical servers
             </remarks>
-        </member>
-        <member name="M:EasyGame.IServiceManager.RegisterService(System.String,EasyGame.MonitorSampleDescData[])">
+          </member>
+          <member name="M:EasyGame.IServiceManager.RegisterService(System.String,EasyGame.MonitorSampleDescData[])">
             <summary>
-            注册服务
+              Register service
             </summary>
             <param name="sessionId">session id</param>
-            <param name="MonitorDescription">监控项描述</param>
+            <param name="MonitorDescription">Monitor item description</param>
         </member>
         <member name="M:EasyGame.IServiceManager.UpdateStatus(EasyGame.ServiceStatus)">
             <summary>
@@ -828,19 +828,19 @@
         </member>
         <member name="M:EasyGame.ServiceContext.LaunchCmdline">
             <summary>
-            启动控制台输入
+              Start console input
             </summary>
-        </member>
-        <member name="M:EasyGame.ServiceContext.LaunchCmdline(System.Type,System.Object)">
+          </member>
+          <member name="M:EasyGame.ServiceContext.LaunchCmdline(System.Type,System.Object)">
             <summary>
-            启动控制台输入(自定义命令行处理)
+              Start console input (custom command line processing)
             </summary>
-            <param name="cmdInterface">自定义命令行接口</param>
-            <param name="cmdHandler">自定义命令行处理器</param>
-        </member>
-        <member name="M:EasyGame.ServiceContext.Run">
+            <param name="cmdInterface">Custom command line interface</param>
+            <param name="cmdHandler">Custom command line processor</param>
+          </member>
+          <member name="M:EasyGame.ServiceContext.Run">
             <summary>
-            启动ServiceContext
+              Start ServiceContext
             </summary>
         </member>
         <member name="T:EasyGame.StubBase">
@@ -942,7 +942,7 @@
             <summary>
             添加log来源
             </summary>
-            <param name="stackIndex">log函数调用到log记录函数之间的调用层数，通常为2，设为0关闭</param>
+           <param name="stackIndex">The number of call levels between the log function call and the log recording function, usually 2, set to 0 to disable</param>
         </member>
         <member name="M:EasyGame.Log.FormatObject(System.Object)">
             <summary>
