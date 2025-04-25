@@ -1,0 +1,352 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!--<base href="http://cdn2.xulonggame.com/EgretCDN/ayPokemon/"/>-->
+    <base href="https://cdn.xulonggame.com/EgretCDN/tgPokemon/"/>
+    <meta charset="utf-8">
+    <title>pokemon</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <link href="//qzonestyle.gtimg.cn/touch/proj-qzone-app/application-v3/annunciate-dialog.css?r=1525696205620"
+          rel="stylesheet"
+          type="text/css">
+    <style>
+        html,
+        body {
+            -ms-touch-action: none;
+            background: black;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            padding-top: constant(safe-area-inset-top);
+            padding-left: constant(safe-area-inset-left);
+            padding-right: constant(safe-area-inset-right);
+            padding-bottom: constant(safe-area-inset-bottom);
+            height: 100%;
+        }
+
+        @font-face {
+            font-family: 'FZXS';
+            src: url('FZXS.eot?#iefix') format('embedded-opentype'), url('FZXS.woff') format('woff'), url('FZXS.ttf') format('truetype'), url('FZXS.svg#FZXS') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+
+    <style>
+        #preloading {
+            z-index: 1000;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1 1 auto;
+            position: absolute;
+        }
+
+        #preloading img {
+            max-width: 100%;
+        }
+    </style>
+    <style>
+        #divL,
+        #divR {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+            background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+            -webkit-background-size: 100% 100%;
+        }
+
+        #divL {
+            background-image: url(resource/assets/loading/leftBg_1ab7686e.jpg);
+            left: 0;
+        }
+
+        #divR {
+            background-image: url(resource/assets/loading/rightBg_e6fd6255.jpg);
+            right: 0;
+        }
+    </style>
+    <div id="divL"></div>
+    <div id="divR"></div>
+    <div id="preloading">
+        <script>
+            document.getElementById("preloading").innerHTML = '<img src="resource/assets/loading/gsLOGO3.png"/>';
+        </script>
+    </div>
+    <!--<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>-->
+    <!--这个标签为通过egret提供的第三方库的方式生成的 javascript 文件。删除 modules_files 标签后，库文件加载列表将不会变化，请谨慎操作！-->
+    <!--modules_files_start-->
+    <!--<script src="merged.js"></script>-->
+    <!--modules_files_end-->
+
+    <!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
+    <!--other_libs_files_start-->
+    <!--other_libs_files_end-->
+
+    <!--这个标签会被替换为项目中所有的 javascript 文件。删除 game_files 标签后，项目文件加载列表将不会变化，请谨慎操作！-->
+    <!--game_files_start-->
+    <!--<script src="1.js"></script>-->
+    <!--game_files_end-->
+</head>
+<script src="https://midas.gtimg.cn/h5pay/js/api/midas.js"></script>
+
+<body>
+
+<div style="margin: auto;width: 100%;height: 100%;" class="egret-player"
+     data-entry-class="Main" data-orientation="auto"
+     data-scale-mode="showAll" data-frame-rate="60" data-content-width="720" data-content-height="1100"
+     data-show-paint-rect="false"
+     data-multi-fingered="2" data-show-fps="false" data-show-log="true"
+     data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
+</div>
+<script>
+
+     if (/iphone/gi.test(navigator.userAgent) && (screen.height == 812 && screen.width == 375)) {
+         var app = document.getElementsByClassName('egret-player')[0];
+         if (app) {
+             app.style.overflow = "hidden";
+             app.style.marginTop = "44px";
+             app.style.height = "734px";
+             app.style.marginBottom = "34px";
+         }
+     }
+
+    //var libFile = "merged.js"
+    var jsFile = "sy.7.json";
+    var resFile = "resource/res.105.json";
+    var themeFile = "resource/theme.6.json";
+	var dataUrl = "CsvData.2.json";
+    var fix = false;
+    var fixTime = "2018-4-01 11:40----2018-4-01 12:30";
+    var noticeid = 4;
+
+    var loadScript = function (list, callback) {
+        var loaded = 0;
+        var loadNext = function () {
+            loadSingleScript(list[loaded], function () {
+                loaded++;
+                if (loaded >= list.length) {
+                    callback();
+                }
+                else {
+                    loadNext();
+                }
+            })
+        };
+        loadNext();
+    };
+
+    var loadSingleScript = function (src, callback) {
+        var s = document.createElement('script');
+        s.async = false;
+        s.src = src;
+        s.addEventListener('load', function () {
+            s.parentNode.removeChild(s);
+            s.removeEventListener('load', arguments.callee, false);
+            callback();
+        }, false);
+        // s.onerror = function (evt) {
+        //     alert("您的网络不给力啊!文件加载失败!");
+        // }
+        document.body.appendChild(s);
+    };
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', './' + jsFile + '?v=' + Math.random(), true);
+    xhr.addEventListener("load", function () {
+        var manifest = JSON.parse(xhr.response);
+        var list = manifest.initial.concat(manifest.game);
+        loadScript(list, function () {
+            var token = SDK.getQueryString("token");
+            if (token) {
+                localStorage.setItem("token", token);
+            }
+            ES6Promise.polyfill();
+            game.themeUrl = themeFile;
+            game.resUrl = resFile;
+            game.OnFix = fix;
+            game.FixTime = fixTime;
+            game.noticeId = noticeid;
+            game.isMobile = true;
+            game.canRecharge = true;
+			game.dataUrl = dataUrl;
+            SDK.$platformType = 9;
+            game.$retryCount = 60;
+            Auth.$serverUrl = "https://tg.xulonggame.com/";
+            egret.ImageLoader.crossOrigin = "anonymous";
+            //egret.TextField.default_fontFamily = "FZXS";
+            /**
+             * {
+             * "renderMode":, //引擎渲染模式，"canvas" 或者 "webgl"
+             * "audioType": "" //使用的音频类型，0:默认，1:qq audio，2:web audio，3:audio
+             * "antialias": //WebGL模式下是否开启抗锯齿，true:开启，false:关闭，默认为false
+             * }
+             **/
+            egret.runEgret({renderMode: "webgl", audioType: 2});
+        });
+    });
+    xhr.send(null);
+</script>
+
+
+<script>
+    //玩吧api
+    var url = window.location.href;
+
+    function RefreshOpenKey() {
+        window.getOpenKey(function (d) {
+            // alert(JSON.stringify(d));
+            Auth.getWBOpenKey(JSON.stringify(d));
+        });
+    }
+
+    if (window.OPEN_DATA && window.OPEN_DATA.jumpurl) {
+        url = window.OPEN_DATA.jumpurl;
+    }
+
+    function getRewardWB(type) {
+        Auth.getRewardWB(type);
+    }
+
+    function addShortcut() {
+        var url = window.location.href;
+
+        if (window.OPEN_DATA && window.OPEN_DATA.jumpurl) {
+            url = window.OPEN_DATA.jumpurl;
+        }
+        mqq.ui.addShortcut({
+            action: 'web',
+            title: '小精灵重置',
+            url: url,
+            icon: 'https://cdn.xulonggame.com/EgretCDN/tgPokemon/resource/assets/appIcon/APPIcon.png',
+            callback: function (ret) {
+            }
+        });
+    }
+
+
+    function showDataInfo() {
+        // mqq.invoke('ui', 'setOnAddShortcutHandler', { 'callback': mqq.callback(addShortcut, false, true) });
+        Auth.$openid = window.OPEN_DATA.openid;
+        Auth.$openkey = window.OPEN_DATA.openkey;
+        Auth.$pfid = window.OPEN_DATA.pf;
+
+        return window.OPEN_DATA;
+    }
+
+    function setShareInfo() {
+        mqq.ui.setOnShareHandler(function (type) {
+            mqq.ui.shareMessage({
+                title: '小精灵重置',
+                desc: '一起来抓神兽吧!',
+                share_type: type,
+                share_url: window.OPEN_DATA && window.OPEN_DATA.shareurl || window.location.href,
+                image_url: 'https://cdn.xulonggame.com/EgretCDN/tgPokemon/resource/assets/loading/gsLOGO_442130f4.png',
+                back: true
+            }, function (result) {
+            });
+        });
+    }
+
+
+    function wbShare() {
+        mqq.ui.shareMessage({
+            title: '小精灵重置',
+            desc: '一起来抓神兽吧!',
+            share_type: 1,
+            share_url: window.OPEN_DATA && window.OPEN_DATA.shareurl || window.location.href,
+            image_url: 'https://cdn.xulonggame.com/EgretCDN/tgPokemon/resource/assets/loading/gsLOGO_442130f4.png',
+            back: true
+        }, function (result) {
+        });
+    }
+
+
+    function showShareMenu() {
+        if (window.QZAppExternal) {
+            mqq.invoke("ui", "showShareMenu", {}, function () {
+            });
+        } else {
+            mqq.invoke("ui", "showShareMenu");
+        }
+
+    }
+
+    function popBack() {
+
+        if (window.QZAppExternal) {
+            QZAppExternal.closeWebview();
+        } else {
+            mqq.invoke('ui', 'popBack');
+        }
+    }
+
+    function goPopPayTips(msg) {
+        window.popPayTips({
+            version: 'v2',
+            defaultScore: msg.count,
+            appid: msg.appid
+        });
+
+        window.__paySuccess = function (t) {
+            showTips("充值成功", '确定');
+            Auth.preRechargeWB(msg.itemid);
+        };
+        window.__payError = function () {
+            showTips("充值失败，收到回调", '确定');
+            //取消再呼起
+            setTimeout(function () {
+                goPopPayTips();
+            }, 1000);
+        };
+        window.__payClose = function () {
+            showTips("取消充值", '确定');
+            Auth.CloseRecharge();
+        };
+    }
+
+
+    function showTips(text, btnText) {
+        if (window.QZAppExternal) {
+            mqq.invoke("ui", "showDialog", {
+                text: text,
+                okBtnText: btnText,
+                needOkBtn: true
+            });
+        } else {
+            mqq.ui.showTips({
+                text: text,
+                iconMode: 2
+            })
+        }
+    }
+
+</script>
+</body>
+<script type="text/javascript" id="report-script"></script>
+<script type="text/javascript">
+    var report_pf = "undefined";
+    var report_openid = "undefined";
+    var report_appid = "1106883526";
+    if (typeof (window.OPEN_DATA) != "undefined") {
+        report_pf = window.OPEN_DATA.pf;
+        report_openid = window.OPEN_DATA.openid;
+        report_appid = window.OPEN_DATA.appid;
+    }
+
+    document.getElementById('report-script').src = "https://report.api.173kw.com:9001/report/jsregaccount/" + report_appid + "/" + report_pf + "/" + report_openid;
+</script>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <base href="http://nlqyres.zs-e.com/EgretCDN/PokemonSP_5.11/" />
+    <!--<base href="http://cdn2.xulonggame.com/EgretCDN/ayPokemon/"/>-->
+    <meta charset="utf-8">
+    <title>pokemon</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="true" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <style>
+        html,
+        body {
+            -ms-touch-action: none;
+            background: #3D3C3C;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+
+        @font-face {
+            font-family: 'FZXS';
+            src: url('FZXS.eot?#iefix') format('embedded-opentype'), url('FZXS.woff') format('woff'), url('FZXS.ttf') format('truetype'), url('FZXS.svg#FZXS') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+    <style>
+        #preloading {
+            z-index: 1000;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1 1 auto;
+            position: absolute;
+        }
+
+        #preloading img {
+            max-width: 100%;
+        }
+    </style>
+    <style>
+        #divL,
+        #divR {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+            background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+            -webkit-background-size: 100% 100%;
+        }
+
+        #divL {
+            background-image: url(resource/assets/loading/leftBg2.jpg);
+            left: 0;
+        }
+
+        #divR {
+            background-image: url(resource/assets/loading/rightBg2.jpg);
+            right: 0;
+        }
+    </style>
+    <div id="divL"></div>
+    <div id="divR"></div>
+    <div id="preloading">
+        <script>
+            document.getElementById("preloading").innerHTML = '<img src="resource/assets/loading/gsLOGO3.png"/>';
+        </script>
+    </div>
+    <!--<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>-->
+    <!--这个标签为通过egret提供的第三方库的方式生成的 javascript 文件。删除 modules_files 标签后，库文件加载列表将不会变化，请谨慎操作！-->
+    <!--modules_files_start-->
+    <!--<script src="merged.js"></script>-->
+    <!--modules_files_end-->
+
+    <!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
+    <!--other_libs_files_start-->
+    <!--other_libs_files_end-->
+
+    <!--这个标签会被替换为项目中所有的 javascript 文件。删除 game_files 标签后，项目文件加载列表将不会变化，请谨慎操作！-->
+    <!--game_files_start-->
+    <!--<script src="1.js"></script>-->
+    <!--game_files_end-->
+</head>
+
+<body>
+
+    <div style="margin: auto;width: 100%;height: 100%;" class="egret-player" data-entry-class="Main" data-orientation="auto"
+        data-scale-mode="showAll" data-frame-rate="60" data-content-width="720" data-content-height="1100" data-show-paint-rect="false"
+        data-multi-fingered="2" data-show-fps="false" data-show-log="false" data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
+    </div>
+    <script>
+        // var libFile = "merged1.js"
+        var jsFile = "sy.1.json";
+        var resFile = "resource/res.1.json";
+        var themeFile = "resource/theme.1.json";
+        var serverUrl = "http://youguang.xulonggame.com/";
+        var fix = false;
+        var fixTime = "2018-3-09 17:30----2018-3-09 18:10";
+        var noticeid = 1;
+
+        var loadScript = function (list, callback) {
+            var loaded = 0;
+            var loadNext = function () {
+                loadSingleScript(list[loaded], function () {
+                    loaded++;
+                    if (loaded >= list.length) {
+                        callback();
+                    }
+                    else {
+                        loadNext();
+                    }
+                })
+            };
+            loadNext();
+        };
+
+        var loadSingleScript = function (src, callback) {
+            var s = document.createElement('script');
+            s.async = false;
+            s.src = src;
+            s.addEventListener('load', function () {
+                s.parentNode.removeChild(s);
+                s.removeEventListener('load', arguments.callee, false);
+                callback();
+            }, false);
+            s.onerror = function (evt) {
+                alert("您的网络不给力啊!文件加载失败!");
+            }
+            document.body.appendChild(s);
+        };
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', './' + jsFile + '?v=' + Math.random(), true);
+        xhr.addEventListener("load", function () {
+            var manifest = JSON.parse(xhr.response);
+            var list = manifest.initial.concat(manifest.game);
+            loadScript(list, function () {
+                var token = SDK.getQueryString("token");
+                if (token) {
+                    localStorage.setItem("token", token);
+                }
+                ES6Promise.polyfill();
+                game.themeUrl = themeFile;
+                game.resUrl = resFile;
+                game.OnFix = fix;
+                game.canRecharge = false;
+                game.FixTime = fixTime;
+                game.isMobile = true;
+                game.noticeId = noticeid;
+                SDK.$platformType = 0;
+                game.$retryCount = 60;
+                Auth.$serverUrl = serverUrl;
+                egret.ImageLoader.crossOrigin = "anonymous";
+                //egret.TextField.default_fontFamily = "FZXS";
+                /**
+                 * {
+             * "renderMode":, //引擎渲染模式，"canvas" 或者 "webgl"
+             * "audioType": "" //使用的音频类型，0:默认，1:qq audio，2:web audio，3:audio
+             * "antialias": //WebGL模式下是否开启抗锯齿，true:开启，false:关闭，默认为false
+             * }
+                 **/
+                egret.runEgret({
+                    renderMode: "webgl", audioType: 2
+                });
+            });
+        });
+        xhr.send(null);
+
+    </script>
+</body>
+
+</html>
