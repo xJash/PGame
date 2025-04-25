@@ -1,0 +1,4 @@
+自增长ID,金额(累计充值),可选精灵（填写时按中-左-右顺序）,图片资源
+number,number,string,number
+id,money,itemBuy,picture
+1,328,1639;1638;1640,3

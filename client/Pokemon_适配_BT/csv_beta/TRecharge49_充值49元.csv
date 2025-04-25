@@ -1,0 +1,4 @@
+自增长ID,充值人民币数,奖励预览（id;数量|id;数量）,奖励（ID;数量）
+number,number,string,string
+ID,Price,preview,RewardList
+1,49,1214;1,601214;100|10113;10|13001;1

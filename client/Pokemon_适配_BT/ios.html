@@ -1,0 +1,176 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>pokemon</title>
+    <meta name="viewport"
+          content="width=720,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+
+    <style>
+        html, body {
+            -ms-touch-action: none;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+    </style>
+    <style>
+        #preloading {
+            z-index: 1000;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1 1 auto;
+            position: absolute;
+        }
+
+        #preloading img {
+            max-width: 100%;
+        }
+    </style>
+    <div id="preloading">
+        <script>
+            document.getElementById("preloading").innerHTML = '<img src="resource/assets/loading/gsLOGO_b39847c4.png"/>';
+        </script>
+    </div>
+</head>
+<body>
+<!--div style="position:absolute;width:100px;height:30px;z-index:1000;">
+    <input type="button" onclick="start()" value="start" style="width:100px;height:30px;">start</input>
+</div-->
+<div style="margin: auto;width: 100%;height: 1100px;position:absolute;bottom:50px" class="egret-player"
+     data-entry-class="Main"
+     data-orientation="auto"
+     data-scale-mode="showAll"
+     data-frame-rate="60"
+     data-content-width="720"
+     data-content-height="1100"
+     data-show-paint-rect="false"
+     data-multi-fingered="2"
+     data-show-fps="false" data-show-log="false"
+     data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
+</div>
+<div id="banner" style="width:100%;position:absolute;">
+    <img id="banner-frame" src="resource/assets/banner/1.png"
+         style="width:100%;position: absolute;bottom: 0px">
+    <img src="resource/assets/banner/line.png"
+         style="width:100%;position: absolute;bottom: -12px">
+</div>
+<script>
+    var banner = document.getElementById("banner");
+    var height = document.body.clientHeight - 1100 - 50;
+    if (height >= 100) {
+        banner.style.height = height + "px";
+        var image = document.getElementById("banner-frame");
+        var sh = height + 38;
+        image.style.clip = "rect(" + 0 + "px " + 720 + "px " + sh + "px " + 0 + "px " + ")";
+        image.style.bottom = (height - 237) * 0.5 + "px";
+        var index = 1;
+        setInterval(function (args) {
+            index++;
+            if (index > 3) {
+                index = 1;
+            }
+            image.src = "resource/assets/banner/" + index + ".png";
+        }, 10000)
+    } else {
+        banner.style.display = "none";
+    }
+    var sdkFinish;
+    //    var serverUrl = "http://youguang.xulonggame.com/";
+    var serverUrl = "http://ayouios.xulonggame.com/";
+    var cdnUrl = "http://cdn.xulonggame.com/";
+
+    var libFile = "ayios.1.merge.js";
+    var jsFile = "ayios.1.js";
+    var resFile = "resource/ayios.1.res.json";
+    var themeFile = "resource/ayios.1.thm.json";
+    var fix = false;
+    var fixTime = "2017-10-25 19:40----2017-10-25 20:00";
+
+    var loadScript = function (list, callback) {
+        var loaded = 0;
+        var loadNext = function () {
+            loadSingleScript(list[loaded], function () {
+                loaded++;
+                if (loaded >= list.length) {
+                    callback();
+                }
+                else {
+                    loadNext();
+                }
+            })
+        };
+        loadNext();
+    };
+
+    var loadSingleScript = function (src, callback) {
+        var s = document.createElement('script');
+        s.async = false;
+        s.src = src;
+        s.addEventListener('load', function () {
+            s.parentNode.removeChild(s);
+            s.removeEventListener('load', arguments.callee, false);
+            callback();
+        }, false);
+        s.onerror = function (evt) {
+            alert("Your network is not strong! File loading failed!");
+        };
+        document.body.appendChild(s);
+    };
+
+    var x = new XMLHttpRequest();
+    x.open("GET", serverUrl+"/ayios/load",true);
+    x.addEventListener("load",function () {
+        var is_error = x.status >= 400 || (!x.status && !x.responseText);
+        if (is_error) {
+            var statusText = x.statusText;
+            if (x.status == 0)
+                statusText = "timeout.";
+            console.error(statusText);
+            return;
+        }
+
+        var r = x.responseText;
+        if (r != "0") {
+            var fs = r.split("\n");
+            libFile = fs[0];
+            jsFile= fs[1];
+            resFile = fs[2];
+            themeFile = fs[3];
+            fix = fs[4];
+            fixTime = fs[5];
+        }
+
+        var list = [libFile, jsFile];
+        loadScript(list, function () {
+            var token = SDK.getQueryString("token");
+            if (token) {
+                localStorage.setItem("token", token);
+            }
+            ES6Promise.polyfill();
+            game.themeUrl = themeFile;
+            game.resUrl = resFile;
+            game.OnFix = fix;
+            game.FixTime = fixTime;
+            game.isMobile = true;
+            SDK.$platformType = 6;
+            game.$retryCount = 60;
+            Auth.$serverUrl = serverUrl;
+            //egret.ImageLoader.crossOrigin = "anonymous";
+            egret.runEgret({renderMode: "webgl", audioType: 3});
+        });
+    });
+    x.send(null);
+</script>
+</body>
+</html>

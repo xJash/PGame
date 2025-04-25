@@ -1,0 +1,4 @@
+卡ID,注释(策划看）,可选神兽,每日获得道具(道具;数量),额外获得道具(道具;数量),挂机经验增加百分比,挂机金币增加百分比,秘籍扫荡(1为可扫荡)
+number,string,string,string,string,double,double,number
+id,ZHUSHI,itemBuy,itemDay,itemAdd,exAddPer,goldAddper,SecretPass
+1,,1243;1244;1245,2;1000000|10003;1000|12111;500|10089;1000,10505;1,0.2,0.2,1

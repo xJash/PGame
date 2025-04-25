@@ -1,0 +1,1376 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EasyGame.Core</name>
+    </assembly>
+    <members>
+        <member name="T:EasyGame.ProtocolAttribute">
+            <summary>
+            define the service protocol identify and version
+            </summary>
+        </member>
+        <member name="P:EasyGame.ProtocolAttribute.ID">
+            <summary>
+            protocol id
+            </summary>
+        </member>
+        <member name="F:EasyGame.ProtocolAttribute.Version">
+            <summary>
+            protocol version
+            </summary>
+        </member>
+        <member name="F:EasyGame.ProtocolAttribute.Multiplex">
+            <summary>
+            indicate the protocol can be multiplex on one connection
+            </summary>
+        </member>
+        <member name="F:EasyGame.ProtocolAttribute.RequestReply">
+            <summary>
+            indicate protocol is Request/Reply mode
+            </summary>
+        </member>
+        <member name="T:EasyGame.DescriptionAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EasyGame.RawAttribute">
+            <summary>
+            Indicate a protocol method accept the raw input stream 
+            </summary>
+        </member>
+        <member name="T:EasyGame.AsyncAttribute">
+            <summary>
+            Indicate a protocol method dispatch use async result
+            </summary>
+        </member>
+        <member name="T:EasyGame.SyncAttribute">
+            <summary>
+            Indicate a protocol method dispatch use sync result
+            </summary>
+        </member>
+        <member name="T:EasyGame.LogAttribute">
+            <summary>
+            Indicate the protocolgenerator don't log the message
+            </summary>
+        </member>
+        <member name="T:EasyGame.WaitableAttribute">
+            <summary>
+            Indicate the void request has awaitable reply
+            </summary>
+        </member>
+        <member name="T:EasyGame.NotifyAttribute">
+            <summary>
+            define the service notify interface
+            </summary>
+        </member>
+        <member name="M:EasyGame.NotifyAttribute.#ctor(System.Type)">
+            <summary>
+            constructor
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="P:EasyGame.NotifyAttribute.NotifyType">
+            <summary>
+            The type of the callback interface 
+            </summary>
+        </member>
+        <member name="T:EasyGame.SubclassAttribute">
+            <summary>
+            Indicate the subclasses of a polymorphic class for serialize
+            </summary>
+        </member>
+        <member name="T:EasyGame.SessionClassAttribute">
+            <summary>
+            Customize the session class
+            </summary>
+        </member>
+        <member name="P:EasyGame.SessionClassAttribute.ClassName">
+            <summary>
+            Indicate the session class name
+            </summary>
+        </member>
+        <member name="M:EasyGame.SessionClassAttribute.#ctor(System.String)">
+            <summary>
+            constructor
+            </summary>
+            <param name="className"></param>
+        </member>
+        <member name="T:EasyGame.ServiceAuxiliaryAttribute">
+            <summary>
+            define the service interface for the implementation class
+            </summary>
+            <remarks>
+            On the server side the protocol generator will generate a new interface from the service interface.
+            It will add the session parameter to each methods. The concrete service should implement this interface.
+            </remarks>
+            <example>
+            the service interface:
+            <code>
+            	[Protocol(ID = 0x39295674), Callback(typeof(IServiceManagerCallback))]
+            	public interface IServiceManager
+            	{
+            		[DispId(1)]
+            		void RegisterServer(string name);
+            		
+            		[DispId(2)]
+            		void RegisterService(string serviceName, string serverName, int port);
+            		
+            		[DispId(3)]
+            		void HeartBeatReply(int tick);
+            	
+            		[DispId(4)]
+            		void WriteLog(int category, string content, bool append);
+            	}
+            	</code>
+            The protocol generator make a new interface:
+            	<code>
+            	[ServiceAuxiliary(Type = typeof(IServiceManager), Stub = typeof(IServiceManagerStub), CallbackProxy = typeof(IServiceManagerCallbackProxy))]
+            	public interface IServiceManagerImpl
+            	{
+            		void RegisterServer(Session session, string name);
+            		void RegisterService(Session session, string serviceName, string serverName, int port);
+            		void HeartBeatReply(Session session, int tick);
+            		void WriteLog(Session session, int category, string content, bool append);
+            	}
+            </code>
+            the ServiceManagerService class should implement IServiceManagerImpl
+            </example>
+        </member>
+        <member name="P:EasyGame.ServiceAuxiliaryAttribute.Type">
+            <summary>
+            the type of the service interface
+            </summary>
+        </member>
+        <member name="P:EasyGame.ServiceAuxiliaryAttribute.Stub">
+            <summary>
+            the type of the service stub class
+            </summary>
+        </member>
+        <member name="P:EasyGame.WebServiceAttribute.Path">
+            <summary>
+            path
+            </summary>
+        </member>
+        <member name="T:EasyGame.ConcurrencyAttribute">
+            <summary>
+            indicate the requst will be handled with multi-thread
+            </summary>
+        </member>
+        <member name="T:EasyGame.AliasAttribute">
+            <summary>
+            indicate the requst will be handled with multi-thread
+            </summary>
+        </member>
+        <member name="T:EasyGame.MethodsAttribute">
+            <summary>
+            indicate the requst allowed methods
+            </summary>
+        </member>
+        <member name="T:EasyGame.Connection">
+            <summary>
+            connection base class
+            </summary>
+        </member>
+        <member name="F:EasyGame.Connection.MaxPacketSize">
+            <summary>
+            the maximum packet size constant
+            </summary>
+        </member>
+        <member name="M:EasyGame.Connection.Write(System.Byte[])">
+            <summary>
+            send a message
+            </summary>
+            <param name="data">message body</param>
+        </member>
+        <member name="M:EasyGame.Connection.Write(System.Byte[],System.Int32)">
+            <summary>
+            send a message
+            </summary>
+            <param name="data">message body</param>
+            <param name="length">message length</param>
+        </member>
+        <member name="M:EasyGame.Connection.Read">
+            <summary>
+            read a message from connection
+            </summary>
+            <returns>message body. if no message, return null</returns>
+        </member>
+        <member name="P:EasyGame.Connection.IsConnected">
+            <summary>
+            test the connection is exist
+            </summary>
+        </member>
+        <member name="P:EasyGame.Connection.CanRead">
+            <summary>
+            test the data is arrived
+            </summary>
+        </member>
+        <member name="M:EasyGame.Connection.ReadAsync">
+            <summary>
+            read a message from connection with async method
+            </summary>
+            <returns>message body.</returns>
+        </member>
+        <member name="M:EasyGame.Connection.Close">
+            <summary>
+            close the connection
+            </summary>
+        </member>
+        <member name="P:EasyGame.StreamConnection.IsConnected">
+            <summary>
+            test the connection
+            </summary>
+        </member>
+        <member name="M:EasyGame.StreamConnection.Close">
+            <summary>
+            close the connection
+            </summary>
+        </member>
+        <member name="T:EasyGame.ServiceErrorCode">
+            <summary>
+            the generic service error code
+            </summary>
+        </member>
+        <member name="T:EasyGame.ErrorHandler">
+            <summary>
+            The async service error handler callback
+            </summary>
+            <param name="errCode">error code</param>
+            <param name="msg">error message</param>
+        </member>
+        <member name="T:EasyGame.ConnectionCloseException">
+            <summary>
+            the exception for the remote endpoint close the connection
+            </summary>
+        </member>
+        <member name="T:EasyGame.ServiceException">
+            <summary>
+            The service exception class
+            </summary>
+        </member>
+        <member name="M:EasyGame.ServiceException.#ctor(System.Int32,System.String)">
+            <summary>
+            constructor
+            </summary>
+            <param name="errCode">error code</param>
+            <param name="msg">error message</param>
+        </member>
+        <member name="P:EasyGame.ServiceException.ErrCode">
+            <summary>
+            error code
+            </summary>
+        </member>
+        <member name="T:EasyGame.ExceptionHelper">
+            <summary>
+            Exception helper class for service exception
+            </summary>
+        </member>
+        <member name="M:EasyGame.ExceptionHelper.SetCulture(System.String)">
+            <summary>
+            Set the error message langurage
+            </summary>
+            <param name="culture">langurage name</param>
+        </member>
+        <member name="M:EasyGame.ExceptionHelper.AddErrorMessages(System.String,System.Collections.Generic.Dictionary{System.Int32,System.String})">
+            <summary>
+            Add a langurage error messages set
+            </summary>
+            <param name="culture"></param>
+            <param name="errMessages"></param>
+        </member>
+        <member name="M:EasyGame.ExceptionHelper.Throw``1(``0)">
+            <summary>
+            Throw the service exception with the error code
+            </summary>
+            <typeparam name="T">error code type</typeparam>
+            <param name="errCode">error code</param>
+        </member>
+        <member name="M:EasyGame.ExceptionHelper.Throw``1(``0,System.Object[])">
+            <summary>
+            Throw the service exception with the error code and parameters
+            </summary>
+            <typeparam name="T">error code type</typeparam>
+            <param name="errCode">error code</param>
+            <param name="args">parameters</param>
+        </member>
+        <member name="T:EasyGame.HeapExtension">
+            <summary>
+            heap sort extension
+            </summary>
+        </member>
+        <member name="M:EasyGame.HeapExtension.PushHeap``1(System.Collections.Generic.List{``0},``0,System.Func{``0,``0,System.Boolean})">
+            <summary>
+            Heap sort push
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="heap"></param>
+            <param name="val"></param>
+            <param name="pred"></param>
+        </member>
+        <member name="M:EasyGame.HeapExtension.PopHeap``1(System.Collections.Generic.List{``0},System.Func{``0,``0,System.Boolean})">
+            <summary>
+            Heap sort pop
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="heap"></param>
+            <param name="pred"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EasyGame.XmlExtension">
+            <summary>
+            xml extension
+            </summary>
+        </member>
+        <member name="T:EasyGame.DateTimeExtension">
+            <summary>
+            DateTime extension
+            </summary>
+        </member>
+        <member name="T:EasyGame.SocketExtension">
+            <summary>
+            Socket extension for IP address retrive
+            </summary>
+        </member>
+        <member name="T:EasyGame.TypeExt">
+            <summary>
+            Type extension for attribute get
+            </summary>
+        </member>
+        <member name="T:EasyGame.CmdLineExtension">
+            <summary>
+            string extension for split command line to argument list
+            </summary>
+        </member>
+        <member name="M:EasyGame.CmdLineExtension.SplitArgs(System.String)">
+            <summary>
+            split command line to argument list
+            </summary>
+            <param name="cmd"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EasyGame.ServiceBase">
+            <summary>
+            service base class
+            </summary>
+            <remarks>
+            the user service should inherit from this class
+            </remarks>
+        </member>
+        <member name="M:EasyGame.ServiceBase.#ctor(EasyGame.ProtocolFlag)">
+            <summary>
+            constructor
+            </summary>
+        </member>
+        <member name="M:EasyGame.ServiceBase.OnConnection(EasyGame.Session)">
+            <summary>
+            client connect event
+            </summary>
+            <param name="client"></param>
+        </member>
+        <member name="M:EasyGame.ServiceBase.OnDisconnection(EasyGame.Session)">
+            <summary>
+            client disconnect event
+            </summary>
+            <param name="client"></param>
+        </member>
+        <member name="M:EasyGame.ServiceBase.Close">
+            <summary>
+            Close the service
+            </summary>
+        </member>
+        <member name="M:EasyGame.ServiceBase.After(System.Int32,System.Action)">
+            <summary>
+            Set a timer to invke the action only once
+            </summary>
+            <param name="milliSec">The amount of time to delay before action is invoked, in milliseconds.</param>
+            <param name="action">the callback</param>
+            <returns>timer id</returns>
+        </member>
+        <member name="M:EasyGame.ServiceBase.SetTimer(System.Int32,System.Int32,System.Action)">
+            <summary>
+            Set a timer to invke the action several times
+            </summary>
+            <param name="milliSec"></param>
+            <param name="times">invoke times. if times is less equal 0, time timer will infinite invoke.</param>
+            <param name="action">the timer callback</param>
+            <returns>timer id</returns>
+        </member>
+        <member name="M:EasyGame.ServiceBase.KillTimer(System.Int32)">
+            <summary>
+            Kill the timer with id
+            </summary>
+            <param name="timerId">timer id</param>
+        </member>
+        <member name="T:EasyGame.ServiceStartInfo">
+            <summary>
+            service start parameters
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceStartInfo.IpAddress">
+            <summary>
+            ip address to bind
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceStartInfo.Port">
+            <summary>
+            port number to listen. if the port number is 0, the service provider will assign an available port number between 1024 and 5000.
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceStartInfo.Backlog">
+            <summary>
+            backlog
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceStartInfo.ReceiveBufferSize">
+            <summary>
+            TCP receive buffer size. -1 is use default setting.
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceStartInfo.SendBufferSize">
+            <summary>
+            TCP send buffer size. -1 is use default setting.
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceStartInfo.TCPNoDelay">
+            <summary>
+            TCP no delay
+            </summary>
+        </member>
+        <member name="T:EasyGame.TcpServiceHolder">
+            <summary>
+            the service holder class
+            </summary>
+        </member>
+        <member name="T:EasyGame.TcpServiceHolder.OnConnectionFilter">
+            <summary>
+            new connection event delegate 
+            </summary>
+            <param name="ip"></param>
+        </member>
+        <member name="P:EasyGame.TcpServiceHolder.ConnectionFilter">
+            <summary>
+            client connect event
+            </summary>
+        </member>
+        <member name="P:EasyGame.TcpServiceHolder.Service">
+            <summary>
+            service instance
+            </summary>
+        </member>
+        <member name="P:EasyGame.TcpServiceHolder.Context">
+            <summary>
+            Synchronization Context
+            </summary>
+        </member>
+        <member name="P:EasyGame.TcpServiceHolder.LocalEndpoint">
+            <summary>
+            the service listening endpoint
+            </summary>
+        </member>
+        <member name="P:EasyGame.TcpServiceHolder.ServerCertificate">
+            <summary>
+            TLS Certificate
+            </summary>
+        </member>
+        <member name="P:EasyGame.TcpServiceHolder.ClientCertRequire">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:EasyGame.TcpServiceHolder.#ctor(EasyGame.ServiceBase)">
+            <summary>
+            constructor
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:EasyGame.TcpServiceHolder.Close">
+            <summary>
+            close the service
+            </summary>
+        </member>
+        <member name="M:EasyGame.TcpServiceHolder.Start(EasyGame.ServiceStartInfo)">
+            <summary>
+            Launch the service
+            </summary>
+            <param name="parameters">the start parameter.</param>
+        </member>
+        <member name="T:EasyGame.MetricSampleData">
+            <summary>
+            监控数据采样点
+            </summary>
+        </member>
+        <member name="T:EasyGame.MetricSampleDescData">
+            <summary>
+            监控数据描述
+            </summary>
+        </member>
+        <member name="F:EasyGame.MetricSampleDescData.Item">
+            <summary>
+            监控编号
+            </summary>
+        </member>
+        <member name="F:EasyGame.MetricSampleDescData.Name">
+            <summary>
+            监控项名字
+            </summary>
+        </member>
+        <member name="F:EasyGame.MetricSampleDescData.Unit">
+            <summary>
+            数据单位
+            </summary>
+        </member>
+        <member name="F:EasyGame.MetricSampleDescData.Interval">
+            <summary>
+            采样时间间隔(sec)
+            </summary>
+        </member>
+        <member name="T:EasyGame.ServiceStatus">
+            <summary>
+            the service/host status
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceStatus.Error">
+            <summary>
+            the service is in error status
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceStatus.Blocking">
+            <summary>
+            the service manager didn't recevice the status udapte from the service/host greate than 1 second
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceStatus.Disconnect">
+            <summary>
+            the network connection is lost
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceStatus.Failed">
+            <summary>
+            the service crash or fail to start
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceStatus.Stop">
+            <summary>
+            the service is stop
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceStatus.Launching">
+            <summary>
+            send the service launch command to the host
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceStatus.Registed">
+            <summary>
+            the service has registed to the service manager
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceStatus.Starting">
+            <summary>
+            the service is starting
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceStatus.Running">
+            <summary>
+            the service/host is running
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceStatus.Closing">
+            <summary>
+            the service is closing
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceStatus.Updating">
+            <summary>
+            the host is updating the service file
+            </summary>
+        </member>
+        <member name="T:EasyGame.ServiceInfo">
+            <summary>
+            the service information data
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceInfo.ServiceName">
+            <summary>
+            the service name
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceInfo.ServiceClass">
+            <summary>
+            the service class name
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceInfo.Description">
+            <summary>
+            the service description
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceInfo.HostName">
+            <summary>
+            the running host name
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceInfo.Revision">
+            <summary>
+            the revision of the service
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceInfo.IP">
+            <summary>
+            the ip address of the service host
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceInfo.Status">
+            <summary>
+            the current status of the service
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceInfo.StartTime">
+            <summary>
+            the service start time
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceInfo.pid">
+            <summary>
+            service process id
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceInfo.CustomInfo">
+            <summary>
+            custom info with json format string
+            </summary>
+        </member>
+        <member name="T:EasyGame.IServiceManagerEvent">
+            <summary>
+            Service Manager event notify
+            </summary>
+        </member>
+        <member name="M:EasyGame.IServiceManagerEvent.Ping(System.Int32)">
+            <summary>
+            服务管理发送Ping消息以确认连接存在
+            </summary>
+            <remarks>service需用相同的tick值来回应Pong</remarks>
+            <param name="tick">tick值</param>
+        </member>
+        <member name="M:EasyGame.IServiceManagerEvent.OnBroadcastMessage(System.String,System.String,System.String)">
+            <summary>
+            广播消息
+            </summary>
+            <param name="sender">发送者的service name</param>
+            <param name="subject">主题</param>
+            <param name="body">消息体，通常可以是json格式对象</param>
+        </member>
+        <member name="T:EasyGame.IServiceManager">
+            <summary>
+            服务管理
+            </summary>
+            <remarks>
+            服务管理器用于注册和管理所有的逻辑服务和物理服务器
+            </remarks>
+        </member>
+        <member name="M:EasyGame.IServiceManager.RegisterService(System.String,EasyGame.MetricSampleDescData[])">
+            <summary>
+            注册服务
+            </summary>
+            <param name="sessionId">session id</param>
+            <param name="metricDescription">监控项描述</param>
+        </member>
+        <member name="M:EasyGame.IServiceManager.UpdateStatus(EasyGame.ServiceStatus)">
+            <summary>
+            chage the current service status
+            </summary>
+            <param name="status">current status</param>
+        </member>
+        <member name="M:EasyGame.IServiceManager.Pong(System.Int32)">
+            <summary>
+            relay the ping message
+            </summary>
+            <param name="tick"></param>
+        </member>
+        <member name="M:EasyGame.IServiceManager.ConsoleLog(EasyGame.LogLevel,System.DateTime,System.String)">
+            <summary>
+            send the log message to the management console
+            </summary>
+            <param name="level"></param>
+            <param name="logTime"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:EasyGame.IServiceManager.UploadMetricData(System.DateTime,EasyGame.MetricSampleData[])">
+            <summary>
+            report the metric data to service manager
+            </summary>
+            <param name="timestamp">metric data time stamp</param>
+            <param name="dataSet">the service metric data points</param>
+        </member>
+        <member name="M:EasyGame.IServiceManager.UpdateCustumInfo(System.String)">
+            <summary>
+            update custom info
+            </summary>
+            <param name="info">json format object</param>
+        </member>
+        <member name="M:EasyGame.IServiceManager.GetServiceInfo(System.String)">
+            <summary>
+            Query service info
+            </summary>
+            <param name="serviceName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EasyGame.IServiceManager.GetServicesInfo(System.String)">
+            <summary>
+            query the services info with name prefix
+            </summary>
+            <param name="prefix">the service name prefix</param>
+            <returns></returns>
+        </member>
+        <member name="M:EasyGame.IServiceManager.Broadcast(System.String,System.String)">
+            <summary>
+            broadcast the message to all the connected services
+            </summary>
+            <param name="subject"></param>
+            <param name="body"></param>
+        </member>
+        <member name="T:EasyGame.SerializeExtension">
+            <exclude/>
+        </member>
+        <member name="T:EasyGame.IServiceManagerProxy">
+            <exclude/>
+        </member>
+        <member name="T:EasyGame.IServiceManagerEventProxy">
+            <exclude/>
+        </member>
+        <member name="T:EasyGame.Session">
+            <summary>
+            client session base class
+            </summary>
+        </member>
+        <member name="P:EasyGame.Session.ID">
+            <summary>
+            the unique id for session
+            </summary>
+        </member>
+        <member name="P:EasyGame.Session.Connection">
+            <summary>
+            the connection of the session
+            </summary>
+        </member>
+        <member name="P:EasyGame.Session.ServiceType">
+            <summary>
+            indicate the service interface type of the seesion
+            </summary>
+        </member>
+        <member name="P:EasyGame.Session.Endpoint">
+            <summary>
+            the client endpoint
+            </summary>
+        </member>
+        <member name="P:EasyGame.Session.UserData">
+            <summary>
+            user data
+            </summary>
+            <remarks>
+            you can extend your UserClass and store in the UserData
+            </remarks>
+        </member>
+        <member name="M:EasyGame.Session.#ctor">
+            <summary>
+            constructor
+            </summary>
+        </member>
+        <member name="M:EasyGame.Session.Close">
+            <summary>
+            close the connection
+            </summary>
+        </member>
+        <member name="P:EasyGame.Session.Alive">
+            <summary>
+            test the connection 
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceContext.PerformanceMetricData.TotalScheduleTime">
+            <summary>
+            the total time spend on schedule
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceContext.PerformanceMetricData.MaxWeakupTime">
+            <summary>
+            the max time spend on weakup
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceContext.PerformanceMetricData.ScheduleCount">
+            <summary>
+            the schedule(post,send,timer) count
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceContext.PerformanceMetricData.WeakupCount">
+            <summary>
+            the weakup count
+            </summary>
+        </member>
+        <member name="F:EasyGame.ServiceContext.PerformanceMetricData.MaxScheduleTime">
+            <summary>
+            the max time spend on schedule
+            </summary>
+        </member>
+        <member name="P:EasyGame.ServiceContext.TimerPrecision">
+            <summary>
+            The precision of timer，Default: 50ms
+            </summary>
+        </member>
+        <member name="P:EasyGame.ServiceContext.MaxQueueLength">
+            <summary>
+            queue length limits. to prevent the task queue overload
+            </summary>
+        </member>
+        <member name="P:EasyGame.ServiceContext.QueueLength">
+            <summary>
+            query the current task queue length
+            </summary>
+        </member>
+        <member name="M:EasyGame.ServiceContext.LaunchCmdline">
+            <summary>
+            启动控制台输入
+            </summary>
+        </member>
+        <member name="M:EasyGame.ServiceContext.LaunchCmdline(System.Type,System.Object)">
+            <summary>
+            启动控制台输入(自定义命令行处理)
+            </summary>
+            <param name="cmdInterface">自定义命令行接口</param>
+            <param name="cmdHandler">自定义命令行处理器</param>
+        </member>
+        <member name="M:EasyGame.ServiceContext.Run">
+            <summary>
+            启动ServiceContext
+            </summary>
+        </member>
+        <member name="T:EasyGame.StubBase">
+            <summary>
+            stub base class for service
+            </summary>
+        </member>
+        <member name="T:EasyGame.StubBase.MethodInvoke">
+            <summary>
+            Method call type
+            </summary>
+            <param name="session"></param>
+            <param name="reader"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EasyGame.StubBase.AddMethodDispatcher(System.Int32,EasyGame.StubBase.MethodInvoke)">
+            <summary>
+            add a method dispatch function to cache
+            </summary>
+            <param name="dispId"></param>
+            <param name="func"></param>
+        </member>
+        <member name="M:EasyGame.StubBase.#ctor(System.Int32)">
+            <summary>
+            constructor
+            </summary>
+        </member>
+        <member name="M:EasyGame.StubBase.SetMethodDispatcher(System.Int32,EasyGame.StubBase.MethodInvoke)">
+            <summary>
+            Set the method dispath function
+            </summary>
+            <param name="dispId"></param>
+            <param name="func"></param>
+        </member>
+        <member name="M:EasyGame.StubBase.GetMethod(System.Int32)">
+            <summary>
+            Get the method dispatch function with id
+            </summary>
+            <param name="dispId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EasyGame.StubBase.Dispatch(EasyGame.ISession,EasyGame.BinaryStreamReader)">
+            <summary>
+            dispatch the message
+            </summary>
+            <param name="session">session object</param>
+            <param name="reader"></param>
+        </member>
+        <member name="T:EasyGame.Configuration`1">
+            <summary>
+            Application Configuration Template
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:EasyGame.Configuration`1.Load(System.String)">
+            <summary>
+            Load the config settings from file
+            </summary>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:EasyGame.Configuration`1.Save(System.String)">
+            <summary>
+            save the config settings to file
+            </summary>
+            <param name="fileName"></param>
+        </member>
+        <member name="P:EasyGame.Configuration`1.DefaultSettings">
+            <summary>
+            default config settings
+            </summary>
+        </member>
+        <member name="P:EasyGame.Configuration`1.AppSettings">
+            <summary>
+            config settings
+            </summary>
+        </member>
+        <member name="T:EasyGame.LogLevel">
+            <summary>
+            Log Level
+            </summary>
+        </member>
+        <member name="T:EasyGame.Log">
+            <summary>
+            Logger module
+            </summary>
+        </member>
+        <member name="T:EasyGame.Log.OnLog">
+            <summary>
+            Log event callback
+            </summary>
+            <param name="tag">the log tag</param>
+            <param name="threadName">the thread of log issue</param>
+            <param name="level">log level</param>
+            <param name="time">log time</param>
+            <param name="content">log content</param>
+            <returns>ture: write to log, false: don't log</returns>
+        </member>
+        <member name="M:EasyGame.Log.ShowLogSource(System.Int32,System.Boolean)">
+            <summary>
+            添加log来源
+            </summary>
+            <param name="stackIndex">log函数调用到log记录函数之间的调用层数，通常为2，设为0关闭</param>
+        </member>
+        <member name="M:EasyGame.Log.FormatObject(System.Object)">
+            <summary>
+            format the object to JSON string
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EasyGame.Log.InfoTag(System.String,System.String,System.Object[])">
+            <summary>
+            Log the Info message
+            </summary>
+            <param name="tag"></param>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:EasyGame.Log.InfoTag(System.String,System.String)">
+            <summary>
+            Log the Info message
+            </summary>
+            <param name="tag"></param>
+            <param name="format"></param>
+        </member>
+        <member name="M:EasyGame.Log.Info(System.String,System.Object[])">
+            <summary>
+            Log the Info message
+            </summary>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:EasyGame.Log.Info(System.String)">
+            <summary>
+            Log the Info message
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:EasyGame.Log.Debug(System.String,System.Object[])">
+            <summary>
+            Log the Debug message
+            </summary>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:EasyGame.Log.Debug(System.String)">
+            <summary>
+            Log the Debug message
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:EasyGame.Log.DebugTag(System.String,System.String,System.Object[])">
+            <summary>
+            Log the Debug message
+            </summary>
+            <param name="tag"></param>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:EasyGame.Log.DebugTag(System.String,System.String)">
+            <summary>
+            Log the Debug message
+            </summary>
+            <param name="tag"></param>
+            <param name="content"></param>
+        </member>
+        <member name="M:EasyGame.Log.Error(System.String,System.Object[])">
+            <summary>
+            Log the error message
+            </summary>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:EasyGame.Log.Error(System.String)">
+            <summary>
+            Log the error message
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:EasyGame.Log.ErrorTag(System.String,System.String,System.Object[])">
+            <summary>
+            Log the error message
+            </summary>
+            <param name="tag"></param>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:EasyGame.Log.ErrorTag(System.String,System.String)">
+            <summary>
+            Log the error message
+            </summary>
+            <param name="tag"></param>
+            <param name="content"></param>
+        </member>
+        <member name="M:EasyGame.Log.Warning(System.String,System.Object[])">
+            <summary>
+            log the warning message
+            </summary>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:EasyGame.Log.Warning(System.String)">
+            <summary>
+            log the warning message
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:EasyGame.Log.WarnTag(System.String,System.String,System.Object[])">
+            <summary>
+            Log the warning message
+            </summary>
+            <param name="tag"></param>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:EasyGame.Log.WarnTag(System.String,System.String)">
+            <summary>
+            Log the warning message
+            </summary>
+            <param name="tag"></param>
+            <param name="content"></param>
+        </member>
+        <member name="M:EasyGame.Log.Fatal(System.String,System.Object[])">
+            <summary>
+            log the fatal message
+            </summary>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:EasyGame.Log.Fatal(System.String)">
+            <summary>
+            log the fatal message
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:EasyGame.Log.FatalTag(System.String,System.String,System.Object[])">
+            <summary>
+            Log the fatal message
+            </summary>
+            <param name="tag"></param>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:EasyGame.Log.FatalTag(System.String,System.String)">
+            <summary>
+            Log the fatal message
+            </summary>
+            <param name="tag"></param>
+            <param name="content"></param>
+        </member>
+        <member name="M:EasyGame.Log.BeginLog(EasyGame.LogLevel,System.String,System.String)">
+            <summary>
+            Create a logger object that can append content
+            </summary>
+            <param name="level">log level</param>
+            <param name="content">log content</param>
+            <returns>logger object</returns>
+        </member>
+        <member name="M:EasyGame.Log.Enable(EasyGame.LogLevel)">
+            <summary>
+            Enable the specified level of log
+            </summary>
+            <param name="log"></param>
+        </member>
+        <member name="M:EasyGame.Log.Disable(EasyGame.LogLevel)">
+            <summary>
+            Disable the specified level of log
+            </summary>
+            <param name="log"></param>
+        </member>
+        <member name="M:EasyGame.Log.SetLogColor(EasyGame.LogLevel,System.ConsoleColor)">
+            <summary>
+            set the color of the log text on console window
+            </summary>
+            <param name="level">log level</param>
+            <param name="color"></param>
+        </member>
+        <member name="M:EasyGame.Log.GetLogColor(EasyGame.LogLevel)">
+            <summary>
+            get the log text color
+            </summary>
+            <param name="level">log level</param>
+        </member>
+        <member name="M:EasyGame.Log.GetStackTrace">
+            <summary>
+            Get the call stack info
+            </summary>
+        </member>
+        <member name="M:EasyGame.Log.LogToFile(System.String)">
+            <summary>
+            redirecte the log to file
+            </summary>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:EasyGame.Log.LogToConsole">
+            <summary>
+            redirecte the log to console window
+            </summary>
+        </member>
+        <member name="M:EasyGame.Log.OpenConsole">
+            <summary>
+            open the console window
+            </summary>
+            <remarks>
+            if the application is not a console project, you need call this to show the console.
+            </remarks>
+        </member>
+        <member name="M:EasyGame.Log.CloseConsole">
+            <summary>
+            close the console window
+            </summary>
+        </member>
+        <member name="E:EasyGame.Log.OnLogEvent">
+            <summary>
+            the log event callback
+            </summary>
+        </member>
+        <member name="T:EasyGame.BinaryStreamWriter">
+            <summary>
+            Binary serialize writer
+            </summary>
+        </member>
+        <member name="T:EasyGame.BinaryStreamReader">
+            <summary>
+            Binary serialize writer
+            </summary>
+        </member>
+        <member name="T:EasyGame.TimeCounter">
+            <summary>
+            the high precision timer for performance profile
+            </summary>
+        </member>
+        <member name="P:EasyGame.TimeCounter.Tick">
+            <summary>
+            Get high precision current tick
+            </summary>
+            <remarks>unit: micro-second</remarks>
+        </member>
+        <member name="M:EasyGame.TimeCounter.BeginNew">
+            <summary>
+            start a new timer
+            </summary>
+        </member>
+        <member name="M:EasyGame.TimeCounter.Begin">
+            <summary>
+            start the timer
+            </summary>
+        </member>
+        <member name="M:EasyGame.TimeCounter.End">
+            <summary>
+            end the timer. 
+            </summary>
+            <returns>return the time. the unit is micro-second(us)</returns>
+        </member>
+        <member name="T:EasyGame.Util">
+            <summary>
+            the utility class
+            </summary>
+        </member>
+        <member name="M:EasyGame.Util.CRC32(System.Byte[],System.Int32)">
+            <summary>
+            calcuate CRC32
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EasyGame.Util.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Write an Int32 to byte array
+            </summary>
+            <param name="data"></param>
+            <param name="index"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:EasyGame.Util.Write(System.Byte[],System.Int32,System.UInt32)">
+            <summary>
+            Write an UInt32 to byte array
+            </summary>
+            <param name="data"></param>
+            <param name="index"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:EasyGame.Util.Write(System.Byte[],System.Int32,System.Int16)">
+            <summary>
+            Write an Int16 to byte array
+            </summary>
+            <param name="data"></param>
+            <param name="index"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:EasyGame.Util.Write(System.Byte[],System.Int32,System.UInt16)">
+            <summary>
+            Write an UInt16 to byte array
+            </summary>
+            <param name="data"></param>
+            <param name="index"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:EasyGame.Util.Write(System.Byte[],System.Int32,System.Int64)">
+            <summary>
+            Write an Int64 to byte array
+            </summary>
+            <param name="data"></param>
+            <param name="index"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:EasyGame.Util.Copy(System.Byte[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            memory copy for byte array data
+            </summary>
+            <param name="src"></param>
+            <param name="srcIndex"></param>
+            <param name="dest"></param>
+            <param name="dstIndex"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:EasyGame.Util.Swap``1(``0@,``0@)">
+            <summary>
+            swap two variables
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="t1"></param>
+            <param name="t2"></param>
+        </member>
+        <member name="M:EasyGame.Util.Clone``1(``0[])">
+            <summary>
+            Clone array object to new array
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="arr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EasyGame.Util.LoadObjectFromXML(System.Object,System.Xml.XmlNode)">
+            <summary>
+            load the object from the XmlNode
+            </summary>
+            <param name="obj"></param>
+            <param name="parent"></param>
+        </member>
+        <member name="M:EasyGame.Util.FormatIP(System.UInt32)">
+            <summary>
+            convert ipv4 dword to string
+            </summary>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="F:EasyGame.ThreadModel.Sync">
+            <summary>
+            the requst will be handled in main thread
+            </summary>
+        </member>
+        <member name="F:EasyGame.ThreadModel.Async">
+            <summary>
+            the requst will be posted to main thread
+            </summary>
+        </member>
+        <member name="F:EasyGame.ThreadModel.Concurrency">
+            <summary>
+            the requst will be handled in thread pool
+            </summary>
+        </member>
+        <member name="T:EasyGame.CacheControlProc">
+            <summary>
+            
+            </summary>
+            <param name="fileName"></param>
+            <param name="ctx"></param>
+            <returns>retrun true to end process</returns>
+        </member>
+        <member name="T:EasyGame.WebSocketServiceStartInfo">
+            <summary>
+            service start parameters
+            </summary>
+        </member>
+        <member name="F:EasyGame.WebSocketServiceStartInfo.IpAddress">
+            <summary>
+            ip address to bind
+            </summary>
+        </member>
+        <member name="F:EasyGame.WebSocketServiceStartInfo.Port">
+            <summary>
+            port number to listen. if the port number is 0, the service provider will assign an available port number between 1024 and 5000.
+            </summary>
+        </member>
+        <member name="F:EasyGame.WebSocketServiceStartInfo.Backlog">
+            <summary>
+            backlog
+            </summary>
+        </member>
+        <member name="F:EasyGame.WebSocketServiceStartInfo.ReceiveBufferSize">
+            <summary>
+            TCP receive buffer size. -1 is use default setting.
+            </summary>
+        </member>
+        <member name="F:EasyGame.WebSocketServiceStartInfo.SendBufferSize">
+            <summary>
+            TCP send buffer size. -1 is use default setting.
+            </summary>
+        </member>
+        <member name="P:EasyGame.WebSocketServiceHolder.Service">
+            <summary>
+            service instance
+            </summary>
+        </member>
+        <member name="P:EasyGame.WebSocketServiceHolder.Context">
+            <summary>
+            Synchronization Context
+            </summary>
+        </member>
+        <member name="P:EasyGame.WebSocketServiceHolder.LocalEndpoint">
+            <summary>
+            the service listening endpoint
+            </summary>
+        </member>
+        <member name="M:EasyGame.WebSocketServiceHolder.#ctor(EasyGame.ServiceBase)">
+            <summary>
+            constructor
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:EasyGame.WebSocketServiceHolder.Close">
+            <summary>
+            close the service
+            </summary>
+        </member>
+        <member name="M:EasyGame.WebSocketServiceHolder.Start(EasyGame.WebSocketServiceStartInfo)">
+            <summary>
+            Launch the service
+            </summary>
+            <param name="parameters">the start parameter.</param>
+        </member>
+    </members>
+</doc>

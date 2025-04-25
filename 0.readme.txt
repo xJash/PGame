@@ -1,0 +1,17 @@
+﻿1.Extract to D:\
+
+2.D:\pgame\client\Pokemon_适配_BT\js\main.min_56d85f71.js
+   Change IP：serverUrl="http://127.0.0.1:8000"
+
+3.Run 1.启动数据库->启动
+          2.启动游戏->Pokemon_适配_BT
+
+Game Url：http://IP:8080/
+
+GM Panel：http://IP:8002/
+	  Account：001 Password：001
+
+Mysql：root qweqwe
+
+Recharge：Google Translate->http://IP:8002/
+	 Recharge->Recharge query->Fake punch

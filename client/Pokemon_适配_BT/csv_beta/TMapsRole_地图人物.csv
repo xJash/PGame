@@ -1,0 +1,6 @@
+副本ID,人物资源,人物朝向（0:右方/1:下方/2:左方/3:上方）,位置X,位置Y,路过时人物的对话（对话ID1｜对话ID2…)
+number,number,number,number,number,string
+id,person,face,positionX,positionY,DialogID
+1,,0,,,1｜2
+2,,1,,,2
+3,,2,,,3

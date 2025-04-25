@@ -1,0 +1,4 @@
+自增长ID,金额(累计充值),奖励预览（id;数量|id;数量）,奖励道具（id;数量|id;数量）
+number,number,string,string
+ID,doses,preview,Item
+1,328,1243;1,1;1000000|2;1000|6;1000

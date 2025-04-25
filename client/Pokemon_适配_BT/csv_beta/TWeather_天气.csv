@@ -1,0 +1,10 @@
+天气ID,天气名称,加成类型（1火，2水，3草，4妖，5恶，6龙，7冰）,引用特效,资源名
+number,string,string,number,string
+Id,name,type,effectWeather,resource
+1,晴天,1;15,400000,qingtian
+2,雨天,2;9,400001,yutian
+3,沙尘暴,5;14;17,400004,shachenbao
+4,彩虹天,4;16;10,400003,caihongtian
+5,阴天,3;11;18,400002,yintian
+6,雪天,7;13,400006,xuetian
+7,雷鸣天,6;8;12,400005,leizhenyu

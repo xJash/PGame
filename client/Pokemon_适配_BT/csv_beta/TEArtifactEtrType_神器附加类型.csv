@@ -1,0 +1,12 @@
+神器附加类型(1共需要随机4次，要随机两条属性，每条属性第1次随机1次类型，第二次随机1次属性数值）,附加说明,随机权重,属性字段(程序用)
+number,string,number,string
+id,textE,pro,attribute
+1,生命百分比,115,hpPer
+2,物攻百分比,115,atkPer
+3,特攻百分比,115,atkSpPer
+4,物防百分比,115,defPer
+5,特防百分比,115,defSpPer
+6,速度百分比,115,spePer
+7,暴击伤害,55,critDamage
+8,暴击率,55,critChance
+9,无加成,200,0

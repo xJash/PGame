@@ -1,0 +1,8 @@
+id（增长id）,品质,名称
+number,number,string
+id,grade,name
+1,0,银蛋
+2,1,金蛋
+3,2,彩蛋
+4,3,橙蛋
+5,4,红蛋

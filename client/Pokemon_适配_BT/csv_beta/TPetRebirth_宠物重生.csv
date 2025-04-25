@@ -1,0 +1,9 @@
+自增长ID（1.绿2.蓝.3.紫4.橙5.红 6.神）,反还金币比例,反还蓝水晶比例,反还宠物精灵经验比例,反还宠物亲密度比例,万能碎片（8星后才开始反还）,超进化石（只有红色精灵才进行反还）,进化石,低阶进化卡,中阶进化卡,努力值
+number,double,double,double,double,double,double,double,double,double,double
+id,gold,bluecrystal,experience,Intimacy,debris,mega,stone,low,scalamedia,strive
+1,1,1,1,1,0,1,1,1,1,1
+2,1,1,1,1,0,1,1,1,1,1
+3,1,1,1,1,0,1,1,1,1,1
+4,1,1,1,1,0,1,1,1,1,1
+5,1,1,1,1,0,1,1,1,1,1
+6,1,1,1,1,0,1,1,1,1,1

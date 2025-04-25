@@ -1,0 +1,7 @@
+解锁栏位序号,宝可梦等级解锁,携带品类型
+number,number,number
+id,unlockElfLevel,bringType
+1,,1
+2,20,1
+3,10,2
+4,30,2

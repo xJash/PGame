@@ -1,0 +1,4 @@
+怪物能力ID（第1次活动开启读取第1行，第二次第二行，依次类推，到最后就重头开始）,展示宝可梦,掉落预览,BOSS掉落（普通LootID;次数）,阵型
+number,number,string,string,number
+id,elfShow,lootPreview,loot,formation
+450004,1149,1;2;6;2144;2145,10000001;1|10000002;1|10000003;1,1

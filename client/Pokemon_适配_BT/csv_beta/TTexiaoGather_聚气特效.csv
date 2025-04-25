@@ -1,0 +1,10 @@
+特效ID,特效名称,特效资源名,特效偏移X,特效偏移Y,延迟,注释
+number,string,string,number,number,number,string
+id,name,resource,offsetX,offsetY,delay,zhishi
+1,水系漩涡,JUQIshuixixuanwo,,,80,水，冰
+2,发电,fadian,,,80,龙，电，飞行
+3,妖系漩涡2,JUQIshuixixuanwo02,,,80,妖，超能
+4,恶漩涡3,JUQIshuixixuanwo03,,,80,恶，鬼，地面
+5,火系漩涡4,JUQIshuixixuanwo04,,,80,火，格斗
+6,水系漩涡5,JUQIshuixixuanwo05,,,80,草，虫，毒
+7,光漩涡6,JUQIshuixixuanwo06,,,80,普，岩石，钢

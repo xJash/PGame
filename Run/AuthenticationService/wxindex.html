@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="width=720,user-scalable=no" name="viewport" id="viewport">
+    <title>妖仙道</title>
+</head>
+<body style="background-color:#000000" id="body">
+    <script>
+        function $(id) {
+			return document.getElementById(id);
+        }
+        var l = window.location;
+        var serverlist;
+        var token;
+        var nickname = "";
+        var lastServer;
+        var base = "http://huaxian.xulonggame.com";
+        var args = {};
+        (function () {
+            var s = window.location.href;
+            if (s.indexOf("?") > 0) {
+                s = s.substr(s.indexOf("?") + 1).split("&");
+                s.forEach(function (p) {
+                    p = p.split("=");
+                    args[p[0]] = p[1];
+                });
+            }
+        })();
+
+        window.onload = function () {
+            { token }
+            if (token) {
+                localStorage.setItem("token", token);
+                enterGame();
+            }
+            else {
+                var authurl = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1903f419e17102e5&redirect_uri=" + encodeURI("http://huaxian.xulonggame.com/weixin/game&response_type=code&scope=snsapi_userinfo&state=#wechat_redirect");
+                token = localStorage.getItem("token");
+                if (!token) {
+                    l.href = authurl;
+                    return;
+                }
+                else {
+                    ajax("/login/auth?token=" + token, function (r) {
+                        if (r)
+                            enterGame();
+						else {
+							l.href = authurl;
+							return;
+						}
+                    }, function () {
+                        l.href = authurl;
+                    });
+                }
+            }
+        }
+
+        function ajax(path, onResult, onError) {
+            var xhr = new XMLHttpRequest();
+            path = base + path;
+            xhr.open("get", path, false);
+            xhr.onload = function () {
+                if (this.status == 200) {
+                    var r = JSON.parse(xhr.response);
+                    if (r.status)
+                        onError(r.message);
+                    else
+                        onResult(r.result);
+                }
+                else {
+                    onError("网络错误!");
+                }
+            };
+            xhr.send();
+        }
+
+        function enterGame() {
+            //localStorage.setItem("user", user);
+            if (args.code) {
+                l.href = base + "/weixin/game";
+                return;
+            }
+            //localStorage.setItem("inviter", args.u == user ? "" : args.u);
+            $("gameFrame").src = "http://huaxian.xulonggame.com/weixin.html?token=" + token;
+        }
+		$("body").innerHTML += '<div id="gameFrameDiv" style="width: ' + window.innerWidth + 'px; height: ' + window.innerHeight + 'px; position: relative; top: 0px; left: 0px;"><iframe id="gameFrame" name="gameFrame" frameborder="no" border="0px" marginwidth="0px" marginheight="0px" scrolling="auto" style="width: ' + window.innerWidth + 'px; height: ' + window.innerHeight + 'px;"></iframe></div>';    </script>
+</body>
+</html>

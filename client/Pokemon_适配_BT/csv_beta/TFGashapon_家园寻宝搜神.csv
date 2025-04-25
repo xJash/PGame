@@ -1,0 +1,7 @@
+扭蛋机ID,所属类型（1.寻宝 2.搜神）,抽取次数,需要消耗道具ID,需要消耗道具数量,免费次数,免费间隔(不填则无免费)（s),每天是否重置（0为不重置，1为重置）,掉落(扭蛋掉落里的id),特殊掉落（次数；id|次数；id）,首次掉落
+number,number,number,number,number,number,number,number,number,string,number
+id,type,count,costItemType,costItemCount,freeCount,freeInterval,reset,loot,SpLoot,Fristloot
+1,1,1,2,998,1,21600,0,5001,6;5051,5091
+2,1,10,2,8888,0,,0,5501,6;5551,
+11,2,1,2,2888,1,86400,0,6001,6;6051,6091
+12,2,10,2,25888,0,,0,6501,6;6551,

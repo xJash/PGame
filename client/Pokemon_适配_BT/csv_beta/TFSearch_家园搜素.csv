@@ -1,0 +1,4 @@
+搜素id,可获得道具预览,每日探索次数(每天重置）,普通掉落id(lootid;loot次数|lootid;loot次数）
+number,string,number,string
+id,itemShow,count,lootId
+1,13051;13052;13061;13062;13066,10,210001;1|210002;1|210051;1|210052;1|210061;1

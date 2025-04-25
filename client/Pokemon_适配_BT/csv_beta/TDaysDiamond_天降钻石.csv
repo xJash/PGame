@@ -1,0 +1,6 @@
+自增长ID(按这个排序),充值金额大于等于该值获得抽奖次数,总次数(活动期间开启的最大次数),消耗钻石,获得钻石最小数,获得钻石最大数（需显示）
+number,number,number,number,number,number
+ID,recharge,doses,Price,acquiresmall,acquiremax
+1,6,3,38,88,168
+2,6,3,68,168,288
+3,6,3,88,288,588

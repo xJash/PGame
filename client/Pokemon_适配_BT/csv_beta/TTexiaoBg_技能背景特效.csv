@@ -1,0 +1,8 @@
+特效ID,特效名称,特效资源名,特效偏移X,特效偏移Y,延迟,注释
+number,string,string,number,number,number,string
+id,name,resource,offsetX,offsetY,delay,zhishi
+1,暗,an01,,,,恶系
+2,光,guang01,,,,电系
+3,火,huo01,,,,火系
+4,水,shui01,,,,水系
+5,土,tu01,,,,土系

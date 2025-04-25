@@ -1,0 +1,11 @@
+{"file":"font_number_gold.png","frames":{
+"0":{"x":0,"y":31,"w":16,"h":29,"offX":0,"offY":0,"sourceW":16,"sourceH":29},
+"1":{"x":36,"y":92,"w":16,"h":28,"offX":0,"offY":1,"sourceW":16,"sourceH":29},
+"2":{"x":36,"y":62,"w":16,"h":28,"offX":0,"offY":1,"sourceW":16,"sourceH":29},
+"3":{"x":36,"y":0,"w":16,"h":29,"offX":0,"offY":0,"sourceW":16,"sourceH":29},
+"4":{"x":36,"y":31,"w":16,"h":29,"offX":0,"offY":0,"sourceW":16,"sourceH":29},
+"5":{"x":18,"y":62,"w":16,"h":29,"offX":0,"offY":0,"sourceW":16,"sourceH":29},
+"6":{"x":18,"y":0,"w":16,"h":29,"offX":0,"offY":0,"sourceW":16,"sourceH":29},
+"7":{"x":18,"y":31,"w":16,"h":29,"offX":0,"offY":0,"sourceW":16,"sourceH":29},
+"8":{"x":0,"y":62,"w":16,"h":29,"offX":0,"offY":0,"sourceW":16,"sourceH":29},
+"9":{"x":0,"y":0,"w":16,"h":29,"offX":0,"offY":0,"sourceW":16,"sourceH":29}}}

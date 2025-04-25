@@ -1,0 +1,4 @@
+自增长ID,充值金额（人民币）,奖励（ID;数量）
+number,number,string
+ID,Money,RewardList
+1,500,201149;1

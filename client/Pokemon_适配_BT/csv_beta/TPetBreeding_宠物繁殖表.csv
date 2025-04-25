@@ -1,0 +1,4 @@
+id,生蛋时长（分钟）,失败爱心增加,开启等级,等级差,基础概率,差值概率
+number,number,number,number,number,number,number
+id,eggTime,loveAdd,openLevel,changeLevel,baseProbability,difProbability
+1,30,5,20,20,50,15

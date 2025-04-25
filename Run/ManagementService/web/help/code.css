@@ -1,0 +1,411 @@
+div.code {
+	background: rgb(247, 247, 247); margin: 1em 1.75em; padding: 0.25em; border-radius: 0.3em; border: 1px solid rgb(215, 215, 215); border-image: none; overflow: auto;
+}
+div.code pre {
+	margin: 0px; overflow: auto;
+}
+table.code {
+	border-width: 0px 1px 1px; border-style: none solid solid; border-color: currentColor rgb(221, 221, 221) rgb(221, 221, 221); margin: 0px auto; padding: 0px; border-image: none; width: 100%; line-height: 130%; font-size: 12px; border-collapse: collapse; table-layout: fixed; border-spacing: 0; empty-cells: show;
+}
+table.code th {
+	font-size: 11px; border-right-color: rgb(215, 215, 215); border-bottom-color: rgb(153, 153, 136); border-right-width: 1px; border-bottom-width: 1px; border-right-style: solid; border-bottom-style: solid;
+}
+table.code th.lineno {
+	width: 4em;
+}
+table.code thead th {
+	background: rgb(238, 238, 238); padding: 0px 0.25em; text-align: center; color: rgb(153, 153, 153); border-top-color: rgb(215, 215, 215); border-top-width: 1px; border-top-style: solid; white-space: nowrap;
+}
+table.code thead th.content {
+	text-align: left;
+}
+table.code thead th.content span.recover {
+	background: rgb(247, 247, 247); margin: 0px 1em 0px 0px; padding: 0px 0.5em; border-right-color: currentColor; border-left-color: currentColor; border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid; cursor: pointer;
+}
+table.code tbody th {
+	background: rgb(238, 238, 221); padding: 0px 0.5em; text-align: right; color: rgb(136, 136, 102); font-weight: normal; vertical-align: top;
+}
+table.code tbody th :link {
+	border: currentColor; border-image: none; color: rgb(136, 136, 102); text-decoration: none;
+}
+table.code tbody th :visited {
+	border: currentColor; border-image: none; color: rgb(136, 136, 102); text-decoration: none;
+}
+table.code tbody th :hover:link {
+	color: rgb(0, 0, 0);
+}
+table.code tbody th :hover:visited {
+	color: rgb(0, 0, 0);
+}
+table.code td {
+	font: 11px/normal monospace; padding: 1px 2px; overflow: hidden; vertical-align: top; font-size-adjust: none; font-stretch: normal;
+}
+table.code tr.hilite th {
+	background: rgb(204, 204, 255);
+}
+table.code tr.hilite td {
+	background: rgb(221, 221, 255);
+}
+.image-file {
+	background: rgb(238, 238, 238); padding: 0.3em;
+}
+.image-file img {
+	background: url("../imggrid.png");
+}
+.code-block span {
+	font-family: monospace;
+}
+.code-comment {
+	color: rgb(153, 153, 136); font-style: italic;
+}
+.css_comment {
+	color: rgb(153, 153, 136); font-style: italic;
+}
+.c_comment {
+	color: rgb(153, 153, 136); font-style: italic;
+}
+.c_commentdoc {
+	color: rgb(153, 153, 136); font-style: italic;
+}
+.c_commentline {
+	color: rgb(153, 153, 136); font-style: italic;
+}
+.c_commentlinedoc {
+	color: rgb(153, 153, 136); font-style: italic;
+}
+.h_comment {
+	color: rgb(153, 153, 136); font-style: italic;
+}
+.pl_commentline {
+	color: rgb(153, 153, 136); font-style: italic;
+}
+.p_commentblock {
+	color: rgb(153, 153, 136); font-style: italic;
+}
+.p_commentline {
+	color: rgb(153, 153, 136); font-style: italic;
+}
+.hphp_comment {
+	color: rgb(153, 153, 136); font-style: italic;
+}
+.hphp_commentblock {
+	color: rgb(153, 153, 136); font-style: italic;
+}
+.hphp_commentline {
+	color: rgb(153, 153, 136); font-style: italic;
+}
+.yaml_comment {
+	color: rgb(153, 153, 136); font-style: italic;
+}
+.code-keyword {
+	color: rgb(119, 136, 153); font-weight: bold;
+}
+.pl_word {
+	color: rgb(119, 136, 153); font-weight: bold;
+}
+.code-type {
+	color: rgb(68, 102, 136); font-weight: bold;
+}
+.c_word {
+	color: rgb(68, 102, 136); font-weight: bold;
+}
+.c_word2 {
+	color: rgb(68, 102, 136); font-weight: bold;
+}
+.p_classname {
+	color: rgb(68, 102, 136); font-weight: bold;
+}
+.hphp_classname {
+	color: rgb(68, 102, 136); font-weight: bold;
+}
+.code-func {
+	color: rgb(153, 0, 0); font-weight: bold; border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none;
+}
+.p_defname {
+	color: rgb(153, 0, 0); font-weight: bold; border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none;
+}
+.code-prep {
+	color: rgb(153, 153, 153); font-weight: bold;
+}
+.c_preprocessor {
+	color: rgb(153, 153, 153); font-weight: bold;
+}
+.pl_preprocessor {
+	color: rgb(153, 153, 153); font-weight: bold;
+}
+.yaml_identifier {
+	color: rgb(153, 153, 153); font-weight: bold;
+}
+.code-lang {
+	color: rgb(0, 0, 0); font-weight: bold;
+}
+.p_word {
+	color: rgb(0, 0, 0); font-weight: bold;
+}
+.code-string {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.c_string {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.c_stringeol {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.css_doublestring {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.css_singlestring {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.h_singlestring {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.h_doublestring {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.pl_string {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.pl_string_q {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.pl_string_qq {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.pl_string_qr {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.pl_string_qw {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.pl_string_qx {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.pl_backticks {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.pl_character {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.p_string {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.p_stringeol {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.hphp_string {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.hphp_stringeol {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.hphp_triple {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.hphp_tripledouble {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.p_character {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.p_triple {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.p_tripledouble {
+	color: rgb(187, 136, 68); font-weight: normal;
+}
+.code-var {
+	color: rgb(255, 153, 255);
+}
+.css_id {
+	color: rgb(144, 0, 0);
+}
+.css_class {
+	color: rgb(144, 0, 0);
+}
+.css_pseudoclass {
+	color: rgb(144, 0, 0);
+}
+.css_tag {
+	color: rgb(144, 0, 0);
+}
+.css_directive {
+	color: rgb(0, 144, 0); font-weight: bold;
+}
+.css_important {
+	color: blue;
+}
+.css_operator {
+	color: rgb(0, 0, 144); font-weight: bold;
+}
+.css_tag {
+	font-weight: bold;
+}
+.css_unknown_identifier {
+	color: red;
+}
+.css_unknown_pseudoclass {
+	color: red;
+}
+.css_value {
+	color: navy;
+}
+.c_commentdockeyword {
+	color: navy; font-weight: bold;
+}
+.c_commentdockeyworderror {
+	color: red; font-weight: bold;
+}
+.c_character {
+	color: olive;
+}
+.c_regex {
+	color: olive;
+}
+.c_uuid {
+	color: olive;
+}
+.c_verbatim {
+	color: olive;
+}
+.c_number {
+	color: rgb(0, 153, 153);
+}
+.h_asp {
+	color: rgb(255, 255, 0);
+}
+.h_aspat {
+	color: rgb(255, 223, 0);
+}
+.h_attribute {
+	color: teal;
+}
+.h_attributeunknown {
+	color: red;
+}
+.h_cdata {
+	color: rgb(51, 119, 51);
+}
+.h_entity {
+	color: purple;
+}
+.h_number {
+	color: rgb(0, 153, 153);
+}
+.h_other {
+	color: purple;
+}
+.h_script {
+	color: navy;
+}
+.h_tag {
+	color: navy;
+}
+.h_tagend {
+	color: navy;
+}
+.h_tagunknown {
+	color: red;
+}
+.h_xmlend {
+	color: blue;
+}
+.h_xmlstart {
+	color: blue;
+}
+.pl_datasection {
+	color: olive;
+}
+.pl_error {
+	color: red; font-weight: bold;
+}
+.pl_hash {
+	color: rgb(0, 0, 0);
+}
+.pl_here_delim {
+	color: olive;
+}
+.pl_here_q {
+	color: olive;
+}
+.pl_here_qq {
+	color: olive;
+}
+.pl_here_qx {
+	color: olive;
+}
+.pl_longquote {
+	color: olive;
+}
+.pl_number {
+	color: rgb(0, 153, 153);
+}
+.pl_pod {
+	font-style: italic;
+}
+.pl_regex {
+	color: olive;
+}
+.pl_regsubst {
+	color: olive;
+}
+.p_number {
+	color: rgb(0, 153, 153);
+}
+.hphp_character {
+	color: olive;
+}
+.hphp_defname {
+	color: rgb(0, 153, 153); font-weight: bold;
+}
+.hphp_number {
+	color: rgb(0, 153, 153);
+}
+.hphp_word {
+	color: navy; font-weight: bold;
+}
+.yaml_document {
+	color: gray; font-style: italic;
+}
+.yaml_keyword {
+	color: rgb(136, 0, 136);
+}
+.yaml_number {
+	color: rgb(136, 0, 0);
+}
+.yaml_reference {
+	color: rgb(0, 136, 136);
+}
+.v_comment {
+	color: gray; font-style: italic;
+}
+.v_commentline {
+	color: red; font-style: italic;
+}
+.v_commentlinebang {
+	color: red; font-style: italic;
+}
+.v_number {
+	color: rgb(0, 153, 153);
+}
+.v_preprocessor {
+	color: rgb(0, 153, 153);
+}
+.v_string {
+	color: olive;
+}
+.v_stringeol {
+	color: olive;
+}
+.v_user {
+	color: blue; font-weight: bold;
+}
+.v_word {
+	color: navy; font-weight: bold;
+}
+.v_word3 {
+	color: navy; font-weight: bold;
+}
+.v_word2 {
+	color: green; font-weight: bold;
+}

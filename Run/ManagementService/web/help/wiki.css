@@ -1,0 +1,205 @@
+@import url( code.css );
+#info {
+	margin: 0px 0px 1em;
+}
+#wikipage {
+	clear: both;
+}
+.wikipage h2 {
+	padding: 0.2em 0.3em 0.1em; border-bottom-color: rgb(221, 221, 221); border-bottom-width: 1px; border-bottom-style: solid; box-shadow: 0.1em 0.4em 0.7em 0px #f2f2f2;
+}
+@media print
+{
+.wikipage h2 {
+	box-shadow: none;
+}
+}
+.wikipage h3 {
+	border-bottom-color: rgb(221, 221, 221); border-bottom-width: 1px; border-bottom-style: dashed;
+}
+.wikipage .trac-content {
+	padding-left: 28px; margin-left: -18px;
+}
+#pagepath {
+	padding: 0.4em 0px; font-size: 10px; float: left;
+}
+#pagepath :link {
+	margin: 0px 0.2em;
+}
+#pagepath :visited {
+	margin: 0px 0.2em;
+}
+#pagepath .first:link {
+	color: rgb(153, 153, 136);
+}
+#pagepath .first:visited {
+	color: rgb(153, 153, 136);
+}
+#pagepath .sep {
+	padding: 0px 0.1em; color: rgb(102, 102, 102);
+}
+#pagepath .pathentry {
+	float: left;
+}
+.preview-right {
+	margin: 0px 0px 0px 1em; width: 50%; float: right; display: block;
+}
+.sidebyside > h2 {
+	margin: 0.4em 0px;
+}
+.sidebyside #preview {
+	margin: 0px;
+}
+.sidebyside #text {
+	overflow: hidden;
+}
+#edit {
+	margin-top: 0.5em;
+}
+#edit #rows {
+	margin: 0.4em 0px 0px; font-size: 80%; float: right;
+}
+#edit #rows select {
+	font-size: 90%;
+}
+#edit fieldset {
+	margin-right: 1px; margin-left: 1px;
+}
+#edit #text {
+	padding: 0px; width: 100%; clear: both; margin-right: -1px; margin-left: -1px; min-height: 10em; resize: vertical;
+}
+#edit .wikitoolbar {
+	margin-left: -1px; float: left;
+}
+#edit div.trac-resizable {
+	width: 100%; clear: both;
+}
+#edit + #info {
+	margin-top: 1em;
+}
+#edit + #attachments {
+	margin-top: 1.5em;
+}
+#changeinfo {
+	padding: 0.5em;
+}
+#changeinfo .field {
+	margin: 0px 1em 0.5em 0px; float: left;
+}
+#changeinfo {
+	clear: both;
+}
+#changeinfo br {
+	clear: left;
+}
+#changeinfo .options {
+	padding: 0px 0px 1em 1em;
+}
+#changeinfo .options {
+	clear: left;
+}
+#changeinfo .buttons {
+	clear: left;
+}
+#delete {
+	margin-left: 3em;
+}
+#rename {
+	margin-left: 3em;
+}
+#save {
+	margin-left: 3em;
+}
+#preview {
+	background: url("../draft.png") rgb(248, 248, 248); margin: 1em 0px 2em; overflow: auto;
+}
+#template {
+	padding-top: 1em; vertical-align: middle;
+}
+#overview .multi {
+	color: rgb(153, 153, 153);
+}
+#overview .ipnr {
+	color: rgb(153, 153, 153); font-size: 80%;
+}
+#overview .comment {
+	padding: 1em 0px 0px;
+}
+@media print
+{
+th.diff {
+	display: none;
+}
+td.diff {
+	display: none;
+}
+}
+.wiki-toc {
+	background: rgb(255, 255, 221); margin: 0px 0px 2em 1em; padding: 0.5em 1em; border: 1px outset rgb(221, 221, 204); border-image: none; clear: right; font-size: 85%; float: right; position: relative;
+}
+.wiki-toc h4 {
+	margin: 0px; font-size: 12px;
+}
+.wiki-toc ul {
+	list-style: none; margin: 0px; padding: 0px;
+}
+.wiki-toc ol {
+	list-style: none; margin: 0px; padding: 0px;
+}
+.wiki-toc ul ul {
+	padding-left: 1.2em;
+}
+.wiki-toc ol ol {
+	padding-left: 1.2em;
+}
+.wiki-toc li {
+	margin: 0px; padding: 0px;
+}
+.wiki-toc .active {
+	background: rgb(255, 255, 153); position: relative;
+}
+.wiki-toc-un ul {
+	list-style: none;
+}
+.wiki-toc-un ol {
+	list-style: none;
+}
+div.trac-modifiedby {
+	margin: 0.3em 0.5em; text-align: right; color: rgb(136, 136, 136); font-size: 80%; font-style: italic; float: right;
+}
+div.trac-modifiedby :link {
+	color: inherit;
+}
+div.trac-modifiedby :visited {
+	color: inherit;
+}
+div.trac-modifiedby span.trac-print {
+	display: none;
+}
+@media print
+{
+div.trac-modifiedby span {
+	display: none;
+}
+div.trac-modifiedby span.trac-print {
+	display: block;
+}
+}
+.rtl {
+	direction: rtl;
+}
+.rtl div.wiki-toc {
+	float: left;
+}
+.rtl .wiki-toc ul ul {
+	padding-right: 1.2em;
+}
+.wiki-toc ol ol {
+	padding-right: 1.2em;
+}
+div.tracini td.default {
+	font-size: 90%;
+}
+div.tracini td.nodefault {
+	color: rgb(119, 119, 119); font-size: 85%; font-style: italic; white-space: nowrap;
+}

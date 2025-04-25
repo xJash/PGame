@@ -1,0 +1,4 @@
+自增长ID,免费礼包(活动期间每个玩家限领1次）,付费礼包（充值后给玩家，服务端统计购买的玩家，公测时邮箱发送这个礼包）,充值额度（对应充值表的ID）
+number,string,string,number
+ID,itemForFree,itemForPay,itemCost
+1,10341;1,10342;1,15

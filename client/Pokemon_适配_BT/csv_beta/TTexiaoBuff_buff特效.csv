@@ -1,0 +1,9 @@
+特效ID,特效名称,特效资源名,特效偏移X,特效偏移Y,延迟
+number,string,string,number,number,number
+id,name,resource,offsetX,offsetY,delay
+1,冰冻,BUFFbingdong,20,-20,
+2,毒,BUFFdu,20,-20,
+3,混乱,BUFFhunluan,20,-20,
+4,麻痹,BUFFmabi,20,-20,
+5,烧伤,BUFFshaoshang,20,-20,
+6,睡眠,BUFFshuimian,20,-20,

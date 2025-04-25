@@ -1,0 +1,60 @@
+{
+  "engineVersion": "5.2.3",
+  "compilerVersion": "5.2.3",
+  "template": {},
+  "target": {
+    "current": "web"
+  },
+  "eui": {
+    "exmlRoot": [
+      "resource/eui_skins"
+    ],
+    "themes": [
+      "resource/default.thm.json"
+    ],
+    "exmlPublishPolicy": "gjs"
+  },
+  "modules": [
+    {
+      "name": "egret"
+    },
+    {
+      "name": "eui"
+    },
+    {
+      "name": "res"
+    },
+    {
+      "name": "tween"
+    },
+    {
+      "name": "game"
+    },
+    {
+      "name": "dragonBones"
+    },
+    {
+      "name": "pathFinding",
+      "path": "../../tools/egret/pathFinding/libsrc"
+    },
+    {
+      "name": "particle",
+      "path": "../../tools/egret/particle/"
+    },
+    {
+      "name": "promise",
+      "path": "../../tools/egret/promise/libsrc"
+    }
+  ],
+  "targets": {
+    "android": {
+      "appname": "宝贝原生As1.0",
+      "packagename": "com.xulonggame.pokemon2"
+    },
+    "ios": {
+      "appname": "sadfasd",
+      "packagename": "com.companyname",
+      "hybird": false
+    }
+  }
+}

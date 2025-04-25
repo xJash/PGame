@@ -1,0 +1,9 @@
+进化后宝可梦品质（1紫 2橙 3红）,最大进阶数,单次进阶手续费比例,单次进阶提升属性比例,亲密度等级增加（每次提升后，宝可梦提升所需亲密度等级增加量）,宝可梦所需等级增加（每次提升后，宝可梦提升所需等级增加量）
+number,number,double,double,number,number
+quality,QualityMax,AdvancedPricePer,AdvPropertiesPer,PkmLoveLvAdd,PkmLvAdd
+2,0,1,1,0,0
+3,0,1,1,0,0
+4,9,0.1,0.01,1,1
+5,9,0.1,0.01,1,1
+6,9,0.1,0.01,2,2
+7,9,0.1,0.01,2,2

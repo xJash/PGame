@@ -1,0 +1,6 @@
+狩猎区ID,狩猎区名称,等级限制（>=),需要消耗道具ID,需要消耗道具数量,替代品(id;数量),可能出现宝可梦,限制时间,出现权重（高、中、低）,"显示ID（随机掉落池,界面显示几率划分标准,844格式）",品质掉落数量,消耗系数(底金+人物等级*系数=进入价格 为空时只读底金),狩猎几率描述（1=高，2=中，3=低，4=极低）,可用精灵球ID
+number,string,number,number,number,string,string,number,string,string,string,number,string,string
+id,name,limit,costItemType,costItemCount,replace,loot,time,probability,showCount,quiltyCount,coefficient,HuntDescribe,AvailableID
+1,初级狩猎区,15,1,20000,,1,90,4000|100|3,1;2|3;4|5&6,4;4|1;1|1,15000,1|3|4,13004|13003
+2,中级狩猎区,15,1,200000,,2,90,1650|150|2,1;2|3;5|5&6,3;3|2;1|2,20000,1|2|3,13004|13003
+3,高级狩猎区,15,13023,3,2;300,3,90,2000|6000|5,2|3;4;5|6,2|3;1;1|2,,3|1|2,13004|13003

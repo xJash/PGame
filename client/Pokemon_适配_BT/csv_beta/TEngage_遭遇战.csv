@@ -1,0 +1,4 @@
+ID,出现权重,掉落id
+number,number,string
+ID,Prob,lootId
+1,500,200000

@@ -1,0 +1,308 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!--<base href="http://cdn2.xulonggame.com/EgretCDN/ayPokemon/"/>-->
+    <base href="http://nlqyres.zs-e.com/EgretCDN/gaveGamePokemon/" />
+    <meta charset="utf-8">
+    <title>pokemon</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="true" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <link href="//qzonestyle.gtimg.cn/touch/proj-qzone-app/application-v3/annunciate-dialog.css?r=1525696205620" rel="stylesheet"
+        type="text/css">
+    <style>
+        html,
+        body {
+            -ms-touch-action: none;
+            background: black;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            padding-top: constant(safe-area-inset-top);
+            padding-left: constant(safe-area-inset-left);
+            padding-right: constant(safe-area-inset-right);
+            padding-bottom: constant(safe-area-inset-bottom);
+            height: 100%;
+        }
+
+        @font-face {
+            font-family: 'FZXS';
+            src: url('FZXS.eot?#iefix') format('embedded-opentype'), url('FZXS.woff') format('woff'), url('FZXS.ttf') format('truetype'), url('FZXS.svg#FZXS') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+
+    <style>
+        #preloading {
+            z-index: 1000;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1 1 auto;
+            position: absolute;
+        }
+
+        #preloading img {
+            max-width: 100%;
+        }
+    </style>
+    <style>
+        #divL,
+        #divR {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+            background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+            -webkit-background-size: 100% 100%;
+        }
+
+        #divL {
+            background-image: url(resource/assets/loading/leftBg_1ab7686e.jpg);
+            left: 0;
+        }
+
+        #divR {
+            background-image: url(resource/assets/loading/rightBg_e6fd6255.jpg);
+            right: 0;
+        }
+    </style>
+    <div id="divL"></div>
+    <div id="divR"></div>
+    <div id="preloading">
+        <script>
+            document.getElementById("preloading").innerHTML = '<img src="resource/assets/loading/gsLOGO_442130f4.png"/>';
+        </script>
+    </div>
+</head>
+
+<!-- 测试环境 -->
+
+<!-- 正式环境 -->
+
+
+<body>
+
+    <div style="margin: auto;width: 100%;height: 100%;" class="egret-player" data-entry-class="Main" data-orientation="auto"
+        data-scale-mode="showAll" data-frame-rate="60" data-content-width="720" data-content-height="1100" data-show-paint-rect="false"
+        data-multi-fingered="2" data-show-fps="false" data-show-log="true" data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
+    </div>
+    <script>
+
+        if (/iphone/gi.test(navigator.userAgent) && (screen.height == 812 && screen.width == 375)) {
+            var app = document.getElementsByClassName('egret-player')[0];
+            if (app) {
+                app.style.overflow = "hidden";
+                app.style.marginTop = "44px";
+                app.style.height = "734px";
+                app.style.marginBottom = "34px";
+            }
+        }
+
+        //var libFile = "merged.js"
+        var jsFile = "sy.1.json";
+        var resFile = "resource/res.1.json";
+        var themeFile = "resource/theme.1.json";
+        var dataUrl = "CsvData.1.json";
+        var fix = false;
+        var fixTime = "2018-4-01 11:40----2018-4-01 12:30";
+        var noticeid = 4;
+
+        var loadScript = function (list, callback) {
+            var loaded = 0;
+            var loadNext = function () {
+                loadSingleScript(list[loaded], function () {
+                    loaded++;
+                    if (loaded >= list.length) {
+                        callback();
+                    }
+                    else {
+                        loadNext();
+                    }
+                })
+            };
+            loadNext();
+        };
+
+        var loadSingleScript = function (src, callback) {
+            var s = document.createElement('script');
+            s.async = false;
+            s.src = src;
+            s.addEventListener('load', function () {
+                s.parentNode.removeChild(s);
+                s.removeEventListener('load', arguments.callee, false);
+                callback();
+            }, false);
+            // s.onerror = function (evt) {
+            //     alert("您的网络不给力啊!文件加载失败!");
+            // }
+            document.body.appendChild(s);
+        };
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', './' + jsFile + '?v=' + Math.random(), true);
+        xhr.addEventListener("load", function () {
+            var manifest = JSON.parse(xhr.response);
+            var list = manifest.initial.concat(manifest.game);
+            loadScript(list, function () {
+                var token = SDK.getQueryString("token");
+                if (token) {
+                    localStorage.setItem("token", token);
+                }
+                ES6Promise.polyfill();
+                game.themeUrl = themeFile;
+                game.resUrl = resFile;
+                game.OnFix = fix;
+                game.FixTime = fixTime;
+                game.noticeId = noticeid;
+                game.isMobile = true;
+                game.canRecharge = true;
+                game.dataUrl = dataUrl;
+                SDK.$platformType = 12;
+                game.$retryCount = 60;
+                Auth.$serverUrl = "http://gavegame.xulonggame.com/";
+                egret.ImageLoader.crossOrigin = "anonymous";
+                //egret.TextField.default_fontFamily = "FZXS";
+                /**
+                 * {
+                 * "renderMode":, //引擎渲染模式，"canvas" 或者 "webgl"
+                 * "audioType": "" //使用的音频类型，0:默认，1:qq audio，2:web audio，3:audio
+                 * "antialias": //WebGL模式下是否开启抗锯齿，true:开启，false:关闭，默认为false
+                 * }
+                 **/
+                egret.runEgret({ renderMode: "webgl", audioType: 2 });
+            });
+        });
+        xhr.send(null);
+    </script>
+
+
+    <script>
+        function getQueryString(name) {
+            let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            let r = window.location.search.substr(1).match(reg);
+            if (r != null) return (r[2]);
+            return null;
+        }
+        //天赐api
+        function initSDK() {
+            var params = {
+
+                "app_id": 10044,
+                "channel_id": getQueryString("channel_id"),
+                "login_token": getQueryString("login_token"),
+                "user_id": getQueryString("user_id"),
+            }
+
+            var listener = {
+                pay: {
+
+                    success: function () {
+                        //支付成功回调
+                        console.log("Pay Success")
+                        Auth.preRechargeWB(msg.itemid);
+                    },
+
+                    cancel: function () {
+                        //支付取消回调
+                        console.log("Pay Cancel")
+                        Auth.CloseRecharge();
+
+                    },
+
+                    failed: function () {
+                        //支付失败回调
+                        console.log("Pay failed")
+                        Auth.CloseRecharge();
+                    }
+                },
+
+                share: {
+                    success: function () {
+                        // 分享成功回调
+                        console.log("Share success")
+
+                    },
+                    cancel: function () {
+                        // 分享取消回调
+                        console.log("Share cancel")
+
+                    },
+                    failed: function () {
+                        // 分享失败回调
+                        console.log("Share failed")
+                    }
+                },
+
+
+                attention: {
+                    success: function () {
+                        // 关注成功回调
+                        console.log("Attention success")
+                    },
+
+
+                    cancel: function () {
+                        // 关注取消回调
+                        console.log("Attention cancel")
+                    },
+
+                    failed: function () {
+                        // 关注失败回调
+                        console.log("Attention failed")
+                    }
+                }
+            }
+
+            //初始化
+            GAVEGAME_SDK.init(params, listener);
+        }
+
+        //上报
+        function updateRoleInfoGave(info) {
+            GAVEGAME_SDK.updateUserInfo(roleInfo);
+        }
+
+
+        //支付
+        function requestPayGave(payInfo) {
+            GAVEGAME_SDK.requestPay(payInfo);
+        }
+
+
+        //分享
+        function isNeedShareGave() {
+            return GAVEGAME_SDK.needShare();
+        }
+
+        function requestShareGave() {
+            GAVEGAME_SDK.requestShare()
+        }
+
+
+        //关注
+        function isNeedAttentionGave() {
+            return GAVEGAME_SDK.needAttention();
+        }
+
+        function requestAttentionGave() {
+            GAVEGAME_SDK.requestAttention()
+        }
+    </script>
+
+    <script src="http://test.tiancigame.cn/h5/dev/2.0.0/GaveGameSDK.js" onload="initSDK()"></script>
+    <!-- <script src="http://cdn.tiancigame.cn/h5/release/2.0.0/GaveGameSDK.js" onload="initSDK()"></script> -->
+
+</body>
+
+</html>

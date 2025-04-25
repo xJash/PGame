@@ -1,0 +1,4 @@
+自增长ID,奖励道具（id;数量|id;数量）
+number,string
+ID,Item
+1,1150;1|2;9980
